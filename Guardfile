@@ -47,7 +47,7 @@ end
 
 # Returns all tests that hit the interface.
 def interface_tests
-  integration_tests << "test/controllers/"
+  integration_tests << "test/controllers"
 end
 
 # Returns the controller tests corresponding to the given resource.
