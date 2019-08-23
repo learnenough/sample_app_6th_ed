@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',          '6.0.0'
 gem 'bcrypt',         '3.1.13'
-gem 'bootstrap-sass', '3.4.1'
+gem 'bootstrap',      '~> 4.3.1'
 gem 'puma',           '3.12.1'
 gem 'sass-rails',     '5.1.0'
 gem 'webpacker',      '4.0.7'

@@ -1,9 +1,11 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$gray-light: #eee;
+$gray-darker: #aaa;
+$gray: #ccc;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -168,13 +170,6 @@ input {
   ul {
     color: red;
     margin: 0 0 30px 0;
-  }
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
   }
 }
 
