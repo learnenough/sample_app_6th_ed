@@ -7,6 +7,12 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   watch(%r{^app/models/(.*?)\.rb$}) do |matches|
     "test/models/#{matches[1]}_test.rb"
   end
+  watch(%r{^app/mailers/(.*?)\.rb$}) do |matches|
+    "test/mailers/#{matches[1]}_test.rb"
+  end
+  watch(%r{^app/views/(.*)_mailer/.*$}) do |matches|
+    "test/mailers/#{matches[1]}_mailer_test.rb"
+  end
   watch(%r{^app/controllers/(.*?)_controller\.rb$}) do |matches|
     resource_tests(matches[1])
   end
