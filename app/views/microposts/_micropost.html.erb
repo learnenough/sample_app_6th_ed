@@ -1,7 +1,14 @@
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="content"><%= micropost.content %></span>
+  <span class="content">
+    <%= micropost.content %>
+    <% if micropost.picture.attached? %>
+      <div class="micropost-picture">
+        <%= image_tag micropost.picture.variant(resize_to_limit: [500, 500]) %>
+      </div?
+    <% end %>
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
     <% if current_user?(micropost.user) %>

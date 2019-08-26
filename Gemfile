@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',                   '6.0.0'
+gem 'image_processing',        '1.9.3'
+gem 'mini_magick',             '4.9.5'
+gem 'aws-sdk-s3',              '1.46.0', require: false
 gem 'bcrypt',                  '3.1.13'
 gem 'faker',                   '2.1.2'
 gem 'will_paginate',           '3.1.8'
