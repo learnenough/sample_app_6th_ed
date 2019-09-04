@@ -5,14 +5,14 @@ This is the Help page for the [*Ruby on Rails Tutorial*](https://www.railstutori
 ## General suggestions
 
 Web development is a tricky business, and despite the best efforts of the
-tutorial it’s likely that you’ll run into trouble at some point. If you do, I suggest comparing your code to the [reference implementation of the sample app](https://github.com/railstutorial/sample_app_6th_ed) to track down any discrepancies. You can also post your question at [Stack Overflow](https://stackoverflow.com/), but I suggest you do so after trying all the debugging tips listed below.
+tutorial it’s likely that you’ll run into trouble at some point. If you do, I suggest comparing your code to the [reference implementation of the sample app](https://github.com/mhartl/sample_app_6th_ed) to track down any discrepancies. You can also post your question at [Stack Overflow](https://stackoverflow.com/), but I suggest you do so after trying all the debugging tips listed below.
 
 ## Debugging tips
 
 While it’s impossible to anticipate every potential problem, here are
 some debugging tips that might help:
 
-- Have you compared your code to the [reference implementation of the sample app](https://github.com/railstutorial/sample_app_6th_ed)?
+- Have you compared your code to the [reference implementation of the sample app](https://github.com/mhartl/sample_app_6th_ed)?
 - Are you using the [exact gem versions](https://gemfiles-6th-ed.railstutorial.org) (including Rails) used in the
   tutorial?
 - Did you try Googling the error message?
