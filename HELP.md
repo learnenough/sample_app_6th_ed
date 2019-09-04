@@ -31,10 +31,7 @@ If your problem is of a general nature, such as having issues installing
 Rails or configuring your system, I suggest posting to [Stack
 Overflow](http://stackoverflow.com/). This will allow other
 people running into your issue (and not just those following the Rails
-Tutorial) to benefit from the discussion. You can also try asking your
-question on the [Rails IRC channel
-(#rubyonrails)](http://webchat.freenode.net/?channels=rubyonrails) to get live assistance
-from other Rails programmers. For issues
+Tutorial) to benefit from the discussion. For issues
 deploying to [Heroku](http://heroku.com/), please contact [Heroku
 technical support](http://support.heroku.com/).
 
