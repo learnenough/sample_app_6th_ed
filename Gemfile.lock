@@ -238,7 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (= 1.4.4)
-  byebug
+  byebug (= 11.0.1)
   capybara (= 3.28.0)
   guard (= 2.15.0)
   guard-minitest (= 2.4.6)
