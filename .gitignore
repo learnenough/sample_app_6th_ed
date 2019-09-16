@@ -34,5 +34,8 @@
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore macOS DS_Store
+# Ignore macOS DS_Store.
 .DS_Store
+
+# Ignore db test files.
+db/test.*
