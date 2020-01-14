@@ -2,7 +2,7 @@
 
 ## Reference implementation
 
-This is the reference implementation of the sample application from 
+This is the reference implementation of the sample application from
 [*Ruby on Rails Tutorial:
 Learn Web Development with Rails*](https://www.railstutorial.org/)
 (6th Edition)
@@ -19,15 +19,18 @@ is available jointly under the MIT License and the Beerware License. See
 To get started with the app, first clone the repo and `cd` into the directory:
 
 ```
-$ git clone https://github.com/mhartl/sample_app_6th_ed.git 
+$ git clone https://github.com/mhartl/sample_app_6th_ed.git
 $ cd sample_app_6th_ed
 ```
 
-Then install the needed gems (while skipping any gems needed only in production):
+Then install the needed packages (while skipping any Ruby gems needed only in production):
 
 ```
+$ yarn add jquery@3.4.1 bootstrap@3.4.1
 $ bundle install --without production
 ```
+
+(If you run into any installation issues or missing dependencies, refer to the [first chapter](https://www.learnenough.com/ruby-on-rails-6th-edition-tutorial/beginning) of the tutorial for details.)
 
 Next, migrate the database:
 
@@ -81,6 +84,6 @@ $ rails db:seed
 
 ## Help with the Rails Tutoiral
 
-Experience shows that comparing code with the reference app is often helpful for debugging errors and tracking down discrepancies. For additional assistance with any issues in the tutorial, please consult the [Rails Tutorial Help page](https://www.railstutorial.org/help). 
+Experience shows that comparing code with the reference app is often helpful for debugging errors and tracking down discrepancies. For additional assistance with any issues in the tutorial, please consult the [Rails Tutorial Help page](https://www.railstutorial.org/help).
 
 Suspected errors, typos, and bugs can be emailed to <admin@railstutorial.org>. All such reports are gratefully received, but please double-check with the [online version of the tutorial](https://www.railstutorial.org/book) and this reference app before submitting.
