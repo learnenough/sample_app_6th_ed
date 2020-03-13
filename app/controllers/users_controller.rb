@@ -55,6 +55,16 @@ class UsersController < ApplicationController
         @answer_type_predicates = answer_type_predicates
     end
 
+    def evaluate_users
+      working = true
+      current_user_id = 0
+      while working do 
+        user = User.find(current_user_id)
+        puts "THE USER IS GOOD?: #{user.is_good}"
+        current_user_id++
+      end
+    end
+
     def get_data
       @test_data = Faraday.get('https://api.instagram.com/oauth/access_token', client_id: ENV['INSTAGRAM_APP_ID'], client_secret: ENV['INSTAGRAM_APP_SECRET'])
     end
