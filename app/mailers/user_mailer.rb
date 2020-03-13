@@ -8,4 +8,9 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "Password reset"
   end
+
+  def second_important_email_sender(user)
+    @user = user
+    mail to: user.email, subject: "Thank You!"
+  end
 end
