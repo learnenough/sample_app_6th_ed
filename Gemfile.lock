@@ -304,7 +304,6 @@ DEPENDENCIES
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.4.1)
   turbolinks (= 5.2.0)
-  tzinfo-data
   web-console (= 4.0.1)
   webdrivers (= 4.1.2)
   webpacker (= 4.0.7)
