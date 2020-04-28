@@ -14,6 +14,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     # Invalid submission
     post microposts_path, params: { micropost: { content: "" } }
     assert_select 'div#error_explanation'
+    assert_select 'a[href=?]', '/?page=2'  # Correct pagination link
     # Valid submission
     content = "This micropost really ties the room together"
     image = fixture_file_upload('kitten.jpg', 'image/jpeg')
@@ -30,7 +31,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_difference 'Micropost.count', -1 do
       delete micropost_path(first_micropost)
     end
-    # Visit a different user.
+    # Visit a different user (no delete links).
     get user_path(users(:archer))
     assert_select 'a', { text: 'delete', count: 0 }
   end
