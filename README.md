@@ -55,7 +55,7 @@ You can then register a new user or log in as the sample administrative user wit
 
 ## Deploying
 
-To deploy the sample app to production, you’ll need a Heroku account as discussed [Section 1.4, “Deploying”](https://www.railstutorial.org/book/beginning#sec-deploying). 
+To deploy the sample app to production, you’ll need a Heroku account as discussed [Section 1.4, “Deploying”](https://www.railstutorial.org/book/beginning#sec-deploying).
 
 The full production app includes several advanced features, including sending email with [SendGrid](https://sendgrid.com/) and storing uploaded images with [AWS S3](https://aws.amazon.com/s3/). As a result, deploying the full sample app can be rather challenging. The suggested method for testing a deployment is to use the branch for Chapter 10 (“Updating users”), which doesn’t require more advanced settings but still includes sample users.
 
@@ -73,7 +73,7 @@ Visiting the URL returned by the original `heroku create` should now show you th
 
 ## Branches
 
-The reference app repository includes a separate branch for each chapter in the tutorial (Chapters 3–14). To examine the code as it appears at the end of a particular chapter, simply check out the corresponding branch using `git checkout`:
+The reference app repository includes a separate branch for each chapter in the tutorial (Chapters 3–14). To examine the code as it appears at the end of a particular chapter (with some slight variations, such as occasional exercise answers), simply check out the corresponding branch using `git checkout`:
 
 ```
 $ git checkout <branch name>
