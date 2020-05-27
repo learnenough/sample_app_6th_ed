@@ -37,7 +37,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_storage_validations (0.8.2)
+    active_storage_validations (0.8.9)
       rails (>= 5.2.0)
     activejob (6.0.3.1)
       activesupport (= 6.0.3.1)
@@ -104,8 +104,8 @@ GEM
     crass (1.0.6)
     erubi (1.9.0)
     execjs (2.7.0)
-    faker (2.1.2)
-      i18n (>= 0.8)
+    faker (2.11.0)
+      i18n (>= 1.6, < 2)
     ffi (1.12.2)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -262,7 +262,7 @@ GEM
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    will_paginate (3.1.8)
+    will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.3.0)
@@ -271,7 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_storage_validations (= 0.8.2)
+  active_storage_validations (= 0.8.9)
   aws-sdk-s3 (= 1.46.0)
   bcrypt (= 3.1.13)
   bootsnap (= 1.4.6)
@@ -279,7 +279,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 1.0.0)
   byebug (= 11.1.3)
   capybara (= 3.32.2)
-  faker (= 2.1.2)
+  faker (= 2.11.0)
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)
   image_processing (= 1.9.3)
@@ -301,7 +301,7 @@ DEPENDENCIES
   web-console (= 4.0.2)
   webdrivers (= 4.3.0)
   webpacker (= 4.2.2)
-  will_paginate (= 3.1.8)
+  will_paginate (= 3.3.0)
 
 BUNDLED WITH
    1.17.3
