@@ -96,9 +96,13 @@ class UserTest < ActiveSupport::TestCase
     lana.microposts.each do |post_following|
       assert michael.feed.include?(post_following)
     end
-    # Posts from self
+    # Self-posts for user with followers
     michael.microposts.each do |post_self|
       assert michael.feed.include?(post_self)
+    end
+    # Self-posts for user with no followers
+    archer.microposts.each do |post_self|
+      assert archer.feed.include?(post_self)
     end
     # Posts from unfollowed user
     archer.microposts.each do |post_unfollowed|
