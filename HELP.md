@@ -4,8 +4,7 @@ This is the Help page for the [*Ruby on Rails Tutorial*](https://www.railstutori
 
 ## General suggestions
 
-Web development is a tricky business, and despite the best efforts of the
-tutorial it’s likely that you’ll run into trouble at some point. If you do, I suggest comparing your code to the [reference implementation of the sample app](https://github.com/mhartl/sample_app_6th_ed) to track down any discrepancies. You can also post your question at [Stack Overflow](https://stackoverflow.com/), but I suggest you do so after trying all the debugging tips listed below.
+Web development is a tricky business, and despite our collective best efforts it’s likely that you’ll run into trouble at some point. If you do, I suggest comparing your code to the [reference implementation of the sample app](https://github.com/mhartl/sample_app_6th_ed) to track down any discrepancies. You can also post your question at [Stack Overflow](https://stackoverflow.com/), but I suggest you do so after trying all the debugging tips listed below.
 
 ## Debugging tips
 

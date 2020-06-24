@@ -26,7 +26,7 @@ $ cd sample_app_6th_ed
 Then install the needed packages (while skipping any Ruby gems needed only in production):
 
 ```
-$ yarn add jquery@3.4.1 bootstrap@3.4.1
+$ yarn add jquery@3.5.1 bootstrap@3.4.1
 $ bundle install --without production
 ```
 
@@ -59,7 +59,7 @@ To deploy the sample app to production, you’ll need a Heroku account as discus
 
 The full production app includes several advanced features, including sending email with [SendGrid](https://sendgrid.com/) and storing uploaded images with [AWS S3](https://aws.amazon.com/s3/). As a result, deploying the full sample app can be rather challenging. The suggested method for testing a deployment is to use the branch for Chapter 10 (“Updating users”), which doesn’t require more advanced settings but still includes sample users.
 
-To deploy this version of the app, you’ll need to create a Heroku new application, switch to the right branch, push up the source, run the migrations, and seed the database with sample users:
+To deploy this version of the app, you’ll need to create a new Heroku application, switch to the right branch, push up the source, run the migrations, and seed the database with sample users:
 
 ```
 $ heroku create
@@ -79,7 +79,7 @@ The reference app repository includes a separate branch for each chapter in the 
 $ git checkout <branch name>
 ```
 
-A full list of branch names appears as follows (preceded by chapter numbers):
+A full list of branch names appears as follows (preceded the number of the corresponding chapter in the book):
 
 ```
 3.  static-pages
