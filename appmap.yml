@@ -1,0 +1,7 @@
+name: rails_sample_app_6th_ed
+packages:
+  - path: app/controllers
+  - path: app/helpers
+  - path: app/jobs
+  - path: app/mailers
+  - path: app/models
