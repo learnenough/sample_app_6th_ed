@@ -101,7 +101,7 @@ GEM
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.6.0)
+    loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.2.7)
@@ -258,4 +258,4 @@ DEPENDENCIES
   webpacker (= 4.2.2)
 
 BUNDLED WITH
-   1.17.3
+   1.17.2
