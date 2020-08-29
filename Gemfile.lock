@@ -61,23 +61,23 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
-    autoprefixer-rails (9.8.6.1)
+    autoprefixer-rails (9.8.6.3)
       execjs
     aws-eventstream (1.1.0)
-    aws-partitions (1.354.0)
-    aws-sdk-core (3.104.3)
+    aws-partitions (1.362.0)
+    aws-sdk-core (3.105.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.36.0)
+    aws-sdk-kms (1.37.0)
       aws-sdk-core (~> 3, >= 3.99.0)
       aws-sigv4 (~> 1.1)
     aws-sdk-s3 (1.46.0)
       aws-sdk-core (~> 3, >= 3.61.1)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
-    aws-sigv4 (1.2.1)
+    aws-sigv4 (1.2.2)
       aws-eventstream (~> 1, >= 1.0.2)
     bcrypt (3.1.13)
     bindex (0.8.1)
@@ -134,7 +134,7 @@ GEM
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.6.0)
+    loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.2.7)
@@ -304,4 +304,4 @@ DEPENDENCIES
   will_paginate (= 3.3.0)
 
 BUNDLED WITH
-   1.17.3
+   1.17.2
