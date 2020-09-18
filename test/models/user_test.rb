@@ -86,6 +86,9 @@ class UserTest < ActiveSupport::TestCase
     assert archer.followers.include?(michael)
     michael.unfollow(archer)
     assert_not michael.following?(archer)
+    # Users can't follow themselves.
+    michael.follow(michael)
+    assert_not michael.following?(michael)
   end
 
   test "feed should have the right posts" do
