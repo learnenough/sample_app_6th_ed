@@ -82,13 +82,13 @@ $ git checkout <branch name>
 A full list of branch names appears as follows (preceded the number of the corresponding chapter in the book):
 
 ```
-3.  static-pages
-4.  rails-flavored-ruby
-5.  filling-in-layout
-6.  modeling-users
-7.  sign-up
-8.  basic-login
-9.  advanced-login
+ 3. static-pages
+ 4. rails-flavored-ruby
+ 5. filling-in-layout
+ 6. modeling-users
+ 7. sign-up
+ 8. basic-login
+ 9. advanced-login
 10. updating-users
 11. account-activation
 12. password-reset
