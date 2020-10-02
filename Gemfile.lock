@@ -59,7 +59,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
-    autoprefixer-rails (10.0.0.2)
+    autoprefixer-rails (10.0.1.0)
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
@@ -184,7 +184,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (1.8.0)
+    regexp_parser (1.8.1)
     ruby-progressbar (1.10.1)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
