@@ -47,7 +47,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_difference 'Micropost.count', 1 do
       count_sql 'Create a valid post' do
         post microposts_path, params: { micropost: { content: content,
-                                                    image:   image } }
+                                                     image:   image } }
       end
       assert assigns(:micropost).image.attached?
     end
