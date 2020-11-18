@@ -1,0 +1,5 @@
+name: SampleApp
+packages:
+- path: app/controllers
+- path: app/models
+- gem: activerecord
