@@ -5,7 +5,8 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   watch('config/routes.rb') { interface_tests }
   watch(%r{app/views/layouts/*}) { interface_tests }
   watch(%r{^app/models/(.*?)\.rb$}) do |matches|
-    "test/models/#{matches[1]}_test.rb"
+    ["test/models/#{matches[1]}_test.rb",
+     "test/integration/microposts_interface_test.rb"]
   end
   watch(%r{^app/mailers/(.*?)\.rb$}) do |matches|
     "test/mailers/#{matches[1]}_test.rb"
