@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   context 'when name is not present' do
     let(:user) {  User.new(email: Faker::Internet.email, password: User.digest('password')) }
 
-    it 'shoud not be valid' do
+    it 'should not be valid' do
       expect(user.valid?).to be false
     end
 
