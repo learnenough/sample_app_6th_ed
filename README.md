@@ -41,7 +41,7 @@ $ rails db:migrate
 Finally, run the test suite to verify that everything is working correctly:
 
 ```
-$ rails test
+$ bundle exec rspec
 ```
 
 If the test suite passes, you’ll be ready to seed the database with sample users and run the app in a local server:
