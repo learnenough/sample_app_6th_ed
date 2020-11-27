@@ -18,10 +18,10 @@ gem 'jbuilder',                   '2.10.0'
 gem 'bootsnap',                   '1.4.6', require: false
 
 group :development, :test do
-  gem 'sqlite3', '1.4.2'
-  gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3',            '1.4.2'
+  gem 'byebug',             '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 4.0.1'
+  gem 'rspec-rails',       '~> 4.0.1'
   gem 'factory_bot_rails', '~> 6.1.0'
 end
 
@@ -41,6 +41,8 @@ group :test do
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
+  gem 'cucumber-rails',           '2.2.0', require: false
+  gem 'database_cleaner-active_record', '1.8.0'
 end
 
 group :production do
