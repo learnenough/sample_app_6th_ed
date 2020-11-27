@@ -62,7 +62,7 @@ RSpec.describe "Users", type: :request do
 
       subject { get edit_user_path(@user) }
 
-      it 'retunrs a 302 response' do
+      it 'returns a 302 response' do
         subject
         expect(response).to have_http_status(302)
       end
