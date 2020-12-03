@@ -16,4 +16,16 @@ RSpec.describe User, type: :model do
       expect(user.save).to be false
     end
   end
+
+  # TODO: Add tests for associations
+
+  # TODO: Add tests for validations
+
+  describe '#send_password_reset_email' do
+    # TODO
+  end
+
+  describe '#feed' do
+    # TODO
+  en
 end

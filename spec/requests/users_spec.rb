@@ -72,4 +72,20 @@ RSpec.describe "Users", type: :request do
       end
     end
   end
+
+  descibe '#show' do
+    # TODO
+  end
+
+  descirbe '#create' do
+    # TODO
+  end
+
+  describe '#destroy' do
+    # TODO
+  end
+
+  describe '#following' do
+    # TODO
+  end
 end
