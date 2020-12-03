@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
-  describe "GET /users" do
+  describe "#index" do
     context 'when user is signned in' do
       subject { get users_path }
 
@@ -35,7 +35,7 @@ RSpec.describe "Users", type: :request do
     end
   end
 
-  describe "GET /users/:id/edit" do
+  describe "#edit" do
     context 'when user is signned in' do
       before do
         @user = create(:user, activated: true, activated_at: Time.zone.now)
