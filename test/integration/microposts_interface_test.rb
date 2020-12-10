@@ -25,10 +25,10 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert assigns(:micropost).image.attached?
     events = AppMap.record do
         follow_redirect!
-      end['events'].map { |evt| OpenStruct.new(evt) }
+      end['events'].map { |event| OpenStruct.new(event) }
     sql = events.select(&:sql_query)
-    # Without the eager load optimization, over 300 queries are issued here.
-    assert_operator sql.count, :<=, 200
+    # Without the eager load optimization, over 200 queries are issued here.
+    assert_operator sql.count, :<, 200
     assert_match content, response.body
     # Delete a post.
     assert_select 'a', 'delete'
