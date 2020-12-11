@@ -17,7 +17,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', '/?page=2'  # Correct pagination link
     # Valid submission
     content = "This micropost really ties the room together"
-    image = fixture_file_upload('kitten.jpg', 'image/jpeg')
+    image = fixture_file_upload('test/fixtures/kitten.jpg', 'image/jpeg')
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params: { micropost: { content: content,
                                                    image:   image } }
