@@ -27,6 +27,9 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end['events'].map { |event| OpenStruct.new(event) }
     sql = events.select(&:sql_query)
+    puts '*****************'
+    puts sql.count
+    puts '*****************'
     # Without the eager load optimization, over 200 queries are issued here.
     assert_operator sql.count, :<, 200
     assert_match content, response.body
