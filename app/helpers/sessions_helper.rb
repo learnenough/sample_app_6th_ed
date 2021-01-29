@@ -16,6 +16,7 @@ module SessionsHelper
   end
 
   # Returns the user corresponding to the remember token cookie.
+  # @label provider.authentication
   def current_user
     if (user_id = session[:user_id])
       user = User.find_by(id: user_id)
