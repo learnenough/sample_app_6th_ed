@@ -1,7 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
-require 'appmap/railtie'
+require 'appmap/railtie' if defined?(AppMap)
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
