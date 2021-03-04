@@ -27,7 +27,9 @@ Then install the needed packages (while skipping any Ruby gems needed only in pr
 
 ```
 $ yarn add jquery@3.5.1 bootstrap@3.4.1
-$ bundle install --without production
+$ gem install bundler -v 2.2.13
+$ bundle _2.2.13_ config set --local without 'production'
+$ bundle _2.2.13_ install
 ```
 
 (If you run into any installation issues or missing dependencies, refer to the [first chapter](https://www.learnenough.com/ruby-on-rails-6th-edition-tutorial/beginning) of the tutorial for details.)
