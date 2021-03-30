@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails',          '6.1.3'
+gem 'rails',          '6.1.3.1'
 gem 'bootstrap-sass', '3.4.1'
 gem 'puma',           '5.0.4'
 gem 'sass-rails',     '6.0.0'
