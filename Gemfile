@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.1.3.1'
-gem 'puma',       '5.0.4'
+gem 'puma',       '5.2.2'
 gem 'sass-rails', '6.0.0'
-gem 'webpacker',  '4.2.2'
+gem 'webpacker',  '5.2.1'
 gem 'turbolinks', '5.2.1'
 gem 'jbuilder',   '2.10.0'
 gem 'bootsnap',   '1.7.2', require: false
