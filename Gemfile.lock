@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/applandinc/appmap_depends
+  remote: https://github.com/applandinc/appmap_depends-ruby.git
   revision: d62d78fd6da5f12a6274e78f1082201bd2c063da
   branch: main
   specs:
