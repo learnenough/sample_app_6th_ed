@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/applandinc/appmap_depends.git
-  revision: d0d47e564d5dd1ba9e2bacb3dd160ba9f49de3c1
+  revision: d62d78fd6da5f12a6274e78f1082201bd2c063da
   branch: main
   specs:
     appmap_depends (0.1.0)
