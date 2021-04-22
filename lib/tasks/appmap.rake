@@ -13,45 +13,38 @@ namespace :appmap do
   BASE_BRANCH = 'origin/appmap-e2e'
 
   def run_minitest(test_files)
-    if test_files.blank?
-      warn 'Tests are up to date'
-    else
-      warn 'Out of date files:'
-      warn test_files.join(' ')
-      $LOAD_PATH << 'test'
-      test_files.each do |test_file|
-        load test_file
-      end
-      $ARGV.replace []
-      Minitest.autorun
+    $LOAD_PATH << 'test'
+    test_files.each do |test_file|
+      load test_file
     end
+    $ARGV.replace []
+    Minitest.autorun
   end
 
   def depends_tasks
     require 'appmap_depends'
     require 'shellwords'
 
+    AppMap::Depends::Task::DiffTask.new.tap do |diff_task|
+      diff_task.base = BASE_BRANCH
+    end.define
+    AppMap::Depends::Task::ModifiedTask.new.define
+
     task :'test:setup' do
-      ENV['RAILS_ENV'] = 'test'
+      raise "Task requires RAILS_ENV=test, got #{Rails.env}" unless Rails.env.test?
       AppMap::Depends.verbose(Rake.verbose == true)      
     end
 
-    task :'test:modified' => :'test:setup' do
-      depends = AppMap::Depends::AppMapJSDepends.new
-      test_files = depends.depends
-      run_minitest test_files
+    task :minitest_depends do
+      test_files = File.read('tmp/appmap_depends_modified.txt').split("\n")
+      run_minitest(test_files) unless test_files.empty?
     end
 
-    desc 'Run tests that are modified relative to the base branch'
-    task :'test:diff', [ :base ] => :'test:setup' do |t, args|
-      base = args[:base] || BASE_BRANCH
-      modified_files = AppMap::Depends::GitDiff.new(base: base).modified_files
-      if Rake.verbose == true
-        warn "Files modified relative to #{base}: #{modified_files.join(' ')}"
-      end
-      test_files = AppMap::Depends::AppMapJSDepends.new.depends(modified_files)
-      run_minitest test_files
-    end
+    desc 'Run tests that depend on a locally modified file'
+    task :'test:modified' => [ :'test:setup', :'depends:modified', :'minitest_depends' ]
+
+    desc 'Run tests that depend on a file which is modified relative to the base branch'
+    task :'test:diff', [ :base ] => [ :'test:setup', :'depends:diff', :'minitest_depends' ]
   end
   
   if %w[test development].member?(Rails.env)
