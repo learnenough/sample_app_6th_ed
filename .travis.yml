@@ -1,0 +1,25 @@
+dist: bionic
+
+language: ruby
+rvm:
+ - 2.6.3
+cache: bundler
+
+branches:
+  only:
+  - master
+
+before_install: >
+  export APPLAND_CLI_DOWNLOAD_URL="$(curl -s https://api.github.com/repos/applandinc/appland-cli/releases/latest \
+    | jq -r '.assets[] | select(.name | contains("Linux")).browser_download_url')" \
+  && curl -sSL "${APPLAND_CLI_DOWNLOAD_URL}" \
+      | sudo tar xz --directory /usr/local/bin appland \
+      && touch ~/.appland
+
+script:
+  - yarn add jquery@3.5.1 bootstrap@3.4.1
+  - bundle exec rake db:migrate
+  - bundle exec rake appmap:test:diff && env APPMAP=true bundle exec rake test
+
+after_script:
+- env DEBUG=true ./bin/upload-appmaps
