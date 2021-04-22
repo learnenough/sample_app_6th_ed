@@ -1,14 +1,18 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
+  
+  rescue_from LoginError, with: :on_login_error
+  
+  skip_before_action :verify_authenticity_token, 
+    if: Proc.new { ENV['SWAGGER'] == 'true' }
+
+  protected
+  
+  def on_login_error(err)
+    render json: { error: { message: err.message } }, status: 401
+  end
 
   private
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
+  include LoggedInHelper
 end

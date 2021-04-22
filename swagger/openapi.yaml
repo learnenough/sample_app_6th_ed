@@ -1,0 +1,447 @@
+---
+openapi: 3.0.1
+info:
+  title: Rails Sample App API
+  version: v6
+paths:
+  "/":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: home
+  "/about":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: about
+  "/account_activations/{id}/edit":
+    get:
+      responses:
+        '302':
+          content: {}
+          description: Found
+      description: edit
+      parameters:
+      - name: email
+        in: query
+        schema:
+          type: string
+          example: user@example.com
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: invalid token
+        required: true
+  "/contact":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: contact
+  "/help":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: help
+  "/login":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: new
+    post:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: create
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                session:
+                  type: object
+                  example: '{"email"=>"michael@example.com", "password"=>"[FILTERED]",
+                    "remember_me"=>"1"}'
+                  properties:
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    remember_me:
+                      type: string
+  "/logout":
+    delete:
+      responses:
+        '302':
+          content: {}
+          description: Found
+      description: destroy
+      requestBody:
+        content: {}
+  "/microposts":
+    get:
+      responses:
+        '200':
+          content:
+            application/json: {}
+          description: OK
+      description: index
+    post:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: create
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                micropost:
+                  type: object
+                  example: '{"content"=>"Lorem ipsum"}'
+                  properties:
+                    content:
+                      type: string
+  "/microposts/{id}":
+    delete:
+      responses:
+        '302':
+          content: {}
+          description: Found
+        '303':
+          content: {}
+          description: See Other
+      description: destroy
+      requestBody:
+        content: {}
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '499495288'
+        required: true
+  "/password_resets":
+    post:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: create
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                password_reset:
+                  type: string
+                  example: "[FILTERED]"
+  "/password_resets/new":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: new
+  "/password_resets/{id}":
+    patch:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: update
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: michael@example.com
+                user:
+                  type: object
+                  example: '{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}'
+                  properties:
+                    password:
+                      type: string
+                    password_confirmation:
+                      type: string
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: 71ipx-1p2E6yoaKfpGl09w
+        required: true
+  "/password_resets/{id}/edit":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: edit
+      parameters:
+      - name: email
+        in: query
+        schema:
+          type: string
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: 71ipx-1p2E6yoaKfpGl09w
+        required: true
+  "/relationships":
+    post:
+      responses:
+        '200':
+          content:
+            text/javascript: {}
+          description: OK
+        '302':
+          content:
+            text/html: {}
+          description: Found
+      description: create
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                followed_id:
+                  type: string
+                  example: '950961012'
+  "/relationships/{id}":
+    delete:
+      responses:
+        '200':
+          content:
+            text/javascript: {}
+          description: OK
+        '302':
+          content:
+            text/html: {}
+          description: Found
+      description: destroy
+      requestBody:
+        content: {}
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '980190963'
+        required: true
+  "/signup":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: new
+  "/users":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: index
+    post:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: create
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  example: '{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]",
+                    "password_confirmation"=>"[FILTERED]'
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    password_confirmation:
+                      type: string
+  "/users/{id}":
+    delete:
+      responses:
+        '302':
+          content: {}
+          description: Found
+      description: destroy
+      requestBody:
+        content: {}
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '762146111'
+        required: true
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+      description: show
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '950961012'
+        required: true
+    patch:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: update
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  example: '{"name"=>"Michael Example", "email"=>"michael@example.com"}'
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '762146111'
+        required: true
+  "/users/{id}/edit":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: edit
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '762146111'
+        required: true
+  "/users/{id}/followers":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: followers
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '762146111'
+        required: true
+  "/users/{id}/following":
+    get:
+      responses:
+        '200':
+          content:
+            text/html: {}
+          description: OK
+        '302':
+          content: {}
+          description: Found
+      description: following
+      parameters:
+      - name: id
+        in: path
+        schema:
+          type: string
+          example: '762146111'
+        required: true
+components:
+  securitySchemes: {}
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000

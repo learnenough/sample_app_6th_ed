@@ -1,0 +1,24 @@
+attributes:
+  - content
+  - foreign_key
+  - inheritance
+  - timestamps
+  - primary_keys
+disconnected: true
+filename: db/entity_relations
+filetype: pdf
+indirect: false
+inheritance: false
+markup: true
+notation: bachman
+orientation: vertical
+polymorphism: false
+sort: true
+warn: true
+title: Ruby on Rails Tutorial Sample App 6th Edition
+exclude: null
+only: null
+only_recursion_depth: null
+prepend_primary: false
+cluster: false
+splines: polyline
