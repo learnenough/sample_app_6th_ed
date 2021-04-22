@@ -22,6 +22,7 @@ group :development, :test do
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'appmap'
   gem 'appmap_swagger'
+  gem 'appmap_depends', github: 'applandinc/appmap_depends', branch: 'main'
   gem 'rswag-ui'
   gem 'rswag-api'
   gem 'rails-erd'
