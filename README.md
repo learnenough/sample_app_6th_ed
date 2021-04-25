@@ -27,9 +27,9 @@ Then install the needed packages (while skipping any Ruby gems needed only in pr
 
 ```
 $ yarn add jquery@3.5.1 bootstrap@3.4.1
-$ gem install bundler -v 2.2.13
-$ bundle _2.2.13_ config set --local without 'production'
-$ bundle _2.2.13_ install
+$ gem install bundler -v 2.2.15
+$ bundle _2.2.15_ config set --local without 'production'
+$ bundle _2.2.15_ install
 ```
 
 (If you run into any installation issues or missing dependencies, refer to the [first chapter](https://www.railstutorial.org/book/beginning) of the tutorial for details.)
