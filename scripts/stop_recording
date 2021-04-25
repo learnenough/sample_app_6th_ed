@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'net/http'
+require 'json'
+
+http = Net::HTTP.new('localhost', 3000)
+response = http.delete('/_appmap/record', {})
+status = response.code.to_i
+if status >= 400
+  warn response.body
+  exit status
+end
+
+appmap = JSON.parse(response.body)
+File.write('sample_app_6th_ed.appmap.json', JSON.pretty_generate(appmap))

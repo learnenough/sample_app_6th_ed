@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'net/http'
+
+http = Net::HTTP.new('localhost', 3000)
+response = http.post('/_appmap/record', '', {})
+status = response.code.to_i
+if status >= 400
+  warn response.body
+  exit status
+end

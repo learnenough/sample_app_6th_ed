@@ -10,5 +10,3 @@ packages:
 - gem: active_storage_validations
 - gem: bcrypt
 - gem: will_paginate
-- gem: actionpack
-  shallow: false

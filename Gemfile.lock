@@ -1,4 +1,17 @@
 GIT
+  remote: https://github.com/applandinc/appmap-ruby.git
+  revision: 826ed83265d175fabd0c47f7f1c914244e46c3a0
+  branch: refine-config
+  specs:
+    appmap (0.44.0)
+      activesupport
+      faraday
+      gli
+      method_source
+      parser
+      rack
+
+GIT
   remote: https://github.com/applandinc/appmap_depends-ruby.git
   revision: d62d78fd6da5f12a6274e78f1082201bd2c063da
   branch: main
@@ -70,13 +83,6 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
-    appmap (0.43.0)
-      activesupport
-      faraday
-      gli
-      method_source
-      parser
-      rack
     appmap_swagger (0.2.0)
       activesupport
       hashdiff
@@ -327,7 +333,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.8.9)
-  appmap
+  appmap!
   appmap_depends!
   appmap_swagger
   aws-sdk-s3 (= 1.46.0)

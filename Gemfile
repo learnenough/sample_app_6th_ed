@@ -20,7 +20,7 @@ gem 'bootsnap',                   '1.4.6', require: false
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'appmap'
+  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'refine-config'
   gem 'appmap_swagger'
   gem 'appmap_depends', github: 'applandinc/appmap_depends-ruby', branch: 'main'
   gem 'rswag-ui'
