@@ -66,7 +66,7 @@ To deploy this version of the app, you’ll need to create a new Heroku applicat
 ```
 $ heroku create
 $ git checkout updating-users
-$ git push heroku updating-users:master
+$ git push heroku updating-users:main
 $ heroku run rails db:migrate
 $ heroku run rails db:seed
 ```
