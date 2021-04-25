@@ -5,9 +5,36 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:michael)
+    @other_user = users(:archer)
   end
 
-  test "profile display" do
+  def login_as(user)
+    get login_path
+    post login_path, params: { 
+      session: { email: user.email, password: 'password' } 
+    }
+  end
+
+  test "profile display while anonyomus" do
+    get user_path(@user)
+    assert_equal 302, response.status
+    assert_match URI.parse(response.location).path, "/login"
+  end
+
+  <<~OTHER_USER
+  test "profile display while logged in as someone else" do
+    login_as @other_user
+
+    get user_path(@user)
+    assert_equal 302, response.status
+    assert_match URI.parse(response.location).path, "/login"
+  end
+  OTHER_USER
+
+  <<~LOGGED_IN
+  test "profile display while logged in as the user" do
+    login_as @user
+
     get user_path(@user)
     assert_template 'users/show'
     assert_select 'title', full_title(@user.name)
@@ -19,4 +46,5 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
       assert_match micropost.content, response.body
     end
   end
+  LOGGED_IN
 end
