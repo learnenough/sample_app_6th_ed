@@ -12,4 +12,8 @@ if status >= 400
 end
 
 appmap = JSON.parse(response.body)
-File.write('sample_app_6th_ed.appmap.json', JSON.pretty_generate(appmap))
+STDOUT.write "Enter a name for the AppMap: "
+name = STDIN.gets.strip
+fname = "#{name}.appmap.json"
+warn "Writing #{fname}"
+File.write(fname, JSON.pretty_generate(appmap))
