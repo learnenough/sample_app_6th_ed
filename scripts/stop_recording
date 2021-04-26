@@ -14,6 +14,7 @@ end
 appmap = JSON.parse(response.body)
 STDOUT.write "Enter a name for the AppMap: "
 name = STDIN.gets.strip
+appmap['metadata']['name'] = name
 fname = "#{name}.appmap.json"
 warn "Writing #{fname}"
 File.write(fname, JSON.pretty_generate(appmap))
