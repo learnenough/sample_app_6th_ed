@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 namespace :appmap do
+  BASE_BRANCH = 'origin/appmap-e2e'
+
   def swagger_tasks
-    # In a Rails app, add a dependency on the :environment task.
-    AppMap::Swagger::RakeTask.new(:swagger, [] => [ :environment ]).tap do |task|
+    AppMap::Swagger::RakeTask.new.tap do |task|
       task.project_name = 'Rails Sample App API'
       task.project_version = 'v6'
     end
@@ -10,14 +13,13 @@ namespace :appmap do
     end
   end
 
-  BASE_BRANCH = 'origin/appmap-e2e'
-
   def run_minitest(test_files)
     $LOAD_PATH << 'test'
     test_files.each do |test_file|
       load test_file
     end
     $ARGV.replace []
+    ENV['APPMAP'] = 'true'
     Minitest.autorun
   end
 

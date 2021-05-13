@@ -14,6 +14,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "@appland/appmap-swagger": "^0.4.0",
+    "@appland/cli": "^1.0.2",
     "webpack-dev-server": "^3.8.0"
   }
 }
