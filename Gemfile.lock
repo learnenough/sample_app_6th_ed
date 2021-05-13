@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: e19dfb560877037d28202857a345896e2ac4bf80
+  revision: 950835de73a2e015a226b546c2b50c80ad8199bf
   branch: master
   specs:
-    appmap (0.47.0)
+    appmap (0.47.1)
       activesupport
       faraday
       gli
