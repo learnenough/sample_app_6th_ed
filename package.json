@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "@appland/appmap": "^2.1.1",
-    "@appland/appmap-swagger": "^0.3.2",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
@@ -14,6 +13,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@appland/appmap-swagger": "^0.4.0",
     "webpack-dev-server": "^3.8.0"
   }
 }

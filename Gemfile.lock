@@ -256,7 +256,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rdoc (6.3.0)
+    rdoc (6.3.1)
     regexp_parser (1.7.1)
     reverse_markdown (2.0.0)
       nokogiri
