@@ -2,7 +2,7 @@ dist: bionic
 
 language: ruby
 rvm:
- - 2.6.3
+ - 2.6.6
 cache: bundler
 
 before_install:
@@ -14,11 +14,12 @@ before_install:
       && curl -sSL "${APPLAND_CLI_DOWNLOAD_URL}" \
       | sudo tar xz --directory /usr/local/bin appland \
       && touch ~/.appland
+  - nvm install 12.18.1
 
 script:
   - npm install
   - bundle exec rake db:migrate
-  - env RAILS_ENV=test bundle exec rake appmap:test:diff && env APPMAP=true bundle exec rake test
+  - env RAILS_ENV=test bundle exec rake appmap:diff && env APPMAP=true bundle exec rake test
 
-after_script:
+after_success:
 - env DEBUG=true ./bin/upload-appmaps
