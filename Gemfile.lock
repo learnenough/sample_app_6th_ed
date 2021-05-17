@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: 950835de73a2e015a226b546c2b50c80ad8199bf
-  branch: master
+  revision: dd9e383024d1d9205a617d46bd64b90820035533
+  branch: conditional-init
   specs:
     appmap (0.47.1)
       activesupport
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/applandinc/appmap_depends-ruby.git
-  revision: 35f27f305bc576a7ffeb1a5f9ef118b90a23ca6f
+  revision: a64a818aa5e4bf28e47f7c17e1f572ed99b25268
   branch: use-monorepo
   specs:
     appmap_depends (0.2.0)
