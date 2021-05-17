@@ -11,6 +11,16 @@ namespace :appmap do
     AppMap::Swagger::RakeDiffTask.new(:'swagger:diff', [ :base, :swagger_file ]).tap do |task|
       task.base = 'remotes/origin/following-users'
     end
+    
+    task :'swagger:uptodate' do
+      swagger_diff = `git diff swagger/openapi_stable.yaml`
+      if swagger_diff != ''
+        warn 'swagger/openapi_stable.yaml has been modified:'
+        warn swagger_diff
+        warn 'Bring it up to date with the command rake appmap:swagger'
+        exit 1
+      end
+    end
   end
 
   def run_minitest(test_files)
@@ -19,38 +29,58 @@ namespace :appmap do
       load test_file
     end
     $ARGV.replace []
-    ENV['APPMAP'] = 'true'
     Minitest.autorun
   end
 
   def depends_tasks
     require 'appmap_depends'
-    require 'shellwords'
 
-    AppMap::Depends::Task::DiffTask.new.tap do |diff_task|
-      diff_task.base = BASE_BRANCH
-    end.define
-    AppMap::Depends::Task::ModifiedTask.new.define
+    namespace :depends do
+      task :modified do
+        @appmap_modified_files = AppMap::Depends.modified
+        AppMap::Depends.report_list 'Out of date', @appmap_modified_files
+      end
 
-    task :'test:setup' do
-      raise "Task requires RAILS_ENV=test, got #{Rails.env}" unless Rails.env.test?
-      AppMap::Depends.verbose(Rake.verbose == true)      
+      task :diff do
+        @appmap_modified_files = AppMap::Depends.diff(base: BASE_BRANCH)
+        AppMap::Depends.report_list 'Out of date', @appmap_modified_files
+      end
+
+      task :test_file_report do
+        @appmap_test_file_report = AppMap::Depends.inspect_test_files
+        @appmap_test_file_report.report
+      end
+
+      task :update_appmaps do
+        @appmap_test_file_report.clean_appmaps
+
+        @appmap_modified_files += @appmap_test_file_report.modified_files
+
+        if @appmap_modified_files.blank?
+          warn 'AppMaps are up to date'
+          next
+        end
+
+        AppMap::Depends.run_tests(@appmap_modified_files) do |test_files|
+          run_minitest(test_files)
+        end
+      end
     end
 
-    task :minitest_depends do
-      test_files = File.read('tmp/appmap_depends_modified.txt').split("\n")
-      run_minitest(test_files) unless test_files.empty?
-    end
+    desc 'Bring AppMaps up to date with local file modifications, and updated derived data such as Swagger files'
+    task :modified => [ :'depends:modified', :'depends:test_file_report', :'depends:update_appmaps', :swagger ]
 
-    desc 'Run tests that depend on a locally modified file'
-    task :'test:modified' => [ :'test:setup', :'depends:modified', :'minitest_depends' ]
-
-    desc 'Run tests that depend on a file which is modified relative to the base branch'
-    task :'test:diff', [ :base ] => [ :'test:setup', :'depends:diff', :'minitest_depends' ]
+    desc 'Bring AppMaps up to date with file modifications relative to the base branch'
+    task :diff, [ :base ] => [ :'depends:diff', :'depends:update_appmaps', :swagger, :'swagger:uptodate' ]
   end
-  
+
   if %w[test development].member?(Rails.env)
     swagger_tasks
-    depends_tasks  
+    depends_tasks
   end
+end
+
+if %w[test development].member?(Rails.env)
+  desc 'Bring AppMaps up to date with local file modifications, and updated derived data such as Swagger files'
+  task :appmap => [ :'appmap:modified' ]
 end
