@@ -71,7 +71,8 @@ namespace :appmap do
     task :modified => [ :'depends:modified', :'depends:test_file_report', :'depends:update_appmaps', :swagger ]
 
     desc 'Bring AppMaps up to date with file modifications relative to the base branch'
-    task :diff, [ :base ] => [ :'depends:diff', :'depends:update_appmaps', :swagger, :'swagger:uptodate' ]
+    # TODO: Add :swagger, :'swagger:uptodate'
+    task :diff, [ :base ] => [ :'depends:diff', :'depends:update_appmaps' ]
   end
 
   if %w[test development].member?(Rails.env)
