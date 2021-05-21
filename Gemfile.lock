@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: 383ba0ad444922a0a85409477d11bc7ed06a9160
-  branch: conditional-init
+  revision: 827b63e41429db12ce59344823e9cb4e370599ea
+  branch: master
   specs:
-    appmap (0.47.1)
+    appmap (0.48.0)
       activesupport
       faraday
       gli
@@ -13,8 +13,8 @@ GIT
 
 GIT
   remote: https://github.com/applandinc/appmap_depends-ruby.git
-  revision: 1eb4a3ac31d804dd6dafbd3f68b37258387bead1
-  branch: use-monorepo
+  revision: 7f46d333889333522491846ccf740bd5ad2193ed
+  branch: main
   specs:
     appmap_depends (0.2.0)
       activesupport
@@ -196,7 +196,7 @@ GEM
     multipart-post (2.1.1)
     nenv (0.3.0)
     nio4r (2.5.7)
-    nokogiri (1.11.3)
+    nokogiri (1.11.5)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     notiffany (0.1.3)
