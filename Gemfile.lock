@@ -63,8 +63,8 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
-    autoprefixer-rails (10.2.5.0)
-      execjs (< 2.8.0)
+    autoprefixer-rails (10.2.5.1)
+      execjs (> 0)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.7.2)
@@ -87,8 +87,8 @@ GEM
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
-    execjs (2.7.0)
-    ffi (1.15.0)
+    execjs (2.8.1)
+    ffi (1.15.1)
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -130,7 +130,7 @@ GEM
     msgpack (1.4.2)
     nenv (0.3.0)
     nio4r (2.5.7)
-    nokogiri (1.11.4-x86_64-darwin)
+    nokogiri (1.11.5-x86_64-darwin)
       racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
@@ -232,7 +232,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    websocket-driver (0.7.3)
+    websocket-driver (0.7.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     xpath (3.2.0)
@@ -240,7 +240,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x86_64-darwin-20
+  x86_64-darwin-19
 
 DEPENDENCIES
   bcrypt (= 3.1.13)
