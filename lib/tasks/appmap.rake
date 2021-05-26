@@ -24,12 +24,21 @@ namespace :appmap do
   end
 
   def run_minitest(test_files)
-    $LOAD_PATH << 'test'
-    test_files.each do |test_file|
-      load test_file
+    raise "RAILS_ENV must be 'test', but it's '#{Rails.env}'" unless ENV['RAILS_ENV'] == 'test'
+    pid = fork
+    if pid.nil?
+      $LOAD_PATH << 'test'
+      simplify = ->(f) { f.index(Dir.pwd) == 0 ? f[Dir.pwd.length+1..-1] : f }
+      test_files.map(&simplify).uniq.each do |test_file|
+        load test_file
+      end
+      $ARGV.replace []
+      Minitest.autorun
+      exit 0
     end
-    $ARGV.replace []
-    Minitest.autorun
+
+    Process.wait pid
+    exit $?.exitstatus unless $?.exitstatus == 0
   end
 
   def depends_tasks
@@ -61,9 +70,12 @@ namespace :appmap do
           next
         end
 
+        start_time = Time.current
         AppMap::Depends.run_tests(@appmap_modified_files) do |test_files|
           run_minitest(test_files)
         end
+        removed = AppMap::Depends.remove_out_of_date_appmaps(start_time)
+        warn "Removed out of date AppMaps: #{removed.join(' ')}" unless removed.empty?
       end
     end
 
