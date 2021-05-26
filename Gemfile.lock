@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: 3dcaeae44da5e40e432eda41caf5b9ebff5bea12
-  branch: fix-bundle-path-and-exception-messages
+  revision: be3ba021fed4f24b0f03cd59744d6552e720e26b
+  branch: fix-missing-hooks
   specs:
-    appmap (0.48.0)
+    appmap (0.48.1)
       activesupport
       faraday
       gli
