@@ -22,10 +22,11 @@ test:
 
 production:
   adapter: postgresql
-  encoding: unicode
+  encoding: <%= ENV.fetch("DATABASE_ENCODING") { unicode } %>
+  url: <%= ENV['DATABASE_URL'] %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: sample_app_production
-  username: sample_app
-  password: <%= ENV['SAMPLE_APP_DATABASE_PASSWORD'] %>
+  database: <%= ENV.fetch("DATABASE_NAME") { sample_app_production } %>
+  username: <%= ENV.fetch("DATABASE_USERNAME") { sample_app } %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

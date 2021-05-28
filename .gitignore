@@ -39,3 +39,10 @@ yarn-debug.log*
 
 # Ignore db test files.
 db/test.*
+
+# Custom gitignore
+.env
+server.key
+server.csr
+tmp/db
+certificates

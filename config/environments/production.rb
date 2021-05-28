@@ -34,6 +34,7 @@ Rails.application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' unless config.public_file_server.enabled
 
   # Store uploaded files on Amazon AWS.
   config.active_storage.service = :amazon
@@ -66,15 +67,15 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'https://mysterious-atoll-47182.herokuapp.com'
+  host = ENV['HOST']
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => 'apikey',
-    :password       => ENV['SENDGRID_API_KEY'],
-    :domain         => 'heroku.com',
+    :address        => ENV.fetch('SMTP_ADDRESS') {'smtp.sendgrid.net'},
+    :port           => ENV.fetch('SMTP_PORT') {'587'},
+    :authentication => ENV.fetch('SMTP_AUTHENTICATION') {:plain},
+    :user_name      => ENV.fetch('SMTP_USERNAME') {'apikey'},
+    :password       => ENV['SMTP_PASSWORD'],
+    :domain         => ENV.fetch('SMTP_DOMAIN') {'heroku.com'},
     :enable_starttls_auto => true
   }
 
