@@ -1,24 +1,15 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: be3ba021fed4f24b0f03cd59744d6552e720e26b
-  branch: fix-missing-hooks
+  revision: 1146299c64173e053e8fb884782deda8d48fe11c
+  branch: depends-task
   specs:
-    appmap (0.48.1)
+    appmap (0.49.0)
       activesupport
       faraday
       gli
       method_source
       parser
       rack
-
-GIT
-  remote: https://github.com/applandinc/appmap_depends-ruby.git
-  revision: c805853ededbc78a5b8e570fde341be57301aea8
-  branch: testing
-  specs:
-    appmap_depends (0.3.0)
-      activesupport
-      rake
 
 GEM
   remote: https://rubygems.org/
@@ -83,12 +74,6 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
-    appmap_swagger (0.2.0)
-      activesupport
-      hashdiff
-      rake
-      rdoc
-      reverse_markdown
     ast (2.4.2)
     autoprefixer-rails (9.8.5)
       execjs
@@ -130,7 +115,7 @@ GEM
     childprocess (3.0.0)
     choice (0.2.0)
     coderay (1.1.3)
-    concurrent-ruby (1.1.8)
+    concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
     execjs (2.7.0)
@@ -167,7 +152,6 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
-    hashdiff (1.0.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.9.3)
@@ -260,10 +244,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rdoc (6.3.1)
     regexp_parser (1.7.1)
-    reverse_markdown (2.0.0)
-      nokogiri
     rexml (3.2.4)
     rswag-api (2.4.0)
       railties (>= 3.1, < 7.0)
@@ -338,8 +319,6 @@ PLATFORMS
 DEPENDENCIES
   active_storage_validations (= 0.8.9)
   appmap!
-  appmap_depends!
-  appmap_swagger
   aws-sdk-s3 (= 1.46.0)
   bcrypt (= 3.1.13)
   bootsnap (= 1.4.6)
