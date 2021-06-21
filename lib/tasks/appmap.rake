@@ -1,16 +1,8 @@
 # frozen_string_literal: true
 
 namespace :appmap do
-  BASE_BRANCH = 'origin/appmap-e2e'
-
   def swagger_tasks
-    require 'appmap/swagger'
-
-    configuration = AppMap::Swagger::Configuration.new
-    configuration.project_name = 'Rails Sample App API'
-    configuration.project_version = 'v6'
-
-    AppMap::Swagger::RakeTasks.define_tasks configuration
+    AppMap::Swagger::RakeTasks.define_tasks
   end
 
   def run_minitest(test_files)
@@ -33,13 +25,9 @@ namespace :appmap do
   end
 
   def depends_tasks
-    require 'appmap/depends'
-
     test_runner = ->(test_files) { run_minitest(test_files) }
 
-    configuration = AppMap::Depends::Configuration.new(test_runner)
-
-    AppMap::Depends::RakeTasks.define_tasks configuration
+    AppMap::Depends::RakeTasks.define_tasks test_runner: test_runner
   end
 
   if %w[test development].member?(Rails.env)
