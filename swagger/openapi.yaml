@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: Rails Sample App API
+  title: Rails Sample App
   version: v6
 paths:
   "/":
@@ -77,6 +77,10 @@ paths:
             schema:
               type: object
               properties:
+                authenticity_token:
+                  type: string
+                commit:
+                  type: string
                 session:
                   type: object
                   properties:
