@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+group :development, :test do
+  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'depends-task'
+end
+
 gem 'rails',                      '~> 6.0.0'
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
@@ -20,7 +24,6 @@ gem 'bootsnap',                   '1.4.6', require: false
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'swagger-and-depends-tasks'
   gem 'rswag-ui'
   gem 'rswag-api'
   gem 'rails-erd'

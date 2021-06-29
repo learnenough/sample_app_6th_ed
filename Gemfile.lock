@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: e77b9f01e6cdf8ed5404c8c32d7f827410db5fb7
-  branch: swagger-and-depends-tasks
+  revision: 4ceb17c920a3e6446da8582cb629e925e55ae564
+  branch: depends-task
   specs:
-    appmap (0.51.1)
+    appmap (0.56.0)
       activesupport
       method_source
       rack
