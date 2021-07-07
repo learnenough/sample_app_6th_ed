@@ -62,10 +62,6 @@ paths:
             schema:
               type: object
               properties:
-                authenticity_token:
-                  type: string
-                commit:
-                  type: string
                 session:
                   type: object
                   properties:
@@ -106,6 +102,14 @@ paths:
                   properties:
                     content:
                       type: string
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                authenticity_token:
+                  type: string
+                commit:
+                  type: string
   "/microposts/{id}":
     delete:
       responses:
