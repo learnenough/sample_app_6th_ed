@@ -5,23 +5,12 @@ lambda do
     AppMap::Swagger::RakeTasks.define_tasks
 
     def run_minitest(test_files)
-      raise "APPMAP must be 'true', but it's '#{ENV['APPMAP']}'" unless ENV['APPMAP'] == 'true'
-      raise "RAILS_ENV must be 'test', but it's '#{Rails.env}'" unless ENV['RAILS_ENV'] == 'test'
-      pid = fork
-      if pid.nil?
-        $LOAD_PATH << 'test'
-        simplify = ->(f) { f.index(Dir.pwd) == 0 ? f[Dir.pwd.length+1..-1] : f }
-        test_files.map(&simplify).uniq.each do |test_file|
-          load test_file
-        end
-        $ARGV.replace []
-        Minitest.autorun
-        # Minitest.autorun kicks in when the process exits; and it replaces the exit code.
-        exit 0
-      end
+      simplify = ->(f) { f.index(Dir.pwd) == 0 ? f[Dir.pwd.length+1..-1] : f }
+      test_files = test_files.map(&simplify).uniq
 
-      Process.wait pid
-      exit $?.exitstatus unless $?.exitstatus == 0
+      # DISABLE_SPRING because it's likely to not have APPMAP=true
+      succeeded = system({ 'APPMAP' => 'true', 'DISABLE_SPRING' => '1' }, "bundle exec rails test #{test_files.map(&:shellescape).join(' ')}")
+      exit 1 unless succeeded
     end
 
     test_runner = ->(test_files) { run_minitest(test_files) }
