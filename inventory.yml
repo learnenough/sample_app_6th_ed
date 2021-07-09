@@ -1,0 +1,449 @@
+packages:
+  - actionpack
+  - actionview
+  - activesupport
+  - app/controllers
+  - app/helpers
+  - app/mailers
+  - app/models
+  - app/views
+  - bcrypt
+  - json
+  - openssl
+  - will_paginate
+  - yaml
+classes:
+  - 'actionpack/ActionController::Instrumentation'
+  - 'actionpack/ActionDispatch::Cookies::CookieJar'
+  - 'actionpack/ActionDispatch::Request::Session'
+  - 'actionview/ActionView::Resolver'
+  - 'activesupport/ActiveSupport::Callbacks::CallbackSequence'
+  - app/controllers/AccountActivationsController
+  - app/controllers/MicropostsController
+  - app/controllers/PasswordResetsController
+  - app/controllers/RelationshipsController
+  - app/controllers/SessionsController
+  - app/controllers/StaticPagesController
+  - app/controllers/UsersController
+  - app/helpers/ApplicationHelper
+  - app/helpers/LoggedInHelper
+  - app/helpers/SessionsHelper
+  - app/helpers/UsersHelper
+  - app/mailers/UserMailer
+  - app/models/Micropost
+  - app/models/User
+  - app/views/app_views_layouts__footer_html_erb
+  - app/views/app_views_layouts__header_html_erb
+  - app/views/app_views_layouts__shim_html_erb
+  - app/views/app_views_layouts_mailer_html_erb
+  - app/views/app_views_layouts_mailer_text_erb
+  - app/views/app_views_microposts__micropost_html_erb
+  - app/views/app_views_password_resets_edit_html_erb
+  - app/views/app_views_password_resets_new_html_erb
+  - app/views/app_views_relationships_destroy_js_erb
+  - app/views/app_views_sessions_new_html_erb
+  - app/views/app_views_shared__error_messages_html_erb
+  - app/views/app_views_shared__feed_html_erb
+  - app/views/app_views_shared__micropost_form_html_erb
+  - app/views/app_views_shared__stats_html_erb
+  - app/views/app_views_shared__user_info_html_erb
+  - app/views/app_views_static_pages_about_html_erb
+  - app/views/app_views_static_pages_contact_html_erb
+  - app/views/app_views_static_pages_help_html_erb
+  - app/views/app_views_static_pages_home_html_erb
+  - app/views/app_views_users__follow_form_html_erb
+  - app/views/app_views_users__follow_html_erb
+  - app/views/app_views_users__user_html_erb
+  - app/views/app_views_users_edit_html_erb
+  - app/views/app_views_users_index_html_erb
+  - app/views/app_views_users_new_html_erb
+  - app/views/app_views_users_show_follow_html_erb
+  - app/views/app_views_users_show_html_erb
+  - 'bcrypt/BCrypt::Password'
+  - 'json/JSON::Ext::Generator::State'
+  - 'json/JSON::Ext::Parser'
+  - 'openssl/OpenSSL::Cipher'
+  - 'openssl/OpenSSL::PKCS5'
+  - 'will_paginate/WillPaginate::ActiveRecord::Pagination'
+  - 'will_paginate/WillPaginate::ActiveRecord::RelationMethods'
+  - 'will_paginate/WillPaginate::PerPage::Inheritance'
+  - 'will_paginate/WillPaginate::ViewHelpers'
+  - yaml/Psych
+labels:
+  - authentication
+  - crypto.decrypt
+  - crypto.encrypt
+  - crypto.pkcs5
+  - format.json.generate
+  - format.json.parse
+  - format.yaml.parse
+  - http.session.read
+  - http.session.write
+  - mvc.after_action
+  - mvc.before_action
+  - mvc.controller
+  - mvc.template
+  - mvc.template.resolver
+  - security.require_login
+packageDependencies:
+  - caller: HTTP server requests
+    callee: actionpack
+  - caller: actionpack
+    callee: actionview
+  - caller: actionpack
+    callee: activesupport
+  - caller: actionpack
+    callee: app/controllers
+  - caller: actionpack
+    callee: app/views
+  - caller: actionpack
+    callee: json
+  - caller: actionpack
+    callee: openssl
+  - caller: activesupport
+    callee: Database
+  - caller: activesupport
+    callee: actionpack
+  - caller: activesupport
+    callee: app/helpers
+  - caller: activesupport
+    callee: app/models
+  - caller: activesupport
+    callee: json
+  - caller: activesupport
+    callee: will_paginate
+  - caller: activesupport
+    callee: yaml
+  - caller: app/controllers
+    callee: Database
+  - caller: app/controllers
+    callee: actionpack
+  - caller: app/controllers
+    callee: activesupport
+  - caller: app/controllers
+    callee: app/helpers
+  - caller: app/controllers
+    callee: app/models
+  - caller: app/controllers
+    callee: app/views
+  - caller: app/controllers
+    callee: bcrypt
+  - caller: app/controllers
+    callee: json
+  - caller: app/controllers
+    callee: will_paginate
+  - caller: app/helpers
+    callee: Database
+  - caller: app/helpers
+    callee: actionpack
+  - caller: app/helpers
+    callee: app/models
+  - caller: app/helpers
+    callee: json
+  - caller: app/helpers
+    callee: openssl
+  - caller: app/mailers
+    callee: actionview
+  - caller: app/mailers
+    callee: app/views
+  - caller: app/models
+    callee: Database
+  - caller: app/models
+    callee: activesupport
+  - caller: app/models
+    callee: app/mailers
+  - caller: app/models
+    callee: bcrypt
+  - caller: app/views
+    callee: Database
+  - caller: app/views
+    callee: actionpack
+  - caller: app/views
+    callee: actionview
+  - caller: app/views
+    callee: app/helpers
+  - caller: app/views
+    callee: app/models
+  - caller: app/views
+    callee: json
+  - caller: app/views
+    callee: will_paginate
+  - caller: will_paginate
+    callee: Database
+sqlTables:
+  - active_storage_attachments
+  - active_storage_blobs
+  - microposts
+  - relationships
+  - users
+sqlNormalized:
+  - >-
+    DELETE FROM "active_storage_attachments" WHERE
+    "active_storage_attachments"."id" = ?
+  - DELETE FROM "microposts" WHERE "microposts"."id" = ?
+  - >-
+    DELETE FROM "relationships" WHERE "relationships"."follower_id" = ? AND
+    "relationships"."followed_id" = ?
+  - DELETE FROM "relationships" WHERE "relationships"."id" = ?
+  - DELETE FROM "users" WHERE "users"."id" = ?
+  - >-
+    INSERT INTO "active_storage_attachments" ("name", "record_type",
+    "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)
+  - >-
+    INSERT INTO "active_storage_blobs" ("key", "filename", "content_type",
+    "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?,
+    ?)
+  - >-
+    INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at")
+    VALUES (?, ?, ?, ?)
+  - >-
+    INSERT INTO "relationships" ("follower_id", "followed_id", "created_at",
+    "updated_at") VALUES (?, ?, ?, ?)
+  - >-
+    INSERT INTO "users" ("name", "email", "created_at", "updated_at",
+    "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)
+  - RELEASE SAVEPOINT active_record_1
+  - ROLLBACK TO SAVEPOINT active_record_1
+  - SAVEPOINT active_record_1
+  - SELECT ? AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?
+  - >-
+    SELECT ? AS one FROM "users" INNER JOIN "relationships" ON "users"."id" =
+    "relationships"."followed_id" WHERE "relationships"."follower_id" = ? AND
+    "users"."id" = ? LIMIT ?
+  - >-
+    SELECT ? AS one FROM "users" INNER JOIN "relationships" ON "users"."id" =
+    "relationships"."follower_id" WHERE "relationships"."followed_id" = ? AND
+    "users"."id" = ? LIMIT ?
+  - >-
+    SELECT ? AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ?
+    LIMIT ?
+  - SELECT ? AS one FROM "users" WHERE "users"."email" = ? LIMIT ?
+  - >-
+    SELECT COUNT(*) FROM "microposts" WHERE (user_id IN (SELECT followed_id FROM
+    relationships
+                         WHERE  follower_id = ?)
+                         OR user_id = ?)
+  - SELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?
+  - SELECT COUNT(*) FROM "microposts"
+  - >-
+    SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" =
+    "relationships"."followed_id" WHERE "relationships"."follower_id" = ?
+  - >-
+    SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" =
+    "relationships"."follower_id" WHERE "relationships"."followed_id" = ?
+  - SELECT COUNT(*) FROM "users"
+  - >-
+    SELECT "active_storage_attachments".* FROM "active_storage_attachments"
+    WHERE "active_storage_attachments"."record_id" = ? AND
+    "active_storage_attachments"."record_type" = ? AND
+    "active_storage_attachments"."name" = ? LIMIT ?
+  - >-
+    SELECT "active_storage_attachments".* FROM "active_storage_attachments"
+    WHERE "active_storage_attachments"."record_type" = ? AND
+    "active_storage_attachments"."name" = ? AND
+    "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  - >-
+    SELECT "active_storage_attachments".* FROM "active_storage_attachments"
+    WHERE "active_storage_attachments"."record_type" = ? AND
+    "active_storage_attachments"."name" = ? AND
+    "active_storage_attachments"."record_id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+    ?)
+  - >-
+    SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE
+    "active_storage_blobs"."id" = ? LIMIT ?
+  - >-
+    SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE
+    "active_storage_blobs"."id" = ?
+  - >-
+    SELECT "microposts".* FROM "microposts" ORDER BY "microposts"."created_at"
+    DESC LIMIT ?
+  - >-
+    SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT
+    followed_id FROM relationships
+                         WHERE  follower_id = ?)
+                         OR user_id = ?) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?
+  - >-
+    SELECT "microposts".* FROM "microposts" WHERE (user_id IN (SELECT
+    followed_id FROM relationships
+                         WHERE  follower_id = ?)
+                         OR user_id = ?) ORDER BY "microposts"."created_at" DESC
+  - SELECT "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?
+  - >-
+    SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? AND
+    "microposts"."id" = ? ORDER BY "microposts"."created_at" DESC LIMIT ?
+  - >-
+    SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?
+    ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?
+  - >-
+    SELECT "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ?
+    ORDER BY "microposts"."created_at" DESC
+  - >-
+    SELECT "relationships".* FROM "relationships" WHERE
+    "relationships"."followed_id" = ?
+  - >-
+    SELECT "relationships".* FROM "relationships" WHERE
+    "relationships"."follower_id" = ?
+  - >-
+    SELECT "relationships".* FROM "relationships" WHERE "relationships"."id" = ?
+    LIMIT ?
+  - >-
+    SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" =
+    "relationships"."followed_id" WHERE "relationships"."follower_id" = ? LIMIT
+    ? OFFSET ?
+  - >-
+    SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" =
+    "relationships"."follower_id" WHERE "relationships"."followed_id" = ? LIMIT
+    ? OFFSET ?
+  - SELECT "users".* FROM "users" LIMIT ? OFFSET ?
+  - SELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?
+  - SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?
+  - 'SELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)'
+  - UPDATE "microposts" SET "updated_at" = ? WHERE "microposts"."id" = ?
+  - 'UPDATE "users" SET "activated" = ?, "updated_at" = ? WHERE "users"."id" = ?'
+  - >-
+    UPDATE "users" SET "name" = ?, "email" = ?, "updated_at" = ? WHERE
+    "users"."id" = ?
+  - >-
+    UPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE
+    "users"."id" = ?
+  - >-
+    UPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE
+    "users"."id" = ?
+  - >-
+    UPDATE "users" SET "reset_digest" = ?, "updated_at" = ? WHERE "users"."id" =
+    ?
+  - >-
+    UPDATE "users" SET "updated_at" = ?, "activated_at" = ? WHERE "users"."id" =
+    ?
+  - >-
+    UPDATE "users" SET "updated_at" = ?, "reset_sent_at" = ? WHERE "users"."id"
+    = ?
+  - begin transaction
+  - rollback transaction
+httpServerRequests:
+  - route: DELETE /logout
+    parameters: '(controller,action)'
+    status: 302
+  - route: 'DELETE /microposts/{id}'
+    parameters: '(controller,action,id)'
+    status: 302
+  - route: 'DELETE /microposts/{id}'
+    parameters: '(controller,action,id)'
+    status: 303
+  - route: 'DELETE /relationships/{id}'
+    parameters: '(controller,action,id)'
+    status: 204
+  - route: 'DELETE /relationships/{id}'
+    parameters: '(controller,action,id)'
+    status: 302
+  - route: 'DELETE /users/{id}'
+    parameters: '(controller,action,id)'
+    status: 302
+  - route: GET /
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /about
+    parameters: '(controller,action)'
+    status: 200
+  - route: 'GET /account_activations/{id}/edit'
+    parameters: '(email,controller,action,id)'
+    status: 302
+  - route: GET /contact
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /help
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /login
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /microposts
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /password_resets/new
+    parameters: '(controller,action)'
+    status: 200
+  - route: 'GET /password_resets/{id}/edit'
+    parameters: '(email,controller,action,id)'
+    status: 200
+  - route: 'GET /password_resets/{id}/edit'
+    parameters: '(email,controller,action,id)'
+    status: 302
+  - route: GET /signup
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /users
+    parameters: '(controller,action)'
+    status: 200
+  - route: GET /users
+    parameters: '(controller,action)'
+    status: 302
+  - route: 'GET /users/{id}'
+    parameters: '(controller,action,id)'
+    status: 200
+  - route: 'GET /users/{id}/edit'
+    parameters: '(controller,action,id)'
+    status: 200
+  - route: 'GET /users/{id}/edit'
+    parameters: '(controller,action,id)'
+    status: 302
+  - route: 'GET /users/{id}/followers'
+    parameters: '(controller,action,id)'
+    status: 200
+  - route: 'GET /users/{id}/followers'
+    parameters: '(controller,action,id)'
+    status: 302
+  - route: 'GET /users/{id}/following'
+    parameters: '(controller,action,id)'
+    status: 200
+  - route: 'GET /users/{id}/following'
+    parameters: '(controller,action,id)'
+    status: 302
+  - route: 'PATCH /password_resets/{id}'
+    parameters: '(email,user,controller,action,id)'
+    status: 200
+  - route: 'PATCH /password_resets/{id}'
+    parameters: '(email,user,controller,action,id)'
+    status: 302
+  - route: 'PATCH /users/{id}'
+    parameters: '(user,controller,action,id)'
+    status: 200
+  - route: 'PATCH /users/{id}'
+    parameters: '(user,controller,action,id)'
+    status: 302
+  - route: POST /login
+    parameters: '(session,controller,action)'
+    status: 200
+  - route: POST /login
+    parameters: '(session,controller,action)'
+    status: 302
+  - route: POST /microposts
+    parameters: '(micropost,controller,action)'
+    status: 200
+  - route: POST /microposts
+    parameters: '(micropost,controller,action)'
+    status: 302
+  - route: POST /password_resets
+    parameters: '(password_reset,controller,action)'
+    status: 200
+  - route: POST /password_resets
+    parameters: '(password_reset,controller,action)'
+    status: 302
+  - route: POST /relationships
+    parameters: '(controller,action)'
+    status: 302
+  - route: POST /relationships
+    parameters: '(followed_id,controller,action)'
+    status: 201
+  - route: POST /relationships
+    parameters: '(followed_id,controller,action)'
+    status: 302
+  - route: POST /users
+    parameters: '(user,controller,action)'
+    status: 200
+  - route: POST /users
+    parameters: '(user,controller,action)'
+    status: 302
+

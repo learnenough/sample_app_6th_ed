@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+group :development, :test do
+  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'depends-task'
+end
+
 gem 'rails',                      '~> 6.0.0'
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
@@ -10,7 +14,7 @@ gem 'faker',                      '2.11.0'
 gem 'will_paginate',              '3.3.0'
 gem 'bootstrap-will_paginate',    '1.0.0'
 gem 'bootstrap-sass',             '3.4.1'
-gem 'puma',                       '4.3.5'
+gem 'puma',                       '5.3.2'
 gem 'sass-rails',                 '6.0.0'
 gem 'webpacker',                  '4.2.2'
 gem 'turbolinks',                 '5.2.1'
@@ -20,9 +24,6 @@ gem 'bootsnap',                   '1.4.6', require: false
 group :development, :test do
   gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'fix-missing-hooks'
-  gem 'appmap_swagger'
-  gem 'appmap_depends', github: 'applandinc/appmap_depends-ruby', branch: 'testing'
   gem 'rswag-ui'
   gem 'rswag-api'
   gem 'rails-erd'

@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: Rails Sample App API
+  title: Rails Sample App
   version: v6
 paths:
   "/":
@@ -32,12 +32,10 @@ paths:
         in: query
         schema:
           type: string
-          example: user@example.com
       - name: id
         in: path
         schema:
           type: string
-          example: invalid token
         required: true
   "/contact":
     get:
@@ -81,8 +79,6 @@ paths:
               properties:
                 session:
                   type: object
-                  example: '{"email"=>"michael@example.com", "password"=>"[FILTERED]",
-                    "remember_me"=>"1"}'
                   properties:
                     email:
                       type: string
@@ -125,10 +121,17 @@ paths:
               properties:
                 micropost:
                   type: object
-                  example: '{"content"=>"Lorem ipsum"}'
                   properties:
                     content:
                       type: string
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                authenticity_token:
+                  type: string
+                commit:
+                  type: string
   "/microposts/{id}":
     delete:
       responses:
@@ -146,7 +149,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '499495288'
         required: true
   "/password_resets":
     post:
@@ -167,7 +169,6 @@ paths:
               properties:
                 password_reset:
                   type: string
-                  example: "[FILTERED]"
   "/password_resets/new":
     get:
       responses:
@@ -195,10 +196,8 @@ paths:
               properties:
                 email:
                   type: string
-                  example: michael@example.com
                 user:
                   type: object
-                  example: '{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}'
                   properties:
                     password:
                       type: string
@@ -209,7 +208,6 @@ paths:
         in: path
         schema:
           type: string
-          example: 71ipx-1p2E6yoaKfpGl09w
         required: true
   "/password_resets/{id}/edit":
     get:
@@ -231,7 +229,6 @@ paths:
         in: path
         schema:
           type: string
-          example: 71ipx-1p2E6yoaKfpGl09w
         required: true
   "/relationships":
     post:
@@ -253,7 +250,6 @@ paths:
               properties:
                 followed_id:
                   type: string
-                  example: '950961012'
   "/relationships/{id}":
     delete:
       responses:
@@ -273,7 +269,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '980190963'
         required: true
   "/signup":
     get:
@@ -312,8 +307,6 @@ paths:
               properties:
                 user:
                   type: object
-                  example: '{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]",
-                    "password_confirmation"=>"[FILTERED]'
                   properties:
                     name:
                       type: string
@@ -337,7 +330,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '762146111'
         required: true
     get:
       responses:
@@ -352,7 +344,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '950961012'
         required: true
     patch:
       responses:
@@ -372,7 +363,6 @@ paths:
               properties:
                 user:
                   type: object
-                  example: '{"name"=>"Michael Example", "email"=>"michael@example.com"}'
                   properties:
                     name:
                       type: string
@@ -383,7 +373,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '762146111'
         required: true
   "/users/{id}/edit":
     get:
@@ -401,7 +390,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '762146111'
         required: true
   "/users/{id}/followers":
     get:
@@ -419,7 +407,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '762146111'
         required: true
   "/users/{id}/following":
     get:
@@ -437,7 +424,6 @@ paths:
         in: path
         schema:
           type: string
-          example: '762146111'
         required: true
 components:
   securitySchemes: {}

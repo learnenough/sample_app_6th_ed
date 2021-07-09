@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: Rails Sample App API
+  title: Rails Sample App
   version: v6
 paths:
   "/":
@@ -102,6 +102,14 @@ paths:
                   properties:
                     content:
                       type: string
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                authenticity_token:
+                  type: string
+                commit:
+                  type: string
   "/microposts/{id}":
     delete:
       responses:

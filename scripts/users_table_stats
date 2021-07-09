@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+appmap_dir=$(pwd)/tmp/appmap
+cd ~/source/appland/appmap-js
+echo "Number of packages querying the users table: "
+npx appmap-cli inspect "table:users" --appmap-dir "$appmap_dir" 2>/dev/null | jq -r ".packageTrigrams | length"
+echo "Number of classes querying the users table: "
+npx appmap-cli inspect "table:users" --appmap-dir "$appmap_dir" 2>/dev/null | jq -r ".classTrigrams | length"
