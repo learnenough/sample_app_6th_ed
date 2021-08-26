@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-group :development, :test do
-  gem 'appmap', github: 'applandinc/appmap-ruby', branch: 'depends-task'
-end
+gem 'appmap', :groups => [:development, :test]
 
 gem 'rails',                      '~> 6.0.0'
 gem 'image_processing',           '1.9.3'

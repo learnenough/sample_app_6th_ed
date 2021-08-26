@@ -1,27 +1,15 @@
 # frozen_string_literal: true
 
 lambda do
-  def simplify(file)
-    file.index(Dir.pwd) == 0 ? file[Dir.pwd.length+1..-1] : file
-  end
-
   namespace :appmap do
     AppMap::Swagger::RakeTasks.define_tasks
-
-    def run_minitest(test_files)
-      test_files = test_files.map(&method(:simplify)).uniq
-
-      # DISABLE_SPRING because it's likely to not have APPMAP=true
-      succeeded = system({ 'APPMAP' => 'true', 'DISABLE_SPRING' => '1' }, "bundle exec rails test #{test_files.map(&:shellescape).join(' ')}")
-      exit 1 unless succeeded
-    end
-
-    test_runner = ->(test_files) { run_minitest(test_files) }
-    AppMap::Depends::RakeTasks.define_tasks test_runner: test_runner
-
+    AppMap::Depends::RakeTasks.define_tasks
+    
     task :architecture do
+      simplify = ->(f) { f.index(Dir.pwd) == 0 ? f[Dir.pwd.length+1..-1] : f }
+    
       test_files = File.read('ARCHITECTURE.md').scan(/\[[^\(]+\(([^\]]+)\)\]\(.*\.appmap\.json\)/).flatten
-      test_files = test_files.map(&method(:simplify)).uniq
+      test_files = test_files.map(&simplify).uniq
 
       succeeded = system({ 'APPMAP' => 'true', 'DISABLE_SPRING' => '1' }, "bundle exec rails test #{test_files.map(&:shellescape).join(' ')}")
       exit 1 unless succeeded
