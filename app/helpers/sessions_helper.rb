@@ -31,6 +31,7 @@ module SessionsHelper
   end
 
   # Returns true if the user is logged in, false otherwise.
+  # @label security.authentication
   def logged_in?
     !current_user.nil?
   end

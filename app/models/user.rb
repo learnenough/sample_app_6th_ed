@@ -27,6 +27,7 @@ class User < ApplicationRecord
   end
 
   # Returns a random token.
+  # @label secret.generator
   def User.new_token
     SecureRandom.urlsafe_base64
   end
@@ -51,6 +52,7 @@ class User < ApplicationRecord
 
   # Activates an account.
   def activate
+    # TODO: It's weird to do these in two separate SQL queries.
     update_attribute(:activated,    true)
     update_attribute(:activated_at, Time.zone.now)
   end
