@@ -19,7 +19,7 @@ before_install:
 script:
   - yarn
   - bundle exec rake db:migrate
-  - env RAILS_ENV=test bundle exec rake appmap:diff && env APPMAP=true bundle exec rake test
+  - env APPMAP=true bundle exec rake test
   - yarn scanner --config=../sampleConfig/railsSampleApp6thEd.js
 
 after_success:
