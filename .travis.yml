@@ -20,7 +20,7 @@ script:
   - yarn
   - bundle exec rake db:migrate
   - env APPMAP=true bundle exec rake test
-  - yarn scanner --config=../sampleConfig/railsSampleApp6thEd.js --commit-status=github
+  - yarn scanner --config=../sampleConfig/railsSampleApp6thEd.js --commit-status=github --appmap-dir=tmp/appmap
 
 after_success:
 - env DEBUG=true ./bin/upload-appmaps
