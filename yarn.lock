@@ -114,9 +114,9 @@
     sqlite-parser "^1.0.1"
 
 "@applandinc/scanner@^1.9.0":
-  version "1.11.1"
-  resolved "https://npm.pkg.github.com/download/@applandinc/scanner/1.11.1/ec640d400ef36bda693e8267fd964fa049d93ffb9d9843eca8a336a06330f634#eed70bc4b69cf2459fa8cecc9ca8e5da201f06c2"
-  integrity sha512-+HRzcfM0AZuuajKfFG1Qxa6qvNi9kdf8ku2MFX3Cto9TuNU4S+LFtqkuY4ldYXYdF9F5o43po96U0A3ycunBcA==
+  version "1.11.2"
+  resolved "https://npm.pkg.github.com/download/@applandinc/scanner/1.11.2/03889a24a7eb37195fe8f28f45f623bf82fa5b96e1fa7906e297f0299717c670#41045293af31cbb005bde71d22dfc257dea6fc62"
+  integrity sha512-BuFNrurL8A4QA4QJBsmbFoplRXr9tUXES/KPknvL9os42iASPTbkNAsUFZPQXMlaY4+30Q0OD0n91nnJGqvVqA==
   dependencies:
     "@appland/appmap" "^3.2.3"
     "@appland/models" "^1.5.1"
