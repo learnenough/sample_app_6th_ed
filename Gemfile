@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'appmap', :groups => [:development, :test]
+gem 'appmap', :groups => [:development, :test], github: 'applandinc/appmap-ruby', branch: 'master'
 
 gem 'rails',                      '~> 6.0.0'
 gem 'image_processing',           '1.9.3'
@@ -35,6 +35,8 @@ group :development do
 end
 
 group :test do
+  gem 'skunk'
+  gem 'ruby-prof',                '1.4.3'
   gem 'capybara',                 '3.32.2'
   gem 'selenium-webdriver',       '3.142.7'
   gem 'webdrivers',               '4.3.0'
