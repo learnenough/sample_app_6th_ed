@@ -17,9 +17,10 @@ before_install:
   - nvm install 12.18.1
 
 script:
-  - npm install
+  - yarn
   - bundle exec rake db:migrate
-  - env RAILS_ENV=test bundle exec rake appmap:diff && env APPMAP=true bundle exec rake test
+  - env APPMAP=true bundle exec rake test
+  - yarn scanner --config=../sampleConfig/railsSampleApp6thEd.js --appmap-dir=tmp/appmap --commit-status=github
 
 after_success:
 - env DEBUG=true ./bin/upload-appmaps
