@@ -25,6 +25,7 @@ group :development, :test do
   gem 'rswag-ui'
   gem 'rswag-api'
   gem 'rails-erd'
+  gem 'mocha'
 end
 
 group :development do
