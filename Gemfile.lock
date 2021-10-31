@@ -113,7 +113,7 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     method_source (1.0.0)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     minitest (5.11.3)
     minitest-reporters (1.3.8)
       ansi
@@ -135,7 +135,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.3.1)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-mini-profiler (2.3.1)
       rack (>= 1.2.0)
@@ -230,10 +230,10 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   bootsnap (= 1.7.2)
