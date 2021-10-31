@@ -68,14 +68,14 @@ GEM
     autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.509.0)
-    aws-sdk-core (3.121.1)
+    aws-partitions (1.521.0)
+    aws-sdk-core (3.121.5)
       aws-eventstream (~> 1, >= 1.0.2)
-      aws-partitions (~> 1, >= 1.239.0)
+      aws-partitions (~> 1, >= 1.520.1)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.48.0)
-      aws-sdk-core (~> 3, >= 3.120.0)
+    aws-sdk-kms (1.50.0)
+      aws-sdk-core (~> 3, >= 3.121.2)
       aws-sigv4 (~> 1.1)
     aws-sdk-s3 (1.87.0)
       aws-sdk-core (~> 3, >= 3.109.0)
@@ -147,7 +147,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_magick (4.9.5)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     minitest (5.11.3)
     minitest-reporters (1.3.8)
       ansi
@@ -169,7 +169,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.3.1)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.0)
     rack (2.2.3)
     rack-mini-profiler (2.3.1)
       rack (>= 1.2.0)
@@ -267,10 +267,10 @@ GEM
     will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
   active_storage_validations (= 0.8.9)
