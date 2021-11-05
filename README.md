@@ -25,6 +25,14 @@ $ git clone https://github.com/mhartl/sample_app_6th_ed.git
 $ cd sample_app_6th_ed
 ```
 
+Also make sure you’re using a compatible version of Node.js:
+
+```
+$ nvm install 16.13.0
+$ node -v
+v16.13.0
+```
+
 Then install the needed packages (while skipping any Ruby gems needed only in production):
 
 ```
@@ -32,12 +40,6 @@ $ yarn add jquery@3.5.1 bootstrap@3.4.1
 $ gem install bundler -v 2.2.17
 $ bundle _2.2.17_ config set --local without 'production'
 $ bundle _2.2.17_ install
-```
-
-Next, install Webpacker (this is automatically created by `rails new` but needs to be added by hand when cloning an existing project):
-
-```
-$ rails webpacker:install
 ```
 
 Next, migrate the database:
