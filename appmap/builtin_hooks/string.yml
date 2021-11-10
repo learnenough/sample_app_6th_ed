@@ -1,0 +1,3 @@
+- method: String#==
+  require_name: ruby
+  label: string.equals

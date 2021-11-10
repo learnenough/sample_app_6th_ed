@@ -1,0 +1,2 @@
+- method: Logger::LogDevice#write
+  label: log
