@@ -2,6 +2,7 @@
   "name": "sample_app",
   "private": true,
   "dependencies": {
+    "@applandinc/scanner": "^1.9.0",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
@@ -12,7 +13,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@appland/appmap": "^2.3.4",
     "@appland/appmap-swagger": "^0.4.0",
     "@appland/cli": "^1.1.0",
     "webpack-dev-server": "^4.4.0"

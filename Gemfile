@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'appmap', :groups => [:development, :test]
+gem 'appmap', :groups => [:development, :test], github: 'applandinc/appmap-ruby', branch: 'master'
 
 gem 'rails',                      '~> 6.0.0'
 gem 'image_processing',           '1.9.3'
@@ -29,16 +29,18 @@ end
 
 group :development do
   gem 'web-console',           '4.0.2'
-  gem 'listen',                '3.2.1'
+  gem 'listen',                '3.7.0'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
 end
 
 group :test do
+  gem 'skunk'
+  gem 'ruby-prof',                '1.4.3'
   gem 'capybara',                 '3.32.2'
   gem 'selenium-webdriver',       '3.142.7'
   gem 'webdrivers',               '4.3.0'
-  gem 'rails-controller-testing', '1.0.4'
+  gem 'rails-controller-testing'#, '1.0.4'
   gem 'minitest',                 '5.11.3'
   gem 'minitest-reporters',       '1.3.8'
   gem 'guard',                    '2.16.2'

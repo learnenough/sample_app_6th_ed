@@ -18,4 +18,4 @@ lambda do
 
   desc 'Bring AppMaps up to date with local file modifications, and updated derived data such as Swagger files'
   task :appmap => [ :'appmap:depends:update' ]
-end.call if %w[test development].member?(Rails.env)
+end.call if %w[test development].member?(Rails.env) && defined?(AppMap)
