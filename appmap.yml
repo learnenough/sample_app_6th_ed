@@ -5,14 +5,6 @@ packages:
 - path: app/jobs
 - path: app/mailers
 - path: app/models
-#- gem: image_processing
-#- gem: mini_magick
-#- gem: bcrypt
-#- gem: will_paginate
-functions:
-  - name: logger/Logger::LogDevice#write
-    builtin: true
-    label: log
 swagger:
   project_name: Rails Sample App
   project_version: v6

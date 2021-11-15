@@ -1,0 +1,26 @@
+scanners:
+  - id: authzBeforeAuthn
+  - id: http500
+  - id: illegalPackageDependency
+    properties:
+      selector: function:app/controllers/*
+      packageNames: [ 'actionpack' ]
+  - id: insecureCompare
+  - id: missingAuthentication
+  - id: missingContentType
+  - id: nPlusOneQuery
+  - id: secretInLog
+  - id: slowFunctionCall
+    properties:
+      timeAllowed: 0.2
+      codeObjectName: .*Controller#create
+  - id: slowHttpServerRequest
+    properties:
+      timeAllowed: 0.5
+  - id: slowQuery
+    properties:
+      timeAllowed: 0.05
+  - id: tooManyJoins
+  - id: tooManyUpdates
+#  - id: unbatchedMaterializedQuery
+  - id: updateInGetRequest

@@ -1,0 +1,2 @@
+- method: ActiveRecord::Relation#records
+  label: dao.materialize
