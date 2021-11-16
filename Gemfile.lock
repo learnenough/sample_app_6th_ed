@@ -1,14 +1,3 @@
-GIT
-  remote: https://github.com/applandinc/appmap-ruby.git
-  revision: 2615c13bddd363fb0eb47a95fc82aac2c00b1acd
-  branch: master
-  specs:
-    appmap (0.68.1)
-      activesupport
-      method_source
-      rack
-      reverse_markdown
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -72,6 +61,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
+    appmap (0.68.1)
+      activesupport
+      method_source
+      rack
+      reverse_markdown
     ast (2.4.2)
     autoprefixer-rails (9.8.5)
       execjs
@@ -365,7 +359,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.8.9)
-  appmap!
+  appmap
   aws-sdk-s3 (= 1.46.0)
   bcrypt (= 3.1.13)
   bootsnap (= 1.4.6)
