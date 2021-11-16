@@ -22,5 +22,5 @@ scanners:
       timeAllowed: 0.05
   - id: tooManyJoins
   - id: tooManyUpdates
-#  - id: unbatchedMaterializedQuery
+  - id: unbatchedMaterializedQuery
   - id: updateInGetRequest

@@ -2,7 +2,7 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "scan": "node_modules/@applandinc/scanner/built/cli.js -c ./appland-scanner.yml --appmap-dir tmp/appmap"
+    "scan": "node node_modules/@applandinc/scanner/built/cli.js -c ./appland-scanner.yml --appmap-dir tmp/appmap"
   },
   "dependencies": {
     "@applandinc/scanner": "^1.20.1",
