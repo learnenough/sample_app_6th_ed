@@ -45,15 +45,17 @@
     yaml "^1.10.2"
     yargs "^16.2.0"
 
-"@appland/appmap@^3.2.3":
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/@appland/appmap/-/appmap-3.7.1.tgz#85e0f486f005c65c9f35bd0c6f3bfef1f3fd551c"
-  integrity sha512-8ipRcNN9ADksRDmUlwQ4lSR8FpvgUCGPicqhj/YHGCvjq0WNYISztPObcu97xwzvyYgoAJAPCXQ8aEmNMvuFeg==
+"@appland/appmap@^3.13.3":
+  version "3.13.3"
+  resolved "https://registry.yarnpkg.com/@appland/appmap/-/appmap-3.13.3.tgz#937dd4577b5c5386c9211ae667b58b8a5205188e"
+  integrity sha512-zUnoY7NwD4fg3fl31SgFI217PM4v+bakhvU0E5tW9fqzBfckxhik+ZdwdiypTVRAihPjLoy9I5KDOJVie8rSsQ==
   dependencies:
-    "@appland/components" "1.12.2"
-    "@appland/diagrams" "1.4.0"
-    "@appland/models" "1.5.1"
+    "@appland/components" "1.14.2"
+    "@appland/diagrams" "1.5.0"
+    "@appland/models" "1.7.0"
+    "@sidvind/better-ajv-errors" "^0.9.1"
     "@types/moo" "^0.5.5"
+    ajv "^8.6.3"
     applicationinsights "^2.1.4"
     async "^3.2.0"
     boxen "^5.0.1"
@@ -99,10 +101,10 @@
     w3c-xmlserializer "^2.0.0"
     yargs "^17.0.1"
 
-"@appland/components@1.12.2":
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/@appland/components/-/components-1.12.2.tgz#11f4a1b1cc13ac10ac0c6297d287538e8fd42ffc"
-  integrity sha512-5jxexgR9Fc9pfG8puCNTw83HsX0AMayHGNIfuHTpqHEwynDbzkpqU6MLniMpjcLjnMScL7jn52GRbgsWDLq70g==
+"@appland/components@1.14.2":
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/@appland/components/-/components-1.14.2.tgz#c04b1ef6efb21f5c99261e51db692146d2872a86"
+  integrity sha512-Gu1nY/1uu+3uR8zaizmMzfHKOUEUl45GYz7Raem082ZNvpER228gq2s4zIGXOi9PeuSCsE8yyux8GgGtPQfJmA==
   dependencies:
     "@appland/diagrams" "^1.3.1"
     "@appland/models" "^1.5.0"
@@ -111,23 +113,7 @@
     vue "^2.6.11"
     vuex "^3.6.0"
 
-"@appland/diagrams@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@appland/diagrams/-/diagrams-1.4.0.tgz#8e299b4e926b7dc02504f2a531d2636db662224f"
-  integrity sha512-OWr/8JjQuqWzdMBAEc0g0pAhzyfz0Jrc4unSglGXfOUe1HhEqqA3Qw8fd9YmjKjHC5t8NvAo9NWdJNwpxUKJyA==
-  dependencies:
-    "@appland/models" "^1.5.0"
-    d3-flame-graph "^4.0.6"
-    d3-hierarchy "^1.1.9"
-    d3-interpolate "^1.4.0"
-    d3-selection "^1.4.2"
-    d3-shape "^1.3.7"
-    d3-zoom "^1.8.3"
-    dagre "^0.8.5"
-    deepmerge "^4.2.2"
-    sql-formatter "^4.0.2"
-
-"@appland/diagrams@^1.3.1":
+"@appland/diagrams@1.5.0", "@appland/diagrams@^1.3.1":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@appland/diagrams/-/diagrams-1.5.0.tgz#b8641aef4294958f0812eff79b5e2d5e7019f65d"
   integrity sha512-Hq4eav1sfg/hpycKB2C2cmVB/pGVIwOKiEO3gzzqnlLKSXfKc2z91sAlTtKIWBysJR1Lgs0GiQoq7f/2xJCYQg==
@@ -152,7 +138,16 @@
     crypto-js "^4.0.0"
     sqlite-parser "^1.0.1"
 
-"@appland/models@1.5.1", "@appland/models@^1.0.2", "@appland/models@^1.5.0", "@appland/models@^1.5.1":
+"@appland/models@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@appland/models/-/models-1.7.0.tgz#448fd976937f4c17cf01b075ce8c39468a491aa8"
+  integrity sha512-ZLUTVvqFExtexRpCciprnQhUKx47LLuAaOxFcBw0AxOQdfvsMCUQUqv5zqqeJPxru1eiE9P5UIOIUfyJYWVLLQ==
+  dependencies:
+    cross-env "^7.0.3"
+    crypto-js "^4.0.0"
+    sqlite-parser "^1.0.1"
+
+"@appland/models@^1.0.2", "@appland/models@^1.5.0":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@appland/models/-/models-1.5.1.tgz#96f269d8327281c9be7694c34c35b61d3645fd39"
   integrity sha512-juY47UB98GNycxK6Q05tyBBvBGEVE93xwvTfpdNIQDYB8YwJEQ4u7XjOWm54fZwX8hcGO3IAjCYrkeU5k+BY1Q==
@@ -161,13 +156,22 @@
     crypto-js "^4.0.0"
     sqlite-parser "^1.0.1"
 
-"@applandinc/scanner@^1.20.1":
-  version "1.20.1"
-  resolved "https://npm.pkg.github.com/download/@applandinc/scanner/1.20.1/71f5ca193967e7c321d9034d6139a84332ea2df58c8035c5863a5c539d6f5764#d3fd0fba709612754efc2e3bbaa936bb6f82f0c4"
-  integrity sha512-CjubpeBn4AAplB6UO1ZTv1fH3NFKOFZGL5kQ1ZyK2gkalet110rZ+B4FOO2XAFhaYxWFhQYCn5YWylwWeVoS7w==
+"@appland/models@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@appland/models/-/models-1.7.1.tgz#3a6e7c6d5f1fb9a3d5dd5b21c7b21f0e18614baf"
+  integrity sha512-sQeOzM9fxxAokK/LyhH4xiY0+bxMN2Q6griOoAAJasoYfhJSAeJPHbLUpYhvpFqdyBY7PDhSM/osfSZxZCBOYA==
   dependencies:
-    "@appland/appmap" "^3.2.3"
-    "@appland/models" "^1.5.1"
+    cross-env "^7.0.3"
+    crypto-js "^4.0.0"
+    sqlite-parser "^1.0.1"
+
+"@applandinc/scanner@^1.22.2":
+  version "1.22.2"
+  resolved "https://npm.pkg.github.com/download/@applandinc/scanner/1.22.2/c790af9b0c9297dec13363d8c66c411258343dd4389697dda3694abc4acb5bac#90a1728af951a2f651065dbc5e8b0f057931ae39"
+  integrity sha512-5Wd/cwKkRAKqGZTmSlQ1NstPyr9alHn7xFchcBEoqJYiLs0SFH4Jv0Wen2vbrcK9cC61mc1kHSRaGc29na4Wsg==
+  dependencies:
+    "@appland/appmap" "^3.13.3"
+    "@appland/models" "^1.7.1"
     "@types/sinon" "^10.0.2"
     ansi-escapes "^5.0.0"
     chalk "^4.1.2"
@@ -1593,6 +1597,17 @@
     into-stream "^6.0.0"
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
+
+"@sidvind/better-ajv-errors@^0.9.1":
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/@sidvind/better-ajv-errors/-/better-ajv-errors-0.9.2.tgz#91927c4320d2a7e4d689dea84109790fb17bd124"
+  integrity sha512-lSHBKGFaRFen0pih3dtgwZmSI49UGnVWWLpfIKb+YIksbI6IB2kR69lO2yDojcseLIp2eeUO+KM9yEDxdqKcMw==
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    chalk "^4.0.0"
+    json-to-ast "^2.0.3"
+    jsonpointer "^4.1.0"
+    leven "^3.1.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
@@ -3085,6 +3100,11 @@ coa@^2.0.2:
     "@types/q" "^1.5.1"
     chalk "^2.4.1"
     q "^1.1.2"
+
+code-error-fragment@0.0.230:
+  version "0.0.230"
+  resolved "https://registry.yarnpkg.com/code-error-fragment/-/code-error-fragment-0.0.230.tgz#d736d75c832445342eca1d1fedbf17d9618b14d7"
+  integrity sha512-cadkfKp6932H8UkhzE/gcUqhRMNf8jHzkAN7+5Myabswaghu4xABTgPHDCjW+dBAJxj/SpkTYokpzDqY4pCzQw==
 
 code-point-at@^1.0.0:
   version "1.1.0"
@@ -5182,6 +5202,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==
 
+grapheme-splitter@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
+  integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
+
 graphlib@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/graphlib/-/graphlib-2.1.8.tgz#5761d414737870084c92ec7b5dbcb0592c9d35da"
@@ -6326,6 +6351,14 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
+json-to-ast@^2.0.3:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/json-to-ast/-/json-to-ast-2.1.0.tgz#041a9fcd03c0845036acb670d29f425cea4faaf9"
+  integrity sha512-W9Lq347r8tA1DfMvAGn9QNcgYm4Wm7Yc+k8e6vezpMnRT+NHbtlxgNBXRVjXe9YM6eTn6+p/MKOlV/aABJcSnQ==
+  dependencies:
+    code-error-fragment "0.0.230"
+    grapheme-splitter "^1.0.4"
+
 json5@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-1.0.1.tgz#779fb0018604fa854eacbf6252180d83543e3dbe"
@@ -6410,6 +6443,11 @@ last-call-webpack-plugin@^3.0.0:
   dependencies:
     lodash "^4.17.5"
     webpack-sources "^1.1.0"
+
+leven@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"
+  integrity sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==
 
 levn@~0.3.0:
   version "0.3.0"
