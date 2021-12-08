@@ -1,4 +1,5 @@
 class Micropost < ApplicationRecord
+  attr_reader :attr
   belongs_to       :user
   has_one_attached :image
   default_scope -> { order(created_at: :desc) }
@@ -12,5 +13,13 @@ class Micropost < ApplicationRecord
   # Returns a resized image for display.
   def display_image
     image.variant(resize_to_limit: [500, 500])
+  end
+
+  def fiber_test
+    Fiber.new {
+      @attr = 1
+      Fiber.yield
+      @attr = 2
+    }
   end
 end

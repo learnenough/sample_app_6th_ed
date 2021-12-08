@@ -29,4 +29,12 @@ class MicropostTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal microposts(:most_recent), Micropost.first
   end
+
+  test "fiber_test" do
+    assert_nil @micropost.attr
+    @micropost.fiber_test.resume
+    assert_equal 1, @micropost.attr
+    @micropost.fiber_test.resume
+    assert_equal 2, @micropost.attr
+  end
 end
