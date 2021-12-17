@@ -1,26 +1,29 @@
-scanners:
-  - id: authzBeforeAuthn
-  - id: http500
-  - id: illegalPackageDependency
+checks:
+  - rule: authzBeforeAuthn
+  - rule: http500
+  - rule: illegalPackageDependency
     properties:
-      selector: function:app/controllers/*
-      packageNames: [ 'actionpack' ]
-  - id: insecureCompare
-  - id: missingAuthentication
-  - id: missingContentType
-  - id: nPlusOneQuery
-  - id: secretInLog
-  - id: slowFunctionCall
+      callerPackages:
+        - equal: actionpack
+      calleePackage:
+        equal: app/controllers
+  - rule: insecureCompare
+  - rule: missingAuthentication
+  - rule: missingContentType
+  - rule: nPlusOneQuery
+  - rule: secretInLog
+  - rule: slowFunctionCall
     properties:
       timeAllowed: 0.2
-      codeObjectName: .*Controller#create
-  - id: slowHttpServerRequest
+      functions:
+        - match: Controller#
+  - rule: slowHttpServerRequest
     properties:
       timeAllowed: 0.5
-  - id: slowQuery
+  - rule: slowQuery
     properties:
       timeAllowed: 0.05
-  - id: tooManyJoins
-  - id: tooManyUpdates
-  - id: unbatchedMaterializedQuery
-  - id: updateInGetRequest
+  - rule: tooManyJoins
+  - rule: tooManyUpdates
+  - rule: unbatchedMaterializedQuery
+  - rule: updateInGetRequest

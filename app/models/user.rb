@@ -27,7 +27,7 @@ class User < ApplicationRecord
   end
 
   # Returns a random token.
-  # @label secret secret.generator
+  # @label secret
   def User.new_token
     SecureRandom.urlsafe_base64
   end
