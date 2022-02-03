@@ -5,14 +5,6 @@ packages:
 - path: app/jobs
 - path: app/mailers
 - path: app/models
-functions:
-- method: ActiveRecord::Relation#records
-  gem: activerecord
-  label: dao.materialize
-- method: Logger::LogDevice#write
-  require_name: logger
-  builtin: true
-  label: log
 swagger:
   project_name: Rails Sample App
   project_version: v6
