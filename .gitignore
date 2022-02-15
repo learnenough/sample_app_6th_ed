@@ -34,6 +34,9 @@
 yarn-debug.log*
 .yarn-integrity
 *.appmap.json
+appland-findings.json
+*.code-workspace
+swagger/openapi.yaml
 
 # Ignore macOS DS_Store.
 .DS_Store

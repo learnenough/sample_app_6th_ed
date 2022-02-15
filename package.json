@@ -2,10 +2,9 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "scan": "node node_modules/@applandinc/scanner/built/cli.js -c ./appland-scanner.yml --appmap-dir tmp/appmap"
+    "scan": "npx @appland/scanner scan --appmap-dir tmp/appmap/minitest --app kgilpin@gmail.com/sample_app_6th_ed"
   },
   "dependencies": {
-    "@applandinc/scanner": "^1.30.0",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
@@ -16,8 +15,9 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@appland/appmap": "^3.15.1",
     "@appland/appmap-swagger": "^0.4.0",
-    "@appland/cli": "^1.1.0",
+    "@appland/scanner": "^1.45.0",
     "webpack-dev-server": "^4.4.0"
   }
 }
