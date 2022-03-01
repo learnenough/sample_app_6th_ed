@@ -23,4 +23,4 @@ install:
 
 script:
   - env APPMAP=true bundle exec rake test
-  - npx @appland/scanner ci -c appland-scanner.yml -d tmp/appmap --all
+  - npx @appland/scanner ci -c appland-scanner.yml -d tmp/appmap
