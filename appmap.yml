@@ -1,4 +1,4 @@
-name: sample_app_6th_ed
+name: land-of-apps/sample_app_6th_ed
 packages:
 - path: app/controllers
 - path: app/helpers
