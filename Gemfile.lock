@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: bacccdec577933cc2f7c4f89732d01f9e19aa9a6
+  revision: c9ab7a4f6ace841b6056670297fef8185a5e767d
   branch: master
   specs:
-    appmap (0.72.3)
+    appmap (0.72.5)
       activesupport
       method_source
       rack
@@ -190,7 +190,7 @@ GEM
     method_source (1.0.0)
     mini_magick (4.9.5)
     mini_mime (1.1.2)
-    mini_portile2 (2.7.1)
+    mini_portile2 (2.8.0)
     minitest (5.11.3)
     minitest-reporters (1.3.8)
       ansi
@@ -200,8 +200,8 @@ GEM
     msgpack (1.4.2)
     nenv (0.3.0)
     nio4r (2.5.8)
-    nokogiri (1.13.1)
-      mini_portile2 (~> 2.7.0)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
