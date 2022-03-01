@@ -8,12 +8,6 @@ cache: bundler
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install graphviz
-  - >
-    export APPLAND_CLI_DOWNLOAD_URL="$(curl -s https://api.github.com/repos/applandinc/appland-cli/releases/latest \
-      | jq -r '.assets[] | select(.name | contains("Linux")).browser_download_url')" \
-      && curl -sSL "${APPLAND_CLI_DOWNLOAD_URL}" \
-      | sudo tar xz --directory /usr/local/bin appland \
-      && touch ~/.appland
   - nvm install 14.18.1
   - yarn
 
