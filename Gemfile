@@ -33,6 +33,8 @@ group :development do
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
   gem 'solargraph'
+  gem 'brakeman'
+  gem 'active_record_doctor'
 end
 
 group :test do

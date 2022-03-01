@@ -48,6 +48,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_record_doctor (1.9.0)
+      activerecord (>= 4.2.0)
     active_storage_validations (0.8.9)
       rails (>= 5.2.0)
     activejob (6.0.4.1)
@@ -106,6 +108,7 @@ GEM
       sassc (>= 2.0.0)
     bootstrap-will_paginate (1.0.0)
       will_paginate
+    brakeman (5.2.1)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.32.2)
@@ -403,6 +406,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_record_doctor
   active_storage_validations (= 0.8.9)
   appmap!
   aws-sdk-s3 (= 1.46.0)
@@ -410,6 +414,7 @@ DEPENDENCIES
   bootsnap (= 1.4.6)
   bootstrap-sass (= 3.4.1)
   bootstrap-will_paginate (= 1.0.0)
+  brakeman
   byebug (= 11.1.3)
   capybara (= 3.32.2)
   faker (= 2.11.0)
