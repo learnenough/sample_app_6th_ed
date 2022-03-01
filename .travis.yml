@@ -3,7 +3,14 @@ dist: bionic
 language: ruby
 rvm:
  - 3.0.2
-cache: bundler
+cache:
+  bundler: true
+  yarn: true
+  directories:
+    - vendor/bundle
+    - /home/travis/.rvm/
+    - node_modules
+    - public/packs
 
 before_install:
   - sudo apt-get update
