@@ -18,6 +18,7 @@ before_install:
   - yarn
 
 install:
+  - bundle
   - bundle exec rake db:migrate
 
 script:
