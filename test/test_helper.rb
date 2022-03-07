@@ -1,8 +1,23 @@
+if ENV['PROFILE'] == 'true'
+  require 'ruby-prof'
+  at_exit do
+    result = RubyProf.stop
+    printer = RubyProf::GraphPrinter.new(result)
+    printer.print(File.open('profile.txt', 'w'), sort_method: :self_time)
+  end
+end
+
+require 'test_helper'
+
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require "minitest/reporters"
 Minitest::Reporters.use!
+
+if ENV['PROFILE'] == 'true'
+  RubyProf.start
+end
 
 class ActiveSupport::TestCase
   fixtures :all
