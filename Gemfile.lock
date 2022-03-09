@@ -245,7 +245,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  x86_64-darwin-20
+  x86_64-darwin-19
 
 DEPENDENCIES
   bcrypt (= 3.1.13)
@@ -275,6 +275,9 @@ DEPENDENCIES
   webdrivers (= 4.6.0)
   webpacker (= 5.4.0)
   will_paginate (= 3.3.0)
+
+RUBY VERSION
+   ruby 2.7.5p203
 
 BUNDLED WITH
    2.2.17
