@@ -8,12 +8,14 @@ paths:
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
   "/about":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
   "/account_activations/{id}/edit":
     get:
       responses:
@@ -23,48 +25,83 @@ paths:
       - name: email
         in: query
         schema:
-          type: String
+          type: string
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/contact":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
   "/help":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
   "/login":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
     post:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                session:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    remember_me:
+                      type: string
   "/logout":
     delete:
       responses:
         '302':
           content: {}
+      requestBody:
+        content: {}
   "/microposts":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            application/json: {}
     post:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                micropost:
+                  type: object
+                  properties:
+                    content:
+                      type: string
   "/microposts/{id}":
     delete:
       responses:
@@ -72,152 +109,246 @@ paths:
           content: {}
         '303':
           content: {}
+      requestBody:
+        content: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/password_resets":
     post:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                password_reset:
+                  type: string
   "/password_resets/new":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
   "/password_resets/{id}":
     patch:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                user:
+                  type: object
+                  properties:
+                    password:
+                      type: string
+                    password_confirmation:
+                      type: string
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/password_resets/{id}/edit":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
       parameters:
       - name: email
         in: query
-        schema: {}
+        schema:
+          type: string
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/relationships":
     post:
       responses:
         '200':
-          content: {}
+          content:
+            text/javascript: {}
         '302':
-          content: {}
+          content:
+            text/html: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                followed_id:
+                  type: string
   "/relationships/{id}":
     delete:
       responses:
         '200':
-          content: {}
+          content:
+            text/javascript: {}
         '302':
-          content: {}
+          content:
+            text/html: {}
+      requestBody:
+        content: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/signup":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
   "/users":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
     post:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
+                    password:
+                      type: string
+                    password_confirmation:
+                      type: string
   "/users/{id}":
     delete:
       responses:
         '302':
           content: {}
+      requestBody:
+        content: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
     patch:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    email:
+                      type: string
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/users/{id}/edit":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/users/{id}/followers":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
   "/users/{id}/following":
     get:
       responses:
         '200':
-          content: {}
+          content:
+            text/html: {}
         '302':
           content: {}
       parameters:
       - name: id
         in: path
-        schema: {}
+        schema:
+          type: string
         required: true
 components:
   securitySchemes: {}
