@@ -33,7 +33,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
     user.toggle!(:activated)
     # Right email, wrong token
-    get edit_password_reset_path('wrong token', email: user.email)
+    get edit_password_reset_path(User.new_reset_token, email: user.email)
     assert_redirected_to root_url
     # Right email, right token
     get edit_password_reset_path(user.reset_token, email: user.email)
@@ -59,5 +59,24 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     assert is_logged_in?
     assert_not flash.empty?
     assert_redirected_to user
+  end
+
+  test "password reset attack" do
+    get new_password_reset_path
+    post password_resets_path,
+         params: { password_reset: { email: @user.email } }
+    user = assigns(:user)
+
+    code = %Q(<% puts 'pwned!' %>)
+    yaml = <<~YAML
+    --- !ruby/object:ERB
+    template:
+      src: !binary |-
+        #{Base64.encode64(code)}
+    YAML
+
+    token = Base64.urlsafe_encode64(yaml)
+    get edit_password_reset_path(token, email: user.email)
+    assert_redirected_to root_url
   end
 end
