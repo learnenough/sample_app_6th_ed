@@ -26,15 +26,24 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
-  # Returns a random token.
   # @label secret
-  def User.new_token
+  def User.new_remember_token
     SecureRandom.urlsafe_base64
+  end
+
+  # @label secret
+  def User.new_activation_token
+    SecureRandom.urlsafe_base64
+  end
+
+  # @label secret
+  def User.new_reset_token
+    Base64.urlsafe_encode64 YAML.dump('operation' => 'reset', 'secret' => SecureRandom.bytes(200))
   end
 
   # Remembers a user in the database for use in persistent sessions.
   def remember
-    self.remember_token = User.new_token
+    self.remember_token = User.new_remember_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
@@ -42,7 +51,17 @@ class User < ApplicationRecord
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
     return false if digest.nil?
-    BCrypt::Password.new(digest).is_password?(token)
+
+    if attribute == :reset
+      token = YAML.load(Base64.urlsafe_decode64(token))
+
+      operation = token['operation'] rescue nil
+      return false unless operation == 'reset'
+
+      BCrypt::Password.new(digest).is_password?(Base64.urlsafe_encode64(YAML.dump(token)))
+    else
+      BCrypt::Password.new(digest).is_password?(token)
+    end
   end
 
   # Forgets a user.
@@ -64,7 +83,7 @@ class User < ApplicationRecord
 
   # Sets the password reset attributes.
   def create_reset_digest
-    self.reset_token = User.new_token
+    self.reset_token = User.new_reset_token
     update_attribute(:reset_digest,  User.digest(reset_token))
     update_attribute(:reset_sent_at, Time.zone.now)
   end
@@ -111,7 +130,7 @@ class User < ApplicationRecord
 
     # Creates and assigns the activation token and digest.
     def create_activation_digest
-      self.activation_token  = User.new_token
+      self.activation_token  = User.new_activation_token
       self.activation_digest = User.digest(activation_token)
     end
 end
