@@ -15,7 +15,7 @@ cache:
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install graphviz
-  - nvm install 14.18.1
+  - nvm install 16
   - yarn
 
 install:
