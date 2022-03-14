@@ -2,7 +2,7 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "scan": "npx @appland/scanner scan --appmap-dir tmp/appmap/minitest --app kgilpin@gmail.com/sample_app_6th_ed"
+    "scan": "npx @appland/scanner scan -c appland-scanner.yml --appmap-dir tmp/appmap/minitest --app kgilpin@gmail.com/sample_app_6th_ed"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",

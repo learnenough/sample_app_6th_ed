@@ -2,6 +2,8 @@ checks:
   - rule: authzBeforeAuthn
   - rule: deserializationOfUntrustedData
     scope: command
+  - rule: execOfUntrustedCommand
+    scope: command
   - rule: http500
   - rule: illegalPackageDependency
     properties:
