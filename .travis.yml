@@ -16,6 +16,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y install graphviz
   - nvm install 16
+  - npm install -g yarn@2.4.3
   - yarn
 
 install:
