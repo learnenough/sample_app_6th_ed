@@ -36,6 +36,7 @@ yarn-debug.log*
 *.appmap.json
 appland-findings.json
 *.code-workspace
+node_modules
 swagger/openapi.yaml
 
 # Ignore macOS DS_Store.
