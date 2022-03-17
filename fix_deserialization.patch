@@ -1,0 +1,22 @@
+diff --git a/app/models/user.rb b/app/models/user.rb
+index c52fdb7..d9ee46b 100644
+--- a/app/models/user.rb
++++ b/app/models/user.rb
+@@ -52,16 +52,7 @@ class User < ApplicationRecord
+     digest = send("#{attribute}_digest")
+     return false if digest.nil?
+ 
+-    if attribute == :reset
+-      token = YAML.load(Base64.urlsafe_decode64(token))
+-
+-      operation = token['operation'] rescue nil
+-      return false unless operation == 'reset'
+-
+-      BCrypt::Password.new(digest).is_password?(Base64.urlsafe_encode64(YAML.dump(token)))
+-    else
+-      BCrypt::Password.new(digest).is_password?(token)
+-    end
++    BCrypt::Password.new(digest).is_password?(token)
+   end
+ 
+   # Forgets a user.
