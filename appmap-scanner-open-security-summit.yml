@@ -1,0 +1,10 @@
+checks:
+  - rule: authzBeforeAuthn
+  - rule: deserializationOfUntrustedData
+    scope: command
+  - rule: execOfUntrustedCommand
+    scope: command
+  - rule: http500
+  - rule: logoutWithoutSessionReset
+  - rule: missingAuthentication
+  - rule: secretInLog

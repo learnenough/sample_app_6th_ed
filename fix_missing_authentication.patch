@@ -1,0 +1,67 @@
+diff --git a/app/controllers/users_controller.rb b/app/controllers/users_controller.rb
+index ef1af37..bc24312 100644
+--- a/app/controllers/users_controller.rb
++++ b/app/controllers/users_controller.rb
+@@ -1,5 +1,5 @@
+ class UsersController < ApplicationController
+-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
++  before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy,
+                                         :following, :followers]
+   before_action :correct_user,   only: [:edit, :update]
+   before_action :admin_user,     only: :destroy
+diff --git a/app/models/user.rb b/app/models/user.rb
+index c52fdb7..d9ee46b 100644
+--- a/app/models/user.rb
++++ b/app/models/user.rb
+@@ -52,16 +52,7 @@ class User < ApplicationRecord
+     digest = send("#{attribute}_digest")
+     return false if digest.nil?
+ 
+-    if attribute == :reset
+-      token = YAML.load(Base64.urlsafe_decode64(token))
+-
+-      operation = token['operation'] rescue nil
+-      return false unless operation == 'reset'
+-
+-      BCrypt::Password.new(digest).is_password?(Base64.urlsafe_encode64(YAML.dump(token)))
+-    else
+-      BCrypt::Password.new(digest).is_password?(token)
+-    end
++    BCrypt::Password.new(digest).is_password?(token)
+   end
+ 
+   # Forgets a user.
+diff --git a/test/integration/users_profile_test.rb b/test/integration/users_profile_test.rb
+index 6240ce0..695ce90 100644
+--- a/test/integration/users_profile_test.rb
++++ b/test/integration/users_profile_test.rb
+@@ -17,11 +17,10 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
+ 
+   test "profile display while anonyomus" do
+     get user_path(@user)
+-    assert_equal 200, response.status
+-    # assert_match URI.parse(response.location).path, "/login"
++    assert_equal 302, response.status
++    assert_match URI.parse(response.location).path, "/login"
+   end
+ 
+-  <<~LOGGED_IN_USER
+   test "profile display while logged in as the user" do
+     login_as @user
+ 
+@@ -37,15 +36,4 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
+       assert_match micropost.content, response.body
+     end
+   end
+-  LOGGED_IN_USER
+-
+-  <<~OTHER_USER
+-  test "profile display while logged in as someone else" do
+-    login_as @other_user
+-
+-    get user_path(@user)
+-    assert_equal 302, response.status
+-    assert_match URI.parse(response.location).path, "/login"
+-  end
+-  OTHER_USER
+ end
