@@ -17,7 +17,7 @@
   "devDependencies": {
     "@appland/appmap": "^3.18.3",
     "@appland/appmap-swagger": "^0.4.0",
-    "@appland/scanner": "^1.46.1",
+    "@appland/scanner": "^1.47.0",
     "webpack-dev-server": "^4.4.0"
   }
 }
