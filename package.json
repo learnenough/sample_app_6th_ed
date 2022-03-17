@@ -11,6 +11,7 @@
     "@rails/webpacker": "4.2.2",
     "bootstrap": "3.4.1",
     "jquery": "3.5.1",
+    "node-sass": "^7.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
