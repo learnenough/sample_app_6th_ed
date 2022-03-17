@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  # @label public
+  # @label public access.public
   def home
     if logged_in?
       @micropost  = current_user.microposts.build
@@ -8,15 +8,15 @@ class StaticPagesController < ApplicationController
     end
   end
   
-  # @label public
+  # @label public access.public
   def help
   end
 
-  # @label public
+  # @label public access.public
   def about
   end
 
-  # @label public
+  # @label public access.public
   def contact
   end
 end
