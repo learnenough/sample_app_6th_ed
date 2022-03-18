@@ -15,9 +15,9 @@ cache:
 before_install:
   - sudo apt-get update
   - sudo apt-get -y install graphviz
-  - nvm install 16
-  - npm install -g yarn@2.4.3
-  - yarn
+  - nvm install 14.18.1
+  - npm install -g yarn@1.22.10
+  - yarn install
 
 install:
   - bundle

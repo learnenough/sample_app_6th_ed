@@ -8,17 +8,16 @@
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "4.2.2",
+    "@rails/webpacker": "^4.3.0",
     "bootstrap": "3.4.1",
     "jquery": "3.5.1",
-    "node-sass": "^7.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
+  "packageManager": "yarn@1.22.10",
   "devDependencies": {
     "@appland/appmap": "^3.19.0",
     "@appland/appmap-swagger": "^0.4.0",
-    "@appland/scanner": "^1.47.0",
-    "webpack-dev-server": "^4.4.0"
+    "@appland/scanner": "^1.47.0"
   }
 }
