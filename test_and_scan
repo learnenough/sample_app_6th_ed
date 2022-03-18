@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+APPMAP=true DISABLE_SPRING=true rails test
+yarn run scan --all --ide vscode
