@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: f05239f89f85f761e774cf6ab6cb0a122bdb2144
+  revision: 2f2132f4cccc45ce28df8289ae0ead8a40e31c6a
   branch: master
   specs:
-    appmap (0.74.0)
+    appmap (0.76.0)
       activesupport
       method_source
       rack
@@ -124,7 +124,7 @@ GEM
     coderay (1.1.3)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     crass (1.0.6)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
