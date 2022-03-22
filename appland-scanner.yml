@@ -9,6 +9,7 @@ checks:
     properties:
       callerPackages:
         - equal: actionpack
+        - equal: activesupport
       calleePackage:
         equal: app/controllers
   - rule: insecureCompare
