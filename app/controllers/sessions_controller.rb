@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
 
-  # @label public access.public
+  # @label access.public
   def new
   end
 
   # Login a new user.
-  # @label public access.public security.login
+  # @label access.public security.login
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])

@@ -1,7 +1,7 @@
 class AccountActivationsController < ApplicationController
 
   # Activate the account of an existing user.
-  # @label public access.public
+  # @label access.public
   def edit
     user = User.find_by(email: params[:email])
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
