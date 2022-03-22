@@ -1,7 +1,3 @@
 name: land-of-apps/sample_app_6th_ed
 packages:
-- path: app/controllers
-- path: app/helpers
-- path: app/jobs
-- path: app/mailers
-- path: app/models
+- path: app
