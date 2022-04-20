@@ -1,3 +1,7 @@
+# This is the Guardfile for the 6th edition of the Rails Tutorial.
+# For the 7th edition, see here:
+# https://github.com/learnenough/rails_tutorial_sample_app_7th_ed/blob/main/Guardfile
+
 require 'active_support/core_ext/string'
 # Defines the matching rules for Guard.
 guard :minitest, spring: "bin/rails test", all_on_start: false do
