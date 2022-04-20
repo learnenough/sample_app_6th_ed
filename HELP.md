@@ -2,16 +2,19 @@
 
 This is the Help page for the [*Ruby on Rails Tutorial*](https://www.railstutorial.org/) (6th Edition) by [Michael Hartl](http://www.michaelhartl.com/).
 
+See also the [7th edition Help page](https://github.com/learnenough/rails_tutorial_sample_app_7th_ed/blob/main/HELP.md).
+
+
 ## General suggestions
 
-Web development is a tricky business, and despite our collective best efforts it’s likely that you’ll run into trouble at some point. If you do, I suggest comparing your code to the [reference implementation of the sample app](https://github.com/mhartl/sample_app_6th_ed) to track down any discrepancies. You can also post your question at [Stack Overflow](https://stackoverflow.com/), but I suggest you do so after trying all the debugging tips listed below.
+Web development is a tricky business, and despite our collective best efforts it’s likely that you’ll run into trouble at some point. If you do, I suggest comparing your code to the [reference implementation of the sample app](https://github.com/learnenough/sample_app_6th_ed) to track down any discrepancies. You can also post your question at [Stack Overflow](https://stackoverflow.com/), but I suggest you do so after trying all the debugging tips listed below.
 
 ## Debugging tips
 
 While it’s impossible to anticipate every potential problem, here are
 some debugging tips that might help:
 
-- Have you compared your code to the [reference implementation of the sample app](https://github.com/mhartl/sample_app_6th_ed)?
+- Have you compared your code to the [reference implementation of the sample app](https://github.com/learnenough/sample_app_6th_ed)?
 - Are you using the [exact gem versions](https://gemfiles-6th-ed.railstutorial.org) (including Rails) used in the
   tutorial?
 - Did you try Googling the error message?
@@ -42,5 +45,5 @@ Raymond](http://www.catb.org/esr/).
 
 ## Error reports
 
-Suspected errors, typos, and bugs can be emailed to <admin@railstutorial.org>. All such reports are gratefully received, but please double-check with the [online version of the tutorial](https://www.railstutorial.org/book) and the [reference implementation](https://github.com/mhartl/sample_app_6th_ed) before submitting.
+Suspected errors, typos, and bugs can be emailed to <admin@railstutorial.org>. All such reports are gratefully received, but please double-check with the [online version of the tutorial](https://www.railstutorial.org/book) and the [reference implementation](https://github.com/learnenough/sample_app_6th_ed) before submitting.
 
