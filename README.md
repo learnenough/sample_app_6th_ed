@@ -8,6 +8,8 @@ Learn Web Development with Rails*](https://www.railstutorial.org/)
 (6th Edition)
 by [Michael Hartl](http://www.michaelhartl.com/).
 
+See also the [7th edition README](https://github.com/learnenough/rails_tutorial_sample_app_7th_ed#readme).
+
 ## License
 
 All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
