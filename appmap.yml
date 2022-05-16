@@ -1,3 +1,17 @@
-name: land-of-apps/sample_app_6th_ed
+name: sample_app_6th_ed
+language: ruby
+appmap_dir: tmp/appmap
 packages:
-- path: app
+  - path: app
+  - path: lib
+functions:
+  - method: ActionDispatch::Integration::Runner#before_setup
+    labels:
+      - deserialize.safe
+      - lang.eval.safe
+test_recording:
+  test_commands:
+    - env:
+        APPMAP: 'true'
+        DISABLE_SPRING: 'true'
+      command: bundle exec rake test
