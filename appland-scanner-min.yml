@@ -1,9 +1,0 @@
-checks:
-  - rule: http500
-  - rule: logoutWithoutSessionReset
-  - rule: missingContentType
-  - rule: nPlusOneQuery
-  - rule: secretInLog
-  - rule: tooManyJoins
-  - rule: tooManyUpdates
-  - rule: updateInGetRequest
