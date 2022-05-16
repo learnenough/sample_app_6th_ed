@@ -57,13 +57,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@appland/appmap@portal:/Users/kgilpin/source/appland/appmap-js/packages/cli::locator=sample_app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@appland/appmap@portal:/Users/kgilpin/source/appland/appmap-js/packages/cli::locator=sample_app%40workspace%3A."
+"@appland/appmap@npm:^3.25.3":
+  version: 3.25.3
+  resolution: "@appland/appmap@npm:3.25.3"
   dependencies:
-    "@appland/components": "workspace:*"
-    "@appland/diagrams": "workspace:*"
-    "@appland/models": "workspace:^1.14.1"
+    "@appland/components": 2.1.0
+    "@appland/diagrams": 1.5.2
+    "@appland/models": ^1.14.1
     "@sidvind/better-ajv-errors": ^0.9.1
     "@types/moo": ^0.5.5
     JSONStream: ^1.3.5
@@ -96,57 +96,62 @@ __metadata:
     yargs: ^17.1.1
   bin:
     appmap: built/src/cli.js
+  checksum: 4f9d34535658a555801befc210aa5ec24d2c75b824a279c9faac087e3172a9e833b0f1705e6b65df284663a861cc8a6c793c56fcc7a4b727d7d67d2809184f05
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@appland/client@portal:/Users/kgilpin/source/appland/appmap-js/packages/client::locator=sample_app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@appland/client@portal:/Users/kgilpin/source/appland/appmap-js/packages/client::locator=sample_app%40workspace%3A."
+"@appland/client@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@appland/client@npm:1.3.0"
   dependencies:
-    "@appland/models": "workspace:^1.8.1"
+    "@appland/models": ^1.8.1
     js-yaml: ^4.1.0
+  checksum: d5b9c55bf199333e5622af012586dc08b45571d538adea778ce70abf1b17fbf9c5049b212cac6c03cd5d1ca598799c41b8939cef64ea7a6044e9efaa6085727e
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@appland/components@portal:/Users/kgilpin/source/appland/appmap-js/packages/components::locator=sample_app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@appland/components@portal:/Users/kgilpin/source/appland/appmap-js/packages/components::locator=sample_app%40workspace%3A."
+"@appland/components@npm:2.1.0":
+  version: 2.1.0
+  resolution: "@appland/components@npm:2.1.0"
   dependencies:
-    "@appland/diagrams": "workspace:^1.5.1"
-    "@appland/models": "workspace:^1.9.0"
+    "@appland/diagrams": ^1.5.1
+    "@appland/models": ^1.9.0
     highlight.js: ^10.7.2
     sql-formatter: ^4.0.2
     vue: ^2.6.11
     vuex: ^3.6.0
+  checksum: c7ee3e5d397c659d3b606f6ff8b1a63f66b719adeb500e9b5a242d83cac6506eae12d23e9275e9dc061d9641048de8eb15469db9ab347d72ef031507bd5963be
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@appland/diagrams@portal:/Users/kgilpin/source/appland/appmap-js/packages/diagrams::locator=sample_app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@appland/diagrams@portal:/Users/kgilpin/source/appland/appmap-js/packages/diagrams::locator=sample_app%40workspace%3A."
+"@appland/diagrams@npm:1.5.2, @appland/diagrams@npm:^1.5.1":
+  version: 1.5.2
+  resolution: "@appland/diagrams@npm:1.5.2"
   dependencies:
-    "@appland/models": "workspace:^1.9.0"
+    "@appland/models": ^1.9.0
     d3-interpolate: ^1.4.0
     d3-selection: ^1.4.2
     d3-shape: ^1.3.7
     d3-zoom: ^1.8.3
     dagre: ^0.8.5
     deepmerge: ^4.2.2
+  checksum: 4cac690580c15ce4da05167dcc6921453b3139734f08e52ad8122855f66284f9622ffa0e26f5f263aaed6adf12cc766b9c71b3ca2ef39b03cb9c3e126d48fd25
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@appland/models@portal:/Users/kgilpin/source/appland/appmap-js/packages/models::locator=sample_app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@appland/models@portal:/Users/kgilpin/source/appland/appmap-js/packages/models::locator=sample_app%40workspace%3A."
+"@appland/models@npm:^1.14.1, @appland/models@npm:^1.14.5, @appland/models@npm:^1.8.1, @appland/models@npm:^1.9.0":
+  version: 1.15.0
+  resolution: "@appland/models@npm:1.15.0"
   dependencies:
     "@appland/sql-parser": ^1.5.0
     crypto-js: ^4.0.0
+  checksum: 1384c3396b5a9ccfec2ec07e618ee51db01a19db52a462a32eb456b8417941cb40903839cd742bc67a46927b222c8ccaf9d1569a0268e354be8f3095f4ff6d32
   languageName: node
-  linkType: soft
+  linkType: hard
 
-"@appland/scanner@portal:/Users/kgilpin/source/appland/appmap-js/packages/scanner::locator=sample_app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@appland/scanner@portal:/Users/kgilpin/source/appland/appmap-js/packages/scanner::locator=sample_app%40workspace%3A."
+"@appland/scanner@npm:^1.56.0":
+  version: 1.56.0
+  resolution: "@appland/scanner@npm:1.56.0"
   dependencies:
     "@appland/client": ^1.3.0
     "@appland/models": ^1.14.5
@@ -171,8 +176,9 @@ __metadata:
     yargs: ^17.1.1
   bin:
     scanner: built/cli.js
+  checksum: d0190206d425de2795d8b1bd65e10ccfd31a713297efa6f90e20ac7fba5da2a8e965f1588b1f1684ed7be2629b50a7d705e07c317da2122560696aad88ad278e
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@appland/sql-parser@npm:^1.5.0":
   version: 1.5.1

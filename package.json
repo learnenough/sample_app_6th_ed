@@ -2,22 +2,24 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "scan": "npx @appland/scanner scan -c appland-scanner.yml --appmap-dir tmp/appmap/minitest"
+    "openapi": "npx @appland/appmap openapi --appmap-dir tmp/appmap",
+    "index": "npx @appland/appmap index",
+    "scan": "npx @appland/scanner scan"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.3.0",
+    "@types/node": "^17.0.33",
     "bootstrap": "3.4.1",
     "jquery": "3.5.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "packageManager": "yarn@1.22.10",
+  "packageManager": "yarn@3.0.1",
   "devDependencies": {
-    "@appland/appmap": "^3.19.0",
-    "@appland/appmap-swagger": "^0.4.0",
-    "@appland/scanner": "^1.47.0"
+    "@appland/appmap": "^3.25.3",
+    "@appland/scanner": "^1.56.0"
   }
 }
