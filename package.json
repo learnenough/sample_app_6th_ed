@@ -2,9 +2,7 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "openapi": "npx @appland/appmap openapi --appmap-dir tmp/appmap",
-    "index": "npx @appland/appmap index",
-    "scan": "npx @appland/scanner scan"
+    "openapi": "appmap openapi --appmap-dir tmp/appmap"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
