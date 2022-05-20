@@ -17,9 +17,9 @@
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "packageManager": "yarn@3.0.1",
+  "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "@appland/appmap": "^3.25.3",
+    "@appland/appmap": "^3.25.4",
     "@appland/scanner": "^1.56.0"
   }
 }

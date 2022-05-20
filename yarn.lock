@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 6
   cacheKey: 8
 
 "@ampproject/remapping@npm:^2.1.0":
@@ -57,13 +57,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@appland/appmap@npm:^3.25.3":
-  version: 3.25.3
-  resolution: "@appland/appmap@npm:3.25.3"
+"@appland/appmap@npm:^3.25.4":
+  version: 3.25.4
+  resolution: "@appland/appmap@npm:3.25.4"
   dependencies:
     "@appland/components": 2.1.0
     "@appland/diagrams": 1.5.2
     "@appland/models": ^1.14.1
+    "@appland/openapi": 1.0.1
     "@sidvind/better-ajv-errors": ^0.9.1
     "@types/moo": ^0.5.5
     JSONStream: ^1.3.5
@@ -86,7 +87,6 @@ __metadata:
     jsdom: ^16.6.0
     moo: ^0.5.1
     open: ^8.2.1
-    openapi-types: ^10.0.0
     ora: ^5.4.1
     port-pid: ^0.0.7
     ps-node: ^0.1.6
@@ -96,7 +96,7 @@ __metadata:
     yargs: ^17.1.1
   bin:
     appmap: built/src/cli.js
-  checksum: 4f9d34535658a555801befc210aa5ec24d2c75b824a279c9faac087e3172a9e833b0f1705e6b65df284663a861cc8a6c793c56fcc7a4b727d7d67d2809184f05
+  checksum: 395dd4ad765f7a333d7390518eb5d846c01f9092400553f6fa205d35ce34e884425cbeef871a7d92ef0379602c677d1b4eb21fdb0c74db2aaf4699acf5c58764
   languageName: node
   linkType: hard
 
@@ -139,13 +139,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@appland/models@npm:^1.14.1, @appland/models@npm:^1.14.5, @appland/models@npm:^1.8.1, @appland/models@npm:^1.9.0":
+"@appland/models@npm:1.15.0, @appland/models@npm:^1.14.1, @appland/models@npm:^1.14.5, @appland/models@npm:^1.8.1, @appland/models@npm:^1.9.0":
   version: 1.15.0
   resolution: "@appland/models@npm:1.15.0"
   dependencies:
     "@appland/sql-parser": ^1.5.0
     crypto-js: ^4.0.0
   checksum: 1384c3396b5a9ccfec2ec07e618ee51db01a19db52a462a32eb456b8417941cb40903839cd742bc67a46927b222c8ccaf9d1569a0268e354be8f3095f4ff6d32
+  languageName: node
+  linkType: hard
+
+"@appland/openapi@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@appland/openapi@npm:1.0.1"
+  dependencies:
+    "@appland/models": 1.15.0
+    js-yaml: ^4.1.0
+  checksum: 5d34775fc3e1f7d9c75533b86506f9a9e2e5fe5c42c1b6db88b62a5074d1fc0fb1a5554df1f5873ab199a9a5ef238c203dba86f23642e9fb70a459e81e0704c5
   languageName: node
   linkType: hard
 
@@ -273,7 +283,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.17.9, @babel/core@npm:^7.7.2":
+"@babel/core@npm:^7.7.2":
   version: 7.17.9
   resolution: "@babel/core@npm:7.17.9"
   dependencies:
@@ -2075,7 +2085,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.2.4":
+"acorn@npm:^8.2.4, acorn@npm:^8.5.0":
   version: 8.7.1
   resolution: "acorn@npm:8.7.1"
   bin:
@@ -5148,25 +5158,26 @@ fsevents@^1.2.7:
     bindings: ^1.5.0
     nan: ^2.12.1
   checksum: ae855aa737aaa2f9167e9f70417cf6e45a5cd11918e1fee9923709a0149be52416d765433b4aeff56c789b1152e718cd1b13ddec6043b78cdda68260d86383c1
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
 "fsevents@patch:fsevents@^1.2.7#~builtin<compat/fsevents>":
   version: 1.2.13
-  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=1cc4b2"
+  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7"
   dependencies:
     bindings: ^1.5.0
     nan: ^2.12.1
-  checksum: b264407498db2cfdcc2a05287334a4160c985a88e4a989e2f2f8dcc6afc8b04a4fcd82c797266442452e11c1fb07d7747d138b078fe4bb1f8f4fd2a6f2484d7e
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: latest
-  checksum: 78db9daf1f6526a49cefee3917cc988f62dc7f25b5dd80ad6de4ffc4af7f0cab7491ac737626ff53e482a111bc53aac9e411fe3602458eca36f6a003ecf69c16
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -5176,6 +5187,7 @@ fsevents@~2.3.2:
   dependencies:
     node-gyp: latest
   checksum: 97ade64e75091afee5265e6956cb72ba34db7819b4c3e94c431d4be2b19b8bb7a2d4116da417950c3425f17c8fe693d25e20212cac583ac1521ad066b77ae31f
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -7808,13 +7820,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"openapi-types@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "openapi-types@npm:10.0.0"
-  checksum: 8cc8b5bf40ea10b1f9c56fb05aada74bfe3d9e94e141464561a5c3cd0a933906e57d9bf4e059219ec8e63a97a69e0655d21c9dd3f4de1ff4f71672d10664cfc0
-  languageName: node
-  linkType: hard
-
 "openapi3-ts@npm:^2.0.0":
   version: 2.0.2
   resolution: "openapi3-ts@npm:2.0.2"
@@ -9545,14 +9550,14 @@ fsevents@~2.3.2:
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>":
   version: 1.22.0
-  resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"
   dependencies:
     is-core-module: ^2.8.1
     path-parse: ^1.0.7
     supports-preserve-symlinks-flag: ^1.0.0
   bin:
     resolve: bin/resolve
-  checksum: b63b73ecbb7928e71c30e231f6adc380fca66bd5819a1b1324d3dcae573c726d9923df06eef3ac50be52b1dcea67272f3b6f12ba2e87ec8a9d3ebdf8454103bb
+  checksum: c79ecaea36c872ee4a79e3db0d3d4160b593f2ca16e031d8283735acd01715a203607e9ded3f91f68899c2937fa0d49390cddbe0fb2852629212f3cda283f4a7
   languageName: node
   linkType: hard
 
@@ -9685,7 +9690,7 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "sample_app@workspace:."
   dependencies:
-    "@appland/appmap": ^3.25.3
+    "@appland/appmap": ^3.25.4
     "@appland/scanner": ^1.56.0
     "@rails/actioncable": ^6.0.0-alpha
     "@rails/activestorage": ^6.0.0-alpha
