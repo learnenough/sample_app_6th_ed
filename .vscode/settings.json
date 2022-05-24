@@ -1,3 +1,4 @@
 {
-  "appMap.findingsEnabled": true
+  "appMap.findingsEnabled": true,
+  "appMap.inspectEnabled": false,
 }
