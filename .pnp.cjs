@@ -34,13 +34,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@appland/appmap", "npm:3.25.4"],\
-            ["@appland/scanner", "npm:1.56.0"],\
+            ["@appland/scanner", "npm:1.57.0"],\
             ["@rails/actioncable", "npm:6.1.5"],\
             ["@rails/activestorage", "npm:6.1.5"],\
             ["@rails/ujs", "npm:6.1.5"],\
             ["@rails/webpacker", "npm:4.3.0"],\
             ["@types/node", "npm:17.0.33"],\
             ["bootstrap", "npm:3.4.1"],\
+            ["glob", "npm:8.0.3"],\
             ["jquery", "npm:3.5.1"],\
             ["turbolinks", "npm:5.2.0"]\
           ],\
@@ -224,20 +225,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@appland/scanner", [\
-        ["npm:1.56.0", {\
-          "packageLocation": "./.yarn/cache/@appland-scanner-npm-1.56.0-1a1237aa43-d0190206d4.zip/node_modules/@appland/scanner/",\
+        ["npm:1.57.0", {\
+          "packageLocation": "./.yarn/cache/@appland-scanner-npm-1.57.0-2cc46559e7-858b92297f.zip/node_modules/@appland/scanner/",\
           "packageDependencies": [\
-            ["@appland/scanner", "npm:1.56.0"],\
+            ["@appland/scanner", "npm:1.57.0"],\
             ["@appland/client", "npm:1.3.0"],\
             ["@appland/models", "npm:1.15.0"],\
+            ["@appland/openapi", "npm:1.0.1"],\
             ["@appland/sql-parser", "npm:1.5.1"],\
             ["@types/cli-progress", "npm:3.9.2"],\
             ["ajv", "npm:8.11.0"],\
             ["ansi-escapes", "npm:5.0.0"],\
+            ["applicationinsights", "virtual:9c67e735a3683635c2318fab2724f80590e11e62d2c8f2c408544adc4719c163cb1831f23516e06b2e74367b01486fa3e3fab1e7dfc7bc7ba11678eb4c84b700#npm:2.3.1"],\
             ["async", "npm:3.2.3"],\
             ["chalk", "npm:4.1.2"],\
             ["chokidar", "npm:3.5.3"],\
             ["cli-progress", "npm:3.11.0"],\
+            ["conf", "npm:10.1.2"],\
             ["form-data", "npm:4.0.0"],\
             ["glob", "npm:7.2.0"],\
             ["js-yaml", "npm:4.1.0"],\
@@ -246,6 +250,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["octokat", "npm:0.10.0"],\
             ["openapi-diff", "npm:0.23.5"],\
             ["pretty-format", "npm:27.5.1"],\
+            ["read-pkg-up", "npm:7.0.1"],\
             ["supports-hyperlinks", "npm:2.2.0"],\
             ["tar-stream", "npm:2.2.0"],\
             ["yargs", "npm:17.4.1"]\
@@ -2827,6 +2832,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node-fetch", "npm:2.6.1"],\
             ["@types/node", "npm:17.0.29"],\
             ["form-data", "npm:3.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/normalize-package-data", [\
+        ["npm:2.4.1", {\
+          "packageLocation": "./.yarn/cache/@types-normalize-package-data-npm-2.4.1-c31c56ae6a-e87bccbf11.zip/node_modules/@types/normalize-package-data/",\
+          "packageDependencies": [\
+            ["@types/normalize-package-data", "npm:2.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6870,6 +6884,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["minimatch", "npm:5.0.1"],\
             ["once", "npm:1.4.0"],\
             ["path-is-absolute", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:8.0.3", {\
+          "packageLocation": "./.yarn/cache/glob-npm-8.0.3-750f909025-50bcdea19d.zip/node_modules/glob/",\
+          "packageDependencies": [\
+            ["glob", "npm:8.0.3"],\
+            ["fs.realpath", "npm:1.0.0"],\
+            ["inflight", "npm:1.0.6"],\
+            ["inherits", "npm:2.0.4"],\
+            ["minimatch", "npm:5.0.1"],\
+            ["once", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11260,6 +11286,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["path-type", "npm:1.1.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/cache/read-pkg-npm-5.2.0-50426bd8dc-eb696e6052.zip/node_modules/read-pkg/",\
+          "packageDependencies": [\
+            ["read-pkg", "npm:5.2.0"],\
+            ["@types/normalize-package-data", "npm:2.4.1"],\
+            ["normalize-package-data", "npm:2.5.0"],\
+            ["parse-json", "npm:5.2.0"],\
+            ["type-fest", "npm:0.6.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["read-pkg-up", [\
@@ -11269,6 +11306,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["read-pkg-up", "npm:1.0.1"],\
             ["find-up", "npm:1.1.2"],\
             ["read-pkg", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.0.1", {\
+          "packageLocation": "./.yarn/cache/read-pkg-up-npm-7.0.1-11895bed9a-e4e93ce70e.zip/node_modules/read-pkg-up/",\
+          "packageDependencies": [\
+            ["read-pkg-up", "npm:7.0.1"],\
+            ["find-up", "npm:4.1.0"],\
+            ["read-pkg", "npm:5.2.0"],\
+            ["type-fest", "npm:0.8.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11710,13 +11757,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["sample_app", "workspace:."],\
             ["@appland/appmap", "npm:3.25.4"],\
-            ["@appland/scanner", "npm:1.56.0"],\
+            ["@appland/scanner", "npm:1.57.0"],\
             ["@rails/actioncable", "npm:6.1.5"],\
             ["@rails/activestorage", "npm:6.1.5"],\
             ["@rails/ujs", "npm:6.1.5"],\
             ["@rails/webpacker", "npm:4.3.0"],\
             ["@types/node", "npm:17.0.33"],\
             ["bootstrap", "npm:3.4.1"],\
+            ["glob", "npm:8.0.3"],\
             ["jquery", "npm:3.5.1"],\
             ["turbolinks", "npm:5.2.0"]\
           ],\
@@ -13018,6 +13066,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/type-fest-npm-0.21.3-5ff2a9c6fd-e6b32a3b38.zip/node_modules/type-fest/",\
           "packageDependencies": [\
             ["type-fest", "npm:0.21.3"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:0.6.0", {\
+          "packageLocation": "./.yarn/cache/type-fest-npm-0.6.0-76b229965b-b2188e6e4b.zip/node_modules/type-fest/",\
+          "packageDependencies": [\
+            ["type-fest", "npm:0.6.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:0.8.1", {\
+          "packageLocation": "./.yarn/cache/type-fest-npm-0.8.1-351ad028fe-d61c4b2eba.zip/node_modules/type-fest/",\
+          "packageDependencies": [\
+            ["type-fest", "npm:0.8.1"]\
           ],\
           "linkType": "HARD"\
         }],\
