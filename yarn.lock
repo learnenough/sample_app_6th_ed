@@ -159,20 +159,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@appland/scanner@npm:^1.56.0":
-  version: 1.56.0
-  resolution: "@appland/scanner@npm:1.56.0"
+"@appland/scanner@npm:^1.57.0":
+  version: 1.57.0
+  resolution: "@appland/scanner@npm:1.57.0"
   dependencies:
     "@appland/client": ^1.3.0
     "@appland/models": ^1.14.5
+    "@appland/openapi": 1.0.1
     "@appland/sql-parser": ^1.5.0
     "@types/cli-progress": ^3.9.2
     ajv: ^8.8.2
     ansi-escapes: ^5.0.0
+    applicationinsights: ^2.1.4
     async: ^3.2.3
     chalk: ^4.1.2
     chokidar: ^3.5.3
     cli-progress: ^3.11.0
+    conf: ^10.0.2
     form-data: ^4.0.0
     glob: ^7.2.0
     js-yaml: ^4.1.0
@@ -181,12 +184,13 @@ __metadata:
     octokat: ^0.10.0
     openapi-diff: ^0.23.5
     pretty-format: ^27.4.6
+    read-pkg-up: ^7.0.1
     supports-hyperlinks: ^2.2.0
     tar-stream: ^2.2.0
     yargs: ^17.1.1
   bin:
     scanner: built/cli.js
-  checksum: d0190206d425de2795d8b1bd65e10ccfd31a713297efa6f90e20ac7fba5da2a8e965f1588b1f1684ed7be2629b50a7d705e07c317da2122560696aad88ad278e
+  checksum: 858b92297fc30b0b682854390601c788be54d27f1aad40c3c627aff94052e4fe4682c3e57e1d3a3e65263dc976fa4df074a18147ca241b9a8ef17f541f550b5c
   languageName: node
   linkType: hard
 
@@ -1803,6 +1807,13 @@ __metadata:
   version: 17.0.33
   resolution: "@types/node@npm:17.0.33"
   checksum: 6620652cc89ce125e1162e060ec4608c25b3635185e3e5dcaae4ed09e4770dc8bf168ba48bcd7059a1a56087a05000d7ed562e81aea7b6a512e2b13d4409c6b6
+  languageName: node
+  linkType: hard
+
+"@types/normalize-package-data@npm:^2.4.0":
+  version: 2.4.1
+  resolution: "@types/normalize-package-data@npm:2.4.1"
+  checksum: e87bccbf11f95035c89a132b52b79ce69a1e3652fe55962363063c9c0dae0fe2477ebc585e03a9652adc6f381d24ba5589cc5e51849df4ced3d3e004a7d40ed5
   languageName: node
   linkType: hard
 
@@ -4992,7 +5003,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-up@npm:^4.0.0":
+"find-up@npm:^4.0.0, find-up@npm:^4.1.0":
   version: 4.1.0
   resolution: "find-up@npm:4.1.0"
   dependencies:
@@ -5353,6 +5364,19 @@ fsevents@~2.3.2:
     once: ^1.3.0
     path-is-absolute: ^1.0.0
   checksum: 7ac782f3ef1c08005884447479e68ceb0ad56997eb2003e1e9aefae71bad3cb48eb7c49190d3d6736f2ffcd8af4985d53a46831b3d5e0052cc5756822a38b61a
+  languageName: node
+  linkType: hard
+
+"glob@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "glob@npm:8.0.3"
+  dependencies:
+    fs.realpath: ^1.0.0
+    inflight: ^1.0.4
+    inherits: 2
+    minimatch: ^5.0.1
+    once: ^1.3.0
+  checksum: 50bcdea19d8e79d8de5f460b1939ffc2b3299eac28deb502093fdca22a78efebc03e66bf54f0abc3d3d07d8134d19a32850288b7440d77e072aa55f9d33b18c5
   languageName: node
   linkType: hard
 
@@ -7562,7 +7586,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"normalize-package-data@npm:^2.3.2, normalize-package-data@npm:^2.3.4":
+"normalize-package-data@npm:^2.3.2, normalize-package-data@npm:^2.3.4, normalize-package-data@npm:^2.5.0":
   version: 2.5.0
   resolution: "normalize-package-data@npm:2.5.0"
   dependencies:
@@ -9275,6 +9299,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"read-pkg-up@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "read-pkg-up@npm:7.0.1"
+  dependencies:
+    find-up: ^4.1.0
+    read-pkg: ^5.2.0
+    type-fest: ^0.8.1
+  checksum: e4e93ce70e5905b490ca8f883eb9e48b5d3cebc6cd4527c25a0d8f3ae2903bd4121c5ab9c5a3e217ada0141098eeb661313c86fa008524b089b8ed0b7f165e44
+  languageName: node
+  linkType: hard
+
 "read-pkg@npm:^1.0.0":
   version: 1.1.0
   resolution: "read-pkg@npm:1.1.0"
@@ -9283,6 +9318,18 @@ fsevents@~2.3.2:
     normalize-package-data: ^2.3.2
     path-type: ^1.0.0
   checksum: a0f5d5e32227ec8e6a028dd5c5134eab229768dcb7a5d9a41a284ed28ad4b9284fecc47383dc1593b5694f4de603a7ffaee84b738956b9b77e0999567485a366
+  languageName: node
+  linkType: hard
+
+"read-pkg@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "read-pkg@npm:5.2.0"
+  dependencies:
+    "@types/normalize-package-data": ^2.4.0
+    normalize-package-data: ^2.5.0
+    parse-json: ^5.0.0
+    type-fest: ^0.6.0
+  checksum: eb696e60528b29aebe10e499ba93f44991908c57d70f2d26f369e46b8b9afc208ef11b4ba64f67630f31df8b6872129e0a8933c8c53b7b4daf0eace536901222
   languageName: node
   linkType: hard
 
@@ -9691,13 +9738,14 @@ fsevents@~2.3.2:
   resolution: "sample_app@workspace:."
   dependencies:
     "@appland/appmap": ^3.25.4
-    "@appland/scanner": ^1.56.0
+    "@appland/scanner": ^1.57.0
     "@rails/actioncable": ^6.0.0-alpha
     "@rails/activestorage": ^6.0.0-alpha
     "@rails/ujs": ^6.0.0-alpha
     "@rails/webpacker": ^4.3.0
     "@types/node": ^17.0.33
     bootstrap: 3.4.1
+    glob: ^8.0.3
     jquery: 3.5.1
     turbolinks: ^5.2.0
   languageName: unknown
@@ -10854,6 +10902,20 @@ fsevents@~2.3.2:
   version: 0.21.3
   resolution: "type-fest@npm:0.21.3"
   checksum: e6b32a3b3877f04339bae01c193b273c62ba7bfc9e325b8703c4ee1b32dc8fe4ef5dfa54bf78265e069f7667d058e360ae0f37be5af9f153b22382cd55a9afe0
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "type-fest@npm:0.6.0"
+  checksum: b2188e6e4b21557f6e92960ec496d28a51d68658018cba8b597bd3ef757721d1db309f120ae987abeeda874511d14b776157ff809f23c6d1ce8f83b9b2b7d60f
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "type-fest@npm:0.8.1"
+  checksum: d61c4b2eba24009033ae4500d7d818a94fd6d1b481a8111612ee141400d5f1db46f199c014766b9fa9b31a6a7374d96fc748c6d688a78a3ce5a33123839becb7
   languageName: node
   linkType: hard
 

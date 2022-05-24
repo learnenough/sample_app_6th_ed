@@ -2,7 +2,8 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "openapi": "appmap openapi --appmap-dir tmp/appmap"
+    "openapi": "appmap openapi --appmap-dir tmp/appmap",
+    "pre-commit-scan": "node ./scripts/pre-commit-scan.js"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0-alpha",
@@ -18,6 +19,7 @@
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "@appland/appmap": "^3.25.4",
-    "@appland/scanner": "^1.56.0"
+    "@appland/scanner": "^1.57.0",
+    "glob": "^8.0.3"
   }
 }
