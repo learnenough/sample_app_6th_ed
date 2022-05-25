@@ -92,27 +92,6 @@ paths:
           content: {}
           description: Found
   /microposts:
-    get:
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    content:
-                      type: string
-                    user_id:
-                      type: integer
-                    created_at:
-                      type: string
-                    updated_at:
-                      type: string
-          description: OK
     post:
       responses:
         '200':
