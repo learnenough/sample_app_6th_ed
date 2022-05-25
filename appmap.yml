@@ -5,10 +5,12 @@ packages:
   - path: app
   - path: lib
 functions:
-  - method: ActionDispatch::Integration::Runner#before_setup
+  - methods:
+      - Minitest::Test#with_info_handler
+    gem: minitest
+    builtin: true
     labels:
-      - deserialize.safe
-      - lang.eval.safe
+      - test.exec
 test_recording:
   test_commands:
     - env:
