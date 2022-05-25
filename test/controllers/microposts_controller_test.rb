@@ -6,11 +6,6 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     @micropost = microposts(:orange)
   end
 
-  test "can get microposts as JSON" do
-    log_in_as(users(:michael))
-    get microposts_path
-  end
-
   test "should redirect create when not logged in" do
     assert_no_difference 'Micropost.count' do
       post microposts_path, params: { micropost: { content: "Lorem ipsum" } }
