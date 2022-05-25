@@ -2,7 +2,7 @@
   "name": "sample_app",
   "private": true,
   "scripts": {
-    "openapi": "appmap openapi --appmap-dir tmp/appmap",
+    "openapi": "appmap openapi --appmap-dir tmp/appmap --openapi-title 'Rails Sample App' --openapi-version 6",
     "pre-commit-scan": "node ./scripts/pre-commit-scan.js"
   },
   "dependencies": {
