@@ -1,0 +1,32 @@
+diff --git a/app/controllers/microposts_controller.rb b/app/controllers/microposts_controller.rb
+index 3cafe5f..f7caba8 100644
+--- a/app/controllers/microposts_controller.rb
++++ b/app/controllers/microposts_controller.rb
+@@ -3,6 +3,11 @@ class MicropostsController < ApplicationController
+   before_action :logged_in_user, only: [:create, :destroy]
+   before_action :correct_user,   only: :destroy
+ 
++  def index
++    @microposts = current_user.microposts
++    render json: @microposts
++  end
++
+   def create
+     @micropost = current_user.microposts.build(micropost_params)
+     @micropost.image.attach(params[:micropost][:image])
+diff --git a/test/controllers/microposts_controller_test.rb b/test/controllers/microposts_controller_test.rb
+index dc60520..14444b0 100644
+--- a/test/controllers/microposts_controller_test.rb
++++ b/test/controllers/microposts_controller_test.rb
+@@ -6,6 +6,11 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
+     @micropost = microposts(:orange)
+   end
+ 
++  test "can get microposts as JSON" do
++    log_in_as(users(:michael))
++    get microposts_path
++  end
++
+   test "should redirect create when not logged in" do
+     assert_no_difference 'Micropost.count' do
+       post microposts_path, params: { micropost: { content: "Lorem ipsum" } }

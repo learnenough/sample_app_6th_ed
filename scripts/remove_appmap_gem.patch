@@ -1,0 +1,40 @@
+diff --git a/Gemfile b/Gemfile
+index 0be2874..8a0e15f 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -1,8 +1,6 @@
+ source 'https://rubygems.org'
+ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+ 
+-gem 'appmap', :groups => [:development, :test], github: 'applandinc/appmap-ruby', branch: 'master'
+-
+ gem 'rails',                      '~> 6.0.0'
+ gem 'image_processing',           '1.9.3'
+ gem 'mini_magick',                '4.9.5'
+diff --git a/Gemfile.lock b/Gemfile.lock
+index 6876823..21acf25 100644
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@ -1,14 +1,3 @@
+-GIT
+-  remote: https://github.com/applandinc/appmap-ruby.git
+-  revision: ae41d85404928c896878fdf92704dae7f06a166f
+-  branch: master
+-  specs:
+-    appmap (0.83.2)
+-      activesupport
+-      method_source
+-      rack
+-      reverse_markdown
+-
+ GEM
+   remote: https://rubygems.org/
+   specs:
+@@ -408,7 +397,6 @@ PLATFORMS
+ DEPENDENCIES
+   active_record_doctor
+   active_storage_validations (= 0.8.9)
+-  appmap!
+   aws-sdk-s3 (= 1.46.0)
+   bcrypt (= 3.1.13)
+   bootsnap (= 1.4.6)
