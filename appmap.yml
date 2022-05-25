@@ -4,16 +4,3 @@ appmap_dir: tmp/appmap
 packages:
   - path: app
   - path: lib
-functions:
-  - methods:
-      - Minitest::Test#with_info_handler
-    gem: minitest
-    builtin: true
-    labels:
-      - test.exec
-test_recording:
-  test_commands:
-    - env:
-        APPMAP: 'true'
-        DISABLE_SPRING: 'true'
-      command: bundle exec rake test
