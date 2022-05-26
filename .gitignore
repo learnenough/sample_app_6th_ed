@@ -32,6 +32,8 @@
 /node_modules
 /yarn-error.log
 .yarn
+.pnp.cjs
+.pnp.loader.cjs
 yarn-debug.log*
 .yarn-integrity
 *.appmap.json
