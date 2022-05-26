@@ -33,7 +33,7 @@
 /yarn-error.log
 .yarn
 .pnp.cjs
-.pnp.loader.cjs
+.pnp.loader.mjs
 yarn-debug.log*
 .yarn-integrity
 *.appmap.json
