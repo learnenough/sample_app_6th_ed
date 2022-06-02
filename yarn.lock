@@ -57,11 +57,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@appland/appmap@npm:^3.25.4":
-  version: 3.25.4
-  resolution: "@appland/appmap@npm:3.25.4"
+"@appland/appmap@npm:^3.27.4":
+  version: 3.27.4
+  resolution: "@appland/appmap@npm:3.27.4"
   dependencies:
-    "@appland/components": 2.1.0
+    "@appland/components": 2.2.0
     "@appland/diagrams": 1.5.2
     "@appland/models": ^1.14.1
     "@appland/openapi": 1.0.1
@@ -89,14 +89,17 @@ __metadata:
     open: ^8.2.1
     ora: ^5.4.1
     port-pid: ^0.0.7
+    pretty-bytes: ^5.6.0
     ps-node: ^0.1.6
+    read-pkg-up: ^7.0.1
     semver: ^7.3.5
     supports-hyperlinks: ^2.2.0
     w3c-xmlserializer: ^2.0.0
+    write-file-atomic: ^4.0.1
     yargs: ^17.1.1
   bin:
-    appmap: built/src/cli.js
-  checksum: 395dd4ad765f7a333d7390518eb5d846c01f9092400553f6fa205d35ce34e884425cbeef871a7d92ef0379602c677d1b4eb21fdb0c74db2aaf4699acf5c58764
+    appmap: built/cli.js
+  checksum: fac1673d0133ef76cfb67964524c0c042245f1a1edaf8b738c0dd87ce42d47984742e792e5475afaef0f02efbb34ce9a5f709c7f1ffa421de5293b61f56caa76
   languageName: node
   linkType: hard
 
@@ -110,9 +113,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@appland/components@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@appland/components@npm:2.1.0"
+"@appland/components@npm:2.2.0":
+  version: 2.2.0
+  resolution: "@appland/components@npm:2.2.0"
   dependencies:
     "@appland/diagrams": ^1.5.1
     "@appland/models": ^1.9.0
@@ -120,7 +123,7 @@ __metadata:
     sql-formatter: ^4.0.2
     vue: ^2.6.11
     vuex: ^3.6.0
-  checksum: c7ee3e5d397c659d3b606f6ff8b1a63f66b719adeb500e9b5a242d83cac6506eae12d23e9275e9dc061d9641048de8eb15469db9ab347d72ef031507bd5963be
+  checksum: 9cc94ff4f6dbdec638fbf0559950a349843f72febd69505450b5304df42231296c657531f14bf8941e27f313f601912591b411ab3904881869973fff45f6e7df
   languageName: node
   linkType: hard
 
@@ -9078,6 +9081,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"pretty-bytes@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "pretty-bytes@npm:5.6.0"
+  checksum: 9c082500d1e93434b5b291bd651662936b8bd6204ec9fa17d563116a192d6d86b98f6d328526b4e8d783c07d5499e2614a807520249692da9ec81564b2f439cd
+  languageName: node
+  linkType: hard
+
 "pretty-format@npm:^27.4.6":
   version: 27.5.1
   resolution: "pretty-format@npm:27.5.1"
@@ -9737,7 +9747,7 @@ fsevents@~2.3.2:
   version: 0.0.0-use.local
   resolution: "sample_app@workspace:."
   dependencies:
-    "@appland/appmap": ^3.25.4
+    "@appland/appmap": ^3.27.4
     "@appland/scanner": ^1.57.0
     "@rails/actioncable": ^6.0.0-alpha
     "@rails/activestorage": ^6.0.0-alpha
@@ -11530,6 +11540,16 @@ fsevents@~2.3.2:
   version: 1.0.2
   resolution: "wrappy@npm:1.0.2"
   checksum: 159da4805f7e84a3d003d8841557196034155008f817172d4e986bd591f74aa82aa7db55929a54222309e01079a65a92a9e6414da5a6aa4b01ee44a511ac3ee5
+  languageName: node
+  linkType: hard
+
+"write-file-atomic@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "write-file-atomic@npm:4.0.1"
+  dependencies:
+    imurmurhash: ^0.1.4
+    signal-exit: ^3.0.7
+  checksum: 8f780232533ca6223c63c9b9c01c4386ca8c625ebe5017a9ed17d037aec19462ae17109e0aa155bff5966ee4ae7a27b67a99f55caf3f32ffd84155e9da3929fc
   languageName: node
   linkType: hard
 
