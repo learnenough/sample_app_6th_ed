@@ -1,0 +1,1853 @@
+{
+  "configuration": {
+    "checks": [
+      {
+        "rule": "authzBeforeAuthn"
+      },
+      {
+        "rule": "deserializationOfUntrustedData",
+        "scope": "command"
+      },
+      {
+        "rule": "execOfUntrustedCommand",
+        "scope": "command"
+      },
+      {
+        "rule": "http500"
+      },
+      {
+        "rule": "illegalPackageDependency",
+        "properties": {
+          "callerPackages": [
+            {
+              "equal": "actionpack"
+            },
+            {
+              "equal": "activesupport"
+            }
+          ],
+          "calleePackage": {
+            "equal": "app/controllers"
+          }
+        }
+      },
+      {
+        "rule": "insecureCompare"
+      },
+      {
+        "rule": "logoutWithoutSessionReset"
+      },
+      {
+        "rule": "missingAuthentication"
+      },
+      {
+        "rule": "missingContentType"
+      },
+      {
+        "rule": "nPlusOneQuery"
+      },
+      {
+        "rule": "secretInLog"
+      },
+      {
+        "rule": "tooManyJoins"
+      },
+      {
+        "rule": "tooManyUpdates"
+      },
+      {
+        "rule": "unbatchedMaterializedQuery"
+      },
+      {
+        "rule": "updateInGetRequest"
+      }
+    ]
+  },
+  "appMapMetadata": {
+    "./tmp/appmap/minitest/Following_followers_page.appmap.json": {
+      "name": "Following followers page",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/following_test.rb:20",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Following_following_page.appmap.json": {
+      "name": "Following following page",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/following_test.rb:11",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Following_should_follow_a_user_the_standard_way.appmap.json": {
+      "name": "Following should follow a user the standard way",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/following_test.rb:29",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Following_should_follow_a_user_with_Ajax.appmap.json": {
+      "name": "Following should follow a user with Ajax",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/following_test.rb:35",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Following_should_unfollow_a_user_the_standard_way.appmap.json": {
+      "name": "Following should unfollow a user the standard way",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/following_test.rb:41",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Following_should_unfollow_a_user_with_Ajax.appmap.json": {
+      "name": "Following should unfollow a user with Ajax",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/following_test.rb:49",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Micropost_content_should_be_at_most_140_characters.appmap.json": {
+      "name": "Micropost content should be at most 140 characters",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/micropost_test.rb:24",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Micropost_content_should_be_present.appmap.json": {
+      "name": "Micropost content should be present",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/micropost_test.rb:19",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Micropost_order_should_be_most_recent_first.appmap.json": {
+      "name": "Micropost order should be most recent first",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/micropost_test.rb:29",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Micropost_should_be_valid.appmap.json": {
+      "name": "Micropost should be valid",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/micropost_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Micropost_user_id_should_be_present.appmap.json": {
+      "name": "Micropost user id should be present",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/micropost_test.rb:14",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Microposts_controller_can_get_microposts_as_JSON.appmap.json": {
+      "name": "Microposts_controller can get microposts as JSON",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/microposts_controller_test.rb:9",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Microposts_controller_should_redirect_create_when_not_logged_in.appmap.json": {
+      "name": "Microposts_controller should redirect create when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/microposts_controller_test.rb:14",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Microposts_controller_should_redirect_destroy_for_wrong_micropost.appmap.json": {
+      "name": "Microposts_controller should redirect destroy for wrong micropost",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/microposts_controller_test.rb:28",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Microposts_controller_should_redirect_destroy_when_not_logged_in.appmap.json": {
+      "name": "Microposts_controller should redirect destroy when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/microposts_controller_test.rb:21",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Microposts_interface_micropost_interface.appmap.json": {
+      "name": "Microposts_interface micropost interface",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/microposts_interface_test.rb:9",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Password_resets_password_reset_attack.appmap.json": {
+      "name": "Password_resets password reset attack",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/password_resets_test.rb:64",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Password_resets_password_resets.appmap.json": {
+      "name": "Password_resets password resets",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/password_resets_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Relationship_should_be_valid.appmap.json": {
+      "name": "Relationship should be valid",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/relationship_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Relationship_should_require_a_followed_id.appmap.json": {
+      "name": "Relationship should require a followed id",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/relationship_test.rb:19",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Relationship_should_require_a_follower_id.appmap.json": {
+      "name": "Relationship should require a follower id",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/relationship_test.rb:14",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Relationships_controller_create_should_require_logged-in_user.appmap.json": {
+      "name": "Relationships_controller create should require logged-in user",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/relationships_controller_test.rb:5",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Relationships_controller_destroy_should_require_logged-in_user.appmap.json": {
+      "name": "Relationships_controller destroy should require logged-in user",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/relationships_controller_test.rb:12",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Sessions_controller_should_get_new.appmap.json": {
+      "name": "Sessions_controller should get new",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/sessions_controller_test.rb:5",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Sessions_helper_current_user_returns_nil_when_remember_digest_is_wrong.appmap.json": {
+      "name": "Sessions_helper current user returns nil when remember digest is wrong",
+      "source_location": "/workspaces/sample_app_6th_ed/test/helpers/sessions_helper_test.rb:15",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Sessions_helper_current_user_returns_right_user_when_session_is_nil.appmap.json": {
+      "name": "Sessions_helper current user returns right user when session is nil",
+      "source_location": "/workspaces/sample_app_6th_ed/test/helpers/sessions_helper_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Site_layout_layout_links.appmap.json": {
+      "name": "Site_layout layout links",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/site_layout_test.rb:5",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Static_pages_controller_should_get_about.appmap.json": {
+      "name": "Static_pages_controller should get about",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/static_pages_controller_test.rb:17",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Static_pages_controller_should_get_contact.appmap.json": {
+      "name": "Static_pages_controller should get contact",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/static_pages_controller_test.rb:23",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Static_pages_controller_should_get_help.appmap.json": {
+      "name": "Static_pages_controller should get help",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/static_pages_controller_test.rb:11",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Static_pages_controller_should_get_home.appmap.json": {
+      "name": "Static_pages_controller should get home",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/static_pages_controller_test.rb:5",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_associated_microposts_should_be_destroyed.appmap.json": {
+      "name": "User associated microposts should be destroyed",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:72",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_authenticated_should_return_false_for_a_user_with_nil_digest.appmap.json": {
+      "name": "User authenticated? should return false for a user with nil digest",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:68",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_email_addresses_should_be_unique.appmap.json": {
+      "name": "User email addresses should be unique",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:52",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_email_should_be_present.appmap.json": {
+      "name": "User email should be present",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:19",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_email_should_not_be_too_long.appmap.json": {
+      "name": "User email should not be too long",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:29",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_email_validation_should_accept_valid_addresses.appmap.json": {
+      "name": "User email validation should accept valid addresses",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:34",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_email_validation_should_reject_invalid_addresses.appmap.json": {
+      "name": "User email validation should reject invalid addresses",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:43",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_feed_should_have_the_right_posts.appmap.json": {
+      "name": "User feed should have the right posts",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:91",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_mailer_account_activation.appmap.json": {
+      "name": "User_mailer account activation",
+      "source_location": "/workspaces/sample_app_6th_ed/test/mailers/user_mailer_test.rb:5",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_mailer_password_reset.appmap.json": {
+      "name": "User_mailer password reset",
+      "source_location": "/workspaces/sample_app_6th_ed/test/mailers/user_mailer_test.rb:17",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_name_should_be_present.appmap.json": {
+      "name": "User name should be present",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:14",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_name_should_not_be_too_long.appmap.json": {
+      "name": "User name should not be too long",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:24",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_password_should_be_present_nonblank.appmap.json": {
+      "name": "User password should be present (nonblank)",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:58",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_password_should_have_a_minimum_length.appmap.json": {
+      "name": "User password should have a minimum length",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:63",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_should_be_valid.appmap.json": {
+      "name": "User should be valid",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/User_should_follow_and_unfollow_a_user.appmap.json": {
+      "name": "User should follow and unfollow a user",
+      "source_location": "/workspaces/sample_app_6th_ed/test/models/user_test.rb:80",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_get_new.appmap.json": {
+      "name": "Users_controller should get new",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_destroy_when_not_logged_in.appmap.json": {
+      "name": "Users_controller should redirect destroy when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:48",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_destroy_when_logged_in_as_a_non-admin.appmap.json": {
+      "name": "Users_controller should redirect destroy when logged in as a non-admin",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:55",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_edit_when_logged_in_as_wrong_user.appmap.json": {
+      "name": "Users_controller should redirect edit when logged in as wrong user",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:33",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_edit_when_not_logged_in.appmap.json": {
+      "name": "Users_controller should redirect edit when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:20",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_followers_when_not_logged_in.appmap.json": {
+      "name": "Users_controller should redirect followers when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:68",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_following_when_not_logged_in.appmap.json": {
+      "name": "Users_controller should redirect following when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:63",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_index_when_not_logged_in.appmap.json": {
+      "name": "Users_controller should redirect index when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:15",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_update_when_logged_in_as_wrong_user.appmap.json": {
+      "name": "Users_controller should redirect update when logged in as wrong user",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:40",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_controller_should_redirect_update_when_not_logged_in.appmap.json": {
+      "name": "Users_controller should redirect update when not logged in",
+      "source_location": "/workspaces/sample_app_6th_ed/test/controllers/users_controller_test.rb:26",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_edit_successful_edit_with_friendly_forwarding.appmap.json": {
+      "name": "Users_edit successful edit with friendly forwarding",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_edit_test.rb:21",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_edit_unsuccessful_edit.appmap.json": {
+      "name": "Users_edit unsuccessful edit",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_edit_test.rb:9",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_index_index_as_admin_including_pagination_and_delete_links.appmap.json": {
+      "name": "Users_index index as admin including pagination and delete links",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_index_test.rb:10",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_login_login_with_remembering.appmap.json": {
+      "name": "Users_login login with remembering",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_login_test.rb:43",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_index_index_as_non-admin.appmap.json": {
+      "name": "Users_index index as non-admin",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_index_test.rb:27",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_login_login_with_valid_email_invalid_password.appmap.json": {
+      "name": "Users_login login with valid email/invalid password",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_login_test.rb:9",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_login_login_with_valid_information_followed_by_logout.appmap.json": {
+      "name": "Users_login login with valid information followed by logout",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_login_test.rb:21",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_profile_profile_display_while_anonyomus.appmap.json": {
+      "name": "Users_profile profile display while anonyomus",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_profile_test.rb:18",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_login_login_without_remembering.appmap.json": {
+      "name": "Users_login login without remembering",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_login_test.rb:48",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_signup_invalid_signup_information.appmap.json": {
+      "name": "Users_signup invalid signup information",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_signup_test.rb:9",
+      "test_status": "succeeded"
+    },
+    "./tmp/appmap/minitest/Users_signup_valid_signup_information_with_account_activation.appmap.json": {
+      "name": "Users_signup valid signup information with account activation",
+      "source_location": "/workspaces/sample_app_6th_ed/test/integration/users_signup_test.rb:22",
+      "test_status": "succeeded"
+    }
+  },
+  "findings": [
+    {
+      "appMapFile": "./tmp/appmap/minitest/Microposts_controller_can_get_microposts_as_JSON.appmap.json",
+      "checkId": "unbatched-materialized-query",
+      "ruleId": "unbatched-materialized-query",
+      "ruleTitle": "Unbatched materialized SQL query",
+      "event": {
+        "id": 194,
+        "event": "call",
+        "thread_id": 4480,
+        "sql_query": {
+          "sql": "SELECT \"microposts\".* FROM \"microposts\" WHERE \"microposts\".\"user_id\" = ? ORDER BY \"microposts\".\"created_at\" DESC",
+          "database_type": "sqlite",
+          "server_version": "3.34.1"
+        }
+      },
+      "hash": "a806b8da7d6fa5e1d5294ee0f3a63a715a2a6962d2af8ad5628a72baf26ca2f0",
+      "stack": [
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/activerecord-6.0.4.1/lib/active_record/relation.rb:249",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/renderers.rb:141",
+        "app/controllers/microposts_controller.rb:6",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/instrumentation.rb:19"
+      ],
+      "scope": {
+        "id": 147,
+        "event": "call",
+        "thread_id": 4480,
+        "http_server_request": {
+          "request_method": "GET",
+          "path_info": "/microposts",
+          "normalized_path_info": "/microposts",
+          "headers": {
+            "Host": "www.example.com",
+            "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Cookie": "_sample_app_session=f5PLs29JjJvMrwpnU8VPOkeLam7czvsEGPdYobsYKxIWXUIw0q3fmZeoaYy338seDJ%2BQAYhPKnI%2BO%2FFkweLKk4BW6gIS9cCiRvSyiPQInOqYSCBESWmc4zeardydklAvH%2B5IyRQwQsxl6xZ1Mv4DDss2bDe39aVB0GRSFNamjRhLkNbxkiRv3tSZFAa8SjV%2BlExELVEAwb2WHTVy8ye7BrpY2A%3D%3D--ZGmKxeYhJdHoHM9P--YqvPzdbQgvpzXkFa697nHw%3D%3D; remember_token=ec99mLDfTq46Co0HuxyYzg; user_id=MGZ710HveSGU%2BftWQxJC3LBHF%2FV6r40V%2Fw6eL%2Bf0mxSfZbAAPlTQA6YXNS865Gx2GRQOpQ%2BinVgUaRl0oLdwTt%2FHe5KlFd4%3D--buImrcYVVX%2BKxUY7--eOUnXR%2BaYEKAJbWzujAt%2BA%3D%3D",
+            "Content-Length": "0"
+          }
+        }
+      },
+      "message": "Unbatched materialized SQL query: SELECT \"microposts\".* FROM \"microposts\" WHERE \"microposts\".\"user_id\" = ? ORDER BY \"microposts\".\"created_at\" DESC",
+      "relatedEvents": [
+        {
+          "id": 194,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"microposts\".* FROM \"microposts\" WHERE \"microposts\".\"user_id\" = ? ORDER BY \"microposts\".\"created_at\" DESC",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        }
+      ]
+    },
+    {
+      "appMapFile": "./tmp/appmap/minitest/Microposts_interface_micropost_interface.appmap.json",
+      "checkId": "n-plus-one-query",
+      "ruleId": "n-plus-one-query",
+      "ruleTitle": "N plus 1 SQL query",
+      "event": {
+        "id": 292,
+        "event": "call",
+        "thread_id": 4480,
+        "sql_query": {
+          "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+          "database_type": "sqlite",
+          "server_version": "3.34.1"
+        }
+      },
+      "hash": "3f613b50dced1e74470e192f080e31374e00520c812945de867da4fcd8e09c65",
+      "stack": [
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/activerecord-6.0.4.1/lib/active_record/relation.rb:249",
+        "app/views/microposts/_micropost.html.erb",
+        "app/views/shared/_feed.html.erb",
+        "app/views/static_pages/home.html.erb",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/renderers.rb:141",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/instrumentation.rb:19"
+      ],
+      "scope": {
+        "id": 141,
+        "event": "call",
+        "thread_id": 4480,
+        "http_server_request": {
+          "request_method": "GET",
+          "path_info": "/",
+          "normalized_path_info": "",
+          "headers": {
+            "Host": "www.example.com",
+            "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Cookie": "_sample_app_session=L1TgB94%2FRExbY98N3lj%2FErMcOVfaqpQEtEi%2BbYUin21eUGkKTVMSWpws2Gn%2F%2BfUNq4aYhRXW%2BGWSOtBMFaMRuT4%2BEf%2BhaKpCaIlks69wipQe1CFhAyHcXaGnLqy43ClvJzzyoFXIXHH2yINTG%2ByoT03idXD1WLhrsBiskagltRVaGbkJispM5RospYPeSqwg8OCg6u77YrzKrWFZtT6vYu67Kg%3D%3D--%2Bu8Ylk3silL67xXL--xcRxje%2BKYXHN49M7BouVtw%3D%3D; remember_token=u00HwOzPo5D_Fx1wODlhoA; user_id=5wh2jA%2F9XhDMK30A8gyQs0E4t9prZ45MhaZik4h8M%2FI2RK46tsd9LvOi8e480pAMp3s8wIzpF5YM%2BpxaZwvTlzmSxfRTzP0%3D--OQRk6w2WFTk3xByG--fERZ9PLkEzWHBaLHtuBOiw%3D%3D",
+            "Content-Length": "0"
+          }
+        }
+      },
+      "message": "app_views_microposts__micropost_html_erb.render[280] contains 30 occurrences of SQL: SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+      "groupMessage": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+      "occurranceCount": 30,
+      "relatedEvents": [
+        {
+          "id": 292,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 312,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 332,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 352,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 372,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 392,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 412,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 432,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 452,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 472,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 492,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 512,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 532,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 552,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 572,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 592,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 612,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 632,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 652,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 672,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 692,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 712,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 732,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 752,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 772,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 792,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 812,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 832,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 852,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 872,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"users\".* FROM \"users\" WHERE \"users\".\"id\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        }
+      ]
+    },
+    {
+      "appMapFile": "./tmp/appmap/minitest/Microposts_interface_micropost_interface.appmap.json",
+      "checkId": "n-plus-one-query",
+      "ruleId": "n-plus-one-query",
+      "ruleTitle": "N plus 1 SQL query",
+      "event": {
+        "id": 300,
+        "event": "call",
+        "thread_id": 4480,
+        "sql_query": {
+          "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+          "database_type": "sqlite",
+          "server_version": "3.34.1"
+        }
+      },
+      "hash": "85e714418ac26ab2ed674c83d9031766976b4a5f9047d0b462b781651334ad7c",
+      "stack": [
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/activerecord-6.0.4.1/lib/active_record/relation.rb:249",
+        "app/views/microposts/_micropost.html.erb",
+        "app/views/shared/_feed.html.erb",
+        "app/views/static_pages/home.html.erb",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/renderers.rb:141",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/instrumentation.rb:19"
+      ],
+      "scope": {
+        "id": 141,
+        "event": "call",
+        "thread_id": 4480,
+        "http_server_request": {
+          "request_method": "GET",
+          "path_info": "/",
+          "normalized_path_info": "",
+          "headers": {
+            "Host": "www.example.com",
+            "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Cookie": "_sample_app_session=L1TgB94%2FRExbY98N3lj%2FErMcOVfaqpQEtEi%2BbYUin21eUGkKTVMSWpws2Gn%2F%2BfUNq4aYhRXW%2BGWSOtBMFaMRuT4%2BEf%2BhaKpCaIlks69wipQe1CFhAyHcXaGnLqy43ClvJzzyoFXIXHH2yINTG%2ByoT03idXD1WLhrsBiskagltRVaGbkJispM5RospYPeSqwg8OCg6u77YrzKrWFZtT6vYu67Kg%3D%3D--%2Bu8Ylk3silL67xXL--xcRxje%2BKYXHN49M7BouVtw%3D%3D; remember_token=u00HwOzPo5D_Fx1wODlhoA; user_id=5wh2jA%2F9XhDMK30A8gyQs0E4t9prZ45MhaZik4h8M%2FI2RK46tsd9LvOi8e480pAMp3s8wIzpF5YM%2BpxaZwvTlzmSxfRTzP0%3D--OQRk6w2WFTk3xByG--fERZ9PLkEzWHBaLHtuBOiw%3D%3D",
+            "Content-Length": "0"
+          }
+        }
+      },
+      "message": "app_views_microposts__micropost_html_erb.render[280] contains 30 occurrences of SQL: SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+      "groupMessage": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+      "occurranceCount": 30,
+      "relatedEvents": [
+        {
+          "id": 300,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 320,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 340,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 360,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 380,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 400,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 420,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 440,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 460,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 480,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 500,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 520,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 540,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 560,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 580,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 600,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 620,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 640,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 660,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 680,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 700,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 720,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 740,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 760,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 780,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 800,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 820,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 840,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 860,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        },
+        {
+          "id": 880,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"active_storage_attachments\".* FROM \"active_storage_attachments\" WHERE \"active_storage_attachments\".\"record_id\" = ? AND \"active_storage_attachments\".\"record_type\" = ? AND \"active_storage_attachments\".\"name\" = ? LIMIT ?",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        }
+      ]
+    },
+    {
+      "appMapFile": "./tmp/appmap/minitest/Password_resets_password_reset_attack.appmap.json",
+      "checkId": "deserialization-of-untrusted-data",
+      "ruleId": "deserialization-of-untrusted-data",
+      "ruleTitle": "Deserialization of untrusted data",
+      "event": {
+        "id": 297,
+        "event": "call",
+        "thread_id": 4480,
+        "defined_class": "Psych",
+        "method_id": "load",
+        "path": "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/psych.rb",
+        "lineno": 274,
+        "static": true,
+        "receiver": {
+          "class": "Module",
+          "object_id": 27440,
+          "value": "Psych"
+        }
+      },
+      "hash": "a96aed3fc7dc2515d9ea1475b500ffd4fded710d8fa20d080abe025045630812",
+      "stack": [
+        "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/psych.rb:274",
+        "app/models/user.rb:51",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/activesupport-6.0.4.1/lib/active_support/callbacks.rb:512",
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/actionpack-6.0.4.1/lib/action_controller/metal/instrumentation.rb:19"
+      ],
+      "scope": {
+        "id": 263,
+        "event": "call",
+        "thread_id": 4480,
+        "http_server_request": {
+          "request_method": "GET",
+          "path_info": "/password_resets/LS0tICFydWJ5L29iamVjdDpFUkIKdGVtcGxhdGU6CiAgc3JjOiAhYmluYXJ5IHwtCiAgICBQQ1VnY0hWMGN5QW5jSGR1WldRaEp5QWxQZz09Cgo=/edit",
+          "normalized_path_info": "/password_resets/{id}/edit",
+          "headers": {
+            "Host": "www.example.com",
+            "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Cookie": "_sample_app_session=tuRRMQlJvh4XqgkoDEC4RwBAIK49He1h5xfGekz4jn0VzaCl1FJjzFUdDJWHO1Enh5IG7o8urx6xjE6%2FxmjAwbfxmsT4OMzsry%2Br4rydla3qPVS01Eqr8JrlurLMFRBsmf3fNMCXZ4ialMZAiE6kR0oSc%2Ffi0HGyUgAEyIxVl9X28kL9E5N9cqseaCSOVMWZEqX1afFXQXEmDhV9BOwEjm8VhUV0g9V0Oda91TAMNLkLbG3WElY2htenpSqol4Lf3RglINDAo6uhvuFq9c0EgSUxoE5j0QPjbLnx6c7gQu1bI4JZbhgRtSUnpQbus9zL0fUZcfYmcNO7G8jTJ6gJ--%2BdcTN2btP%2F4KDINJ--806DmTsn7KbISxMhikSHjg%3D%3D",
+            "Content-Length": "0"
+          }
+        }
+      },
+      "message": "Psych.load deserializes untrusted data",
+      "relatedEvents": [
+        {
+          "id": 297,
+          "event": "call",
+          "thread_id": 4480,
+          "defined_class": "Psych",
+          "method_id": "load",
+          "path": "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/psych.rb",
+          "lineno": 274,
+          "static": true,
+          "receiver": {
+            "class": "Module",
+            "object_id": 27440,
+            "value": "Psych"
+          }
+        }
+      ]
+    },
+    {
+      "appMapFile": "./tmp/appmap/minitest/User_feed_should_have_the_right_posts.appmap.json",
+      "checkId": "unbatched-materialized-query",
+      "ruleId": "unbatched-materialized-query",
+      "ruleTitle": "Unbatched materialized SQL query",
+      "event": {
+        "id": 44,
+        "event": "call",
+        "thread_id": 4480,
+        "sql_query": {
+          "sql": "SELECT \"microposts\".* FROM \"microposts\" WHERE (user_id IN (SELECT followed_id FROM relationships\n                     WHERE  follower_id = 762146111)\n                     OR user_id = 762146111) ORDER BY \"microposts\".\"created_at\" DESC",
+          "database_type": "sqlite",
+          "server_version": "3.34.1"
+        }
+      },
+      "hash": "4de06afd1c507cd7bd38aed984c6024eb7c30bf0f8dd9589d34a12ebcee1bc6a",
+      "stack": [
+        "/usr/local/rvm/gems/ruby-3.0.2/gems/activerecord-6.0.4.1/lib/active_record/relation.rb:249"
+      ],
+      "scope": {
+        "id": 41,
+        "event": "call",
+        "thread_id": 4480,
+        "defined_class": "ActiveRecord::Relation",
+        "method_id": "records",
+        "path": "/usr/local/rvm/gems/ruby-3.0.2/gems/activerecord-6.0.4.1/lib/active_record/relation.rb",
+        "lineno": 249,
+        "static": false,
+        "receiver": {
+          "class": "ActiveRecord::Relation",
+          "object_id": 103780,
+          "value": "#<Micropost::ActiveRecord_Relation:0x000056181d420370>"
+        }
+      },
+      "message": "Unbatched materialized SQL query: SELECT \"microposts\".* FROM \"microposts\" WHERE (user_id IN (SELECT followed_id FROM relationships\n                     WHERE  follower_id = 762146111)\n                     OR user_id = 762146111) ORDER BY \"microposts\".\"created_at\" DESC",
+      "relatedEvents": [
+        {
+          "id": 44,
+          "event": "call",
+          "thread_id": 4480,
+          "sql_query": {
+            "sql": "SELECT \"microposts\".* FROM \"microposts\" WHERE (user_id IN (SELECT followed_id FROM relationships\n                     WHERE  follower_id = 762146111)\n                     OR user_id = 762146111) ORDER BY \"microposts\".\"created_at\" DESC",
+            "database_type": "sqlite",
+            "server_version": "3.34.1"
+          }
+        }
+      ]
+    },
+    {
+      "appMapFile": "./tmp/appmap/minitest/Users_profile_profile_display_while_anonyomus.appmap.json",
+      "checkId": "missing-authentication",
+      "ruleId": "missing-authentication",
+      "ruleTitle": "Unauthenticated HTTP server request",
+      "event": {
+        "id": 41,
+        "event": "call",
+        "thread_id": 4480,
+        "http_server_request": {
+          "request_method": "GET",
+          "path_info": "/users/762146111",
+          "normalized_path_info": "/users/{id}",
+          "headers": {
+            "Host": "www.example.com",
+            "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Content-Length": "0"
+          }
+        }
+      },
+      "hash": "71d78423f522bdb8faaef33948567ddf2a4509a89e521947fba89d25632eae56",
+      "stack": [],
+      "scope": {
+        "id": 41,
+        "event": "call",
+        "thread_id": 4480,
+        "http_server_request": {
+          "request_method": "GET",
+          "path_info": "/users/762146111",
+          "normalized_path_info": "/users/{id}",
+          "headers": {
+            "Host": "www.example.com",
+            "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+            "Content-Length": "0"
+          }
+        }
+      },
+      "message": "Unauthenticated HTTP server request: GET /users/{id}",
+      "relatedEvents": [
+        {
+          "id": 41,
+          "event": "call",
+          "thread_id": 4480,
+          "http_server_request": {
+            "request_method": "GET",
+            "path_info": "/users/762146111",
+            "normalized_path_info": "/users/{id}",
+            "headers": {
+              "Host": "www.example.com",
+              "Accept": "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5",
+              "Content-Length": "0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "appMapFile": "./tmp/appmap/minitest/Users_signup_valid_signup_information_with_account_activation.appmap.json",
+      "checkId": "secret-in-log",
+      "ruleId": "secret-in-log",
+      "ruleTitle": "Secret in log",
+      "event": {
+        "id": 401,
+        "event": "call",
+        "thread_id": 4480,
+        "defined_class": "Logger::LogDevice",
+        "method_id": "write",
+        "path": "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/logger/log_device.rb",
+        "lineno": 31,
+        "static": false,
+        "receiver": {
+          "class": "Logger::LogDevice",
+          "object_id": 14080,
+          "value": "#<Logger::LogDevice:0x000056181aa33f08>"
+        }
+      },
+      "hash": "e82963cbf249f6dffc4d8696ff1093f525698c239a5ea794224cfa8790414002",
+      "stack": [
+        "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/logger/log_device.rb:31"
+      ],
+      "scope": {
+        "id": 401,
+        "event": "call",
+        "thread_id": 4480,
+        "defined_class": "Logger::LogDevice",
+        "method_id": "write",
+        "path": "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/logger/log_device.rb",
+        "lineno": 31,
+        "static": false,
+        "receiver": {
+          "class": "Logger::LogDevice",
+          "object_id": 14080,
+          "value": "#<Logger::LogDevice:0x000056181aa33f08>"
+        }
+      },
+      "message": "Log event contains secret data: Started GET \"/account_activations/FHZFLwx5LF1ygdyX4GuReQ/edit?email=wrong\" for 127.0.0.1 at 2022-06- (...18 more characters)",
+      "relatedEvents": [
+        {
+          "id": 401,
+          "event": "call",
+          "thread_id": 4480,
+          "defined_class": "Logger::LogDevice",
+          "method_id": "write",
+          "path": "/usr/local/rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/logger/log_device.rb",
+          "lineno": 31,
+          "static": false,
+          "receiver": {
+            "class": "Logger::LogDevice",
+            "object_id": 14080,
+            "value": "#<Logger::LogDevice:0x000056181aa33f08>"
+          }
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "rule": {
+        "id": "authz-before-authn",
+        "title": "Authorization performed before authentication",
+        "labels": [
+          "security.authorization",
+          "security.authentication"
+        ],
+        "scope": "http_server_request",
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-863": "https://cwe.mitre.org/data/definitions/863.html"
+        },
+        "description": "Determines when authorization logic is applied to a user identity that has not been properly verified. Because the the user's identity has not been verified yet, the outcome of the authorization check cannot be trusted. A malicious user might be able to get themselves authorized as a different user than they really are - or they may not be logged in at all.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#authz-before-authn"
+      },
+      "id": "authz-before-authn",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "deserialization-of-untrusted-data",
+        "title": "Deserialization of untrusted data",
+        "labels": [
+          "deserialize.unsafe",
+          "deserialize.safe",
+          "deserialize.sanitize"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-502": "https://cwe.mitre.org/data/definitions/502.html",
+          "Ruby Security": "https://docs.ruby-lang.org/en/3.0/doc/security_rdoc.html"
+        },
+        "description": "Finds occurrances of deserialization in which the mechanism employed is known to be unsafe, and the data is not known to be trusted.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#deserialization-of-untrusted-data"
+      },
+      "id": "deserialization-of-untrusted-data",
+      "options": {},
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "exec-of-untrusted-command",
+        "title": "Execution of untrusted system command",
+        "labels": [
+          "system.exec",
+          "system.exec.safe",
+          "system.exec.sanitize"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-78": "https://cwe.mitre.org/data/definitions/78.html"
+        },
+        "description": "Find occurrances of system command execution in which the command string is not guaranteed to be safe.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#exec-of-untrusted-command"
+      },
+      "id": "exec-of-untrusted-command",
+      "options": {},
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "http-500",
+        "title": "HTTP 500 status code",
+        "description": "Identifies when an HTTP server requset has returned a 500 status code. HTTP 500 status code generally indicate an unanticipated problem in the backend that is not handled in a predictable way. 500 status codes are also hard for client code to handle, because they don't indicate any particular problem or suggest a solution.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#http-500",
+        "labels": [],
+        "scope": "http_server_request",
+        "enumerateScope": false,
+        "impactDomain": "Stability",
+        "references": {
+          "CWE-392": "https://cwe.mitre.org/data/definitions/392.html"
+        }
+      },
+      "id": "http-500",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "illegal-package-dependency",
+        "title": "Illegal use of code by a non-whitelisted package",
+        "scope": "command",
+        "enumerateScope": true,
+        "impactDomain": "Maintainability",
+        "references": {
+          "CWE-1120": "https://cwe.mitre.org/data/definitions/1120.html",
+          "CWE-1154": "https://cwe.mitre.org/data/definitions/1154.html"
+        },
+        "description": "Ensures that all calls to a specified `callee` package come from an approved `caller` package. This is a way of defining and enforcing an architectural constraint that may not be provided by the programming language itself.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#illegal-package-dependency"
+      },
+      "id": "illegal-package-dependency",
+      "options": {
+        "callerPackages": [
+          {
+            "equal": "actionpack"
+          },
+          {
+            "equal": "activesupport"
+          }
+        ],
+        "calleePackage": {
+          "equal": "app/controllers"
+        }
+      },
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "insecure-compare",
+        "title": "Insecure comparison of secrets",
+        "labels": [
+          "secret",
+          "string.equals"
+        ],
+        "enumerateScope": true,
+        "impactDomain": "Security",
+        "references": {
+          "CWE-208": "https://cwe.mitre.org/data/definitions/208.html"
+        },
+        "description": "Identifies cases in which secrets are being compared directly using `string.equals`.  Ordinary string comparison of user-provided data with a piece of secret data can leak information about the secret through [timing attacks](https://en.wikipedia.org/wiki/Timing_attack), because of short-circuting (returning false on first mismatch). This can allow the attacker to significantly speed up brute forcing, turning an intractable exponential problem into a linear one.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#insecure-compare"
+      },
+      "id": "insecure-compare",
+      "options": {},
+      "scope": "root",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "logout-without-session-reset",
+        "title": "Logout without session reset",
+        "scope": "http_server_request",
+        "labels": [
+          "http.session.clear",
+          "security.logout"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-488": "https://cwe.mitre.org/data/definitions/488.html",
+          "OWASP - Session fixation": "https://owasp.org/www-community/attacks/Session_fixation",
+          "Ruby on Rails - Session fixation countermeasures": "https://guides.rubyonrails.org/security.html#session-fixation-countermeasures"
+        },
+        "description": "Determines when a user has been logged out from the application, but the session hasn't been cleared. When the session isn't cleared after logout, the session is vulnerable to a [session fixation attack](https://owasp.org/www-community/attacks/Session_fixation).",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#logout-without-session-reset"
+      },
+      "id": "logout-without-session-reset",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "missing-authentication",
+        "title": "Unauthenticated HTTP server request",
+        "scope": "http_server_request",
+        "labels": [
+          "access.public",
+          "security.authentication"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": false,
+        "references": {
+          "CWE-306": "https://cwe.mitre.org/data/definitions/306.html"
+        },
+        "description": "An HTTP server request is missing authentication. In this case, the request may be serving assets that should be protected by authentication - but no authentication is actually happening.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#missing-authentication"
+      },
+      "id": "missing-authentication",
+      "options": {
+        "includeContentTypes": [],
+        "excludeContentTypes": []
+      },
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "missing-content-type",
+        "title": "HTTP server request without a Content-Type header",
+        "scope": "http_server_request",
+        "impactDomain": "Stability",
+        "enumerateScope": false,
+        "description": "Finds HTTP server requests that don't provide a `Content-Type` header in the response.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#missing-content-type"
+      },
+      "id": "missing-content-type",
+      "options": {},
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "n-plus-one-query",
+        "title": "N plus 1 SQL query",
+        "scope": "command",
+        "impactDomain": "Performance",
+        "enumerateScope": false,
+        "references": {
+          "CWE-1073": "https://cwe.mitre.org/data/definitions/1073.html"
+        },
+        "description": "Finds occurrences of a query being repeated within a loop.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#n-plus-one-query"
+      },
+      "id": "n-plus-one-query",
+      "options": {
+        "warningLimit": 5,
+        "errorLimit": 10
+      },
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "secret-in-log",
+        "title": "Secret in log",
+        "labels": [
+          "secret",
+          "log"
+        ],
+        "impactDomain": "Security",
+        "enumerateScope": true,
+        "references": {
+          "CWE-532": "https://cwe.mitre.org/data/definitions/532.html"
+        },
+        "description": "Identifies when a known or assumed secret is written to a log. Logs are often transported into other systems that are treated with lesser security - such as backups. Therefore, secrets written into log files are more likely to be leaked or discovered by cyber-attackers.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#secret-in-log"
+      },
+      "id": "secret-in-log",
+      "options": {},
+      "scope": "root",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "too-many-joins",
+        "title": "Too many joins",
+        "impactDomain": "Performance",
+        "enumerateScope": false,
+        "references": {
+          "CWE-1049": "https://cwe.mitre.org/data/definitions/1049.html"
+        },
+        "description": "Verifies that the number of joins in SQL queries does not exceed a threshold.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#too-many-joins"
+      },
+      "id": "too-many-joins",
+      "options": {
+        "warningLimit": 5
+      },
+      "scope": "root",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "too-many-updates",
+        "title": "Too many SQL and RPC updates performed in one command",
+        "scope": "command",
+        "enumerateScope": false,
+        "impactDomain": "Maintainability",
+        "references": {
+          "CWE-1048": "https://cwe.mitre.org/data/definitions/1048.html"
+        },
+        "description": "Verifies that the number of SQL and RPC updates performed by a command does not exceed a threshold.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#too-many-updates"
+      },
+      "id": "too-many-updates",
+      "options": {
+        "warningLimit": 20
+      },
+      "scope": "command",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "unbatched-materialized-query",
+        "title": "Unbatched materialized SQL query",
+        "labels": [
+          "dao.materialize"
+        ],
+        "enumerateScope": true,
+        "impactDomain": "Performance",
+        "references": {
+          "CWE-1049": "https://cwe.mitre.org/data/definitions/1049.html"
+        },
+        "description": "Finds large data sets that are queried from the database and loaded into memory.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#unbatched-materialized-query"
+      },
+      "id": "unbatched-materialized-query",
+      "options": {},
+      "scope": "root",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    },
+    {
+      "rule": {
+        "id": "update-in-get-request",
+        "title": "Data update performed in GET or HEAD request",
+        "scope": "http_server_request",
+        "labels": [
+          "audit"
+        ],
+        "impactDomain": "Maintainability",
+        "description": "Finds SQL updates that are performed in an HTTP server `GET` request.",
+        "url": "https://appland.com/docs/analysis/rules-reference.html#update-in-get-request"
+      },
+      "id": "update-in-get-request",
+      "options": {
+        "_queryInclude": [
+          {},
+          {}
+        ],
+        "_queryExclude": []
+      },
+      "scope": "http_server_request",
+      "includeScope": [],
+      "excludeScope": [],
+      "includeEvent": [],
+      "excludeEvent": []
+    }
+  ],
+  "summary": {
+    "numAppMaps": 68,
+    "numChecks": 1020,
+    "rules": [
+      "authz-before-authn",
+      "deserialization-of-untrusted-data",
+      "exec-of-untrusted-command",
+      "http-500",
+      "illegal-package-dependency",
+      "insecure-compare",
+      "logout-without-session-reset",
+      "missing-authentication",
+      "missing-content-type",
+      "n-plus-one-query",
+      "secret-in-log",
+      "too-many-joins",
+      "too-many-updates",
+      "unbatched-materialized-query",
+      "update-in-get-request"
+    ],
+    "ruleLabels": [
+      "access.public",
+      "audit",
+      "dao.materialize",
+      "deserialize.safe",
+      "deserialize.sanitize",
+      "deserialize.unsafe",
+      "http.session.clear",
+      "log",
+      "secret",
+      "security.authentication",
+      "security.authorization",
+      "security.logout",
+      "string.equals",
+      "system.exec",
+      "system.exec.safe",
+      "system.exec.sanitize"
+    ],
+    "numFindings": 7,
+    "appMapMetadata": {
+      "labels": [],
+      "apps": [
+        "sample_app_6th_ed"
+      ],
+      "clients": [
+        {
+          "name": "appmap",
+          "url": "https://github.com/applandinc/appmap-ruby",
+          "version": "0.83.3"
+        }
+      ],
+      "frameworks": [
+        {
+          "name": "rails",
+          "version": "6.0.4.1"
+        },
+        {
+          "name": "minitest",
+          "version": "5.11.3"
+        }
+      ],
+      "git": [
+        {
+          "repository": "https://github.com/land-of-apps/sample_app_6th_ed",
+          "branch": "appmap-e2e",
+          "commit": "8dab5f06665f0d63b31b239644d3dbf31b0f6383",
+          "status": [
+            "M .gitignore",
+            "D .yarnrc.yml",
+            "M Gemfile",
+            "M Gemfile.lock",
+            "M appmap.yml",
+            "M babel.config.js",
+            "M config/webpack/environment.js",
+            "M config/webpacker.yml",
+            "M package.json",
+            "M yarn.lock",
+            "?? .devcontainer/",
+            "?? .yarnrc.yml.bak"
+          ],
+          "git_last_annotated_tag": null,
+          "git_last_tag": null,
+          "git_commits_since_last_annotated_tag": null,
+          "git_commits_since_last_tag": null
+        }
+      ],
+      "languages": [
+        {
+          "name": "ruby",
+          "engine": "ruby",
+          "version": "3.0.2"
+        }
+      ],
+      "recorders": [
+        {
+          "name": "minitest"
+        }
+      ],
+      "testStatuses": [],
+      "exceptions": []
+    }
+  }
+}

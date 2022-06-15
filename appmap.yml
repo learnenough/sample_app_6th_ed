@@ -1,9 +1,9 @@
 name: sample_app_6th_ed
-language: ruby
-appmap_dir: tmp/appmap
 packages:
   - path: app
   - path: lib
+language: ruby
+appmap_dir: tmp/appmap
 test_recording:
   test_commands:
     - env:
