@@ -1,0 +1,2 @@
+Syntax error found near Identifier (PRAGMA Statement): PRAGMA defer_foreign_keys = ?
+Syntax error found near Identifier (PRAGMA Statement): PRAGMA foreign_keys = ?

@@ -18,8 +18,8 @@
   "version": "0.1.0",
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "@appland/appmap": "^3.25.4",
-    "@appland/scanner": "^1.57.0",
+    "@appland/appmap": "^3.28.1",
+    "@appland/scanner": "^1.59.1",
     "glob": "^8.0.3"
   }
 }
