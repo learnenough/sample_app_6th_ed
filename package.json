@@ -9,7 +9,7 @@
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
-    "@rails/webpacker": "^4.3.0",
+    "@rails/webpacker": "4.2.2",
     "@types/node": "^17.0.33",
     "bootstrap": "3.4.1",
     "jquery": "3.5.1",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@appland/appmap": "^3.28.1",
     "@appland/scanner": "^1.59.1",
-    "glob": "^8.0.3"
+    "glob": "^8.0.3",
+    "webpack-dev-server": "^4.9.2"
   }
 }
