@@ -1,3 +1,0 @@
-- method: Logger::LogDevice#write
-  require_name: logger
-  label: log

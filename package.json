@@ -18,8 +18,6 @@
   "version": "0.1.0",
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
-    "@appland/appmap": "^3.28.1",
-    "@appland/scanner": "^1.59.1",
     "glob": "^8.0.3",
     "webpack-dev-server": "^4.9.2"
   }

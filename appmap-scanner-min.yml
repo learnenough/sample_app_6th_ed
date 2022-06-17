@@ -1,3 +1,0 @@
-checks:
-  - rule: n-plus-one-query
-  - rule: eval-of-untrusted-code
