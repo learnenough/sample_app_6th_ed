@@ -63,11 +63,6 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
-    appmap (0.83.3)
-      activesupport
-      method_source
-      rack
-      reverse_markdown
     ast (2.4.2)
     autoprefixer-rails (10.3.3.0)
       execjs (~> 2)
@@ -402,7 +397,6 @@ PLATFORMS
 DEPENDENCIES
   active_record_doctor
   active_storage_validations (= 0.8.9)
-  appmap
   aws-sdk-s3 (= 1.46.0)
   bcrypt (= 3.1.13)
   bootsnap (= 1.4.6)
