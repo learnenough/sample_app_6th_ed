@@ -1,4 +1,5 @@
 {
   "appMap.inspectEnabled": false,
   "solargraph.useBundler": false,
+  "appMap.findingsEnabled": true
 }
