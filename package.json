@@ -23,6 +23,6 @@
     "@appland/appmap": "^3.29.4",
     "@appland/scanner": "^1.60.0",
     "glob": "^8.0.3",
-    "webpack-dev-server": "^4.9.2"
+    "webpack-dev-server": "^4.9.3"
   }
 }
