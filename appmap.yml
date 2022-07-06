@@ -4,3 +4,9 @@ appmap_dir: tmp/appmap
 packages:
   - path: app
   - path: lib
+test_recording:
+  test_commands:
+    - env:
+        APPMAP: 'true'
+        DISABLE_SPRING: 'true'
+      command: bundle exec rails test

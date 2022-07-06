@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: ae41d85404928c896878fdf92704dae7f06a166f
+  revision: 61177cc3accdefcea112af403cc4beb37014fecf
   branch: master
   specs:
-    appmap (0.83.2)
+    appmap (0.83.5)
       activesupport
       method_source
       rack
@@ -221,7 +221,7 @@ GEM
     puma (5.3.2)
       nio4r (~> 2.0)
     racc (1.6.0)
-    rack (2.2.3)
+    rack (2.2.4)
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -398,9 +398,9 @@ GEM
     will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yard (0.9.27)
+    yard (0.9.28)
       webrick (~> 1.7.0)
-    zeitwerk (2.5.4)
+    zeitwerk (2.6.0)
 
 PLATFORMS
   ruby
