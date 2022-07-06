@@ -19,6 +19,6 @@
   "packageManager": "yarn@3.2.1",
   "devDependencies": {
     "glob": "^8.0.3",
-    "webpack-dev-server": "^4.9.2"
+    "webpack-dev-server": "^4.9.3"
   }
 }
