@@ -42,7 +42,7 @@
     call-me-maybe "^1.0.1"
     z-schema "^5.0.1"
 
-"@appland/appmap@^3.27.4":
+"@appland/appmap@^3.29.4":
   version "3.31.0"
   resolved "https://registry.yarnpkg.com/@appland/appmap/-/appmap-3.31.0.tgz#8e4aae343f372fb543f36f27a6427488031bf986"
   integrity sha512-tjL50GnZmS5OIukaN+gHzzYH1gZUN7Xt1kPhDyby+T/kPgsuCQed8IYePzzRIO8JqdY8vFscILdpCOS97PzHNw==
@@ -140,7 +140,7 @@
     "@appland/models" "1.16.1"
     js-yaml "^4.1.0"
 
-"@appland/scanner@^1.57.0":
+"@appland/scanner@^1.60.0":
   version "1.62.1"
   resolved "https://registry.yarnpkg.com/@appland/scanner/-/scanner-1.62.1.tgz#a2f2f51b0425003c728c90ae2067eb72b8e0da72"
   integrity sha512-v/vKCy9hxsOzcUMYX8dtRrnKCoUiIxuorJFx/Q11d4/Fs49ztCijgxkFJ2fXYS8IBW+xakfxemsPM8AN0z2/pg==

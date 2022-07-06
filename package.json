@@ -20,7 +20,7 @@
   "devDependencies": {
     "glob": "^8.0.3",
     "webpack-dev-server": "^4.9.3",
-    "@appland/appmap": "^3.27.4",
-    "@appland/scanner": "^1.57.0"
+    "@appland/appmap": "^3.29.4",
+    "@appland/scanner": "^1.60.0"
   }
 }
