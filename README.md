@@ -20,7 +20,12 @@ To get started with the app, clone the repo and then install the needed gems:
 $ bundle install --without production
 ```
 
-Next, migrate the database:
+Next, run yarn install
+```
+$ yarn install --check-files
+```
+
+Then, migrate the database:
 
 ```
 $ rails db:migrate
@@ -32,11 +37,18 @@ Finally, run the test suite to verify that everything is working correctly:
 $ rails test
 ```
 
-If the test suite passes, you'll be ready to run the app in a local server:
+If the test suite passes, you can seed the DB with default user logins.
+```
+$ rake db:seed
+```
+
+Finally, you'll be ready to run the app in a local server:
 
 ```
 $ rails server
 ```
+
+Login as username: `example@railstutorial.org` password: `foobar`
 
 For more information, see the
 [*Ruby on Rails Tutorial* book](https://www.railstutorial.org/book).
