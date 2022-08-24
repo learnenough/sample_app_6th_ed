@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   # to the user.
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: page_number)
+    @microposts = @user
+      .microposts
+      # .includes(:user, image_attachment: :blob)
+      .paginate(page: page_number)
   end
 
   # @label access.public
