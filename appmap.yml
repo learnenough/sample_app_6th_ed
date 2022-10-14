@@ -1,0 +1,7 @@
+---
+name: sample_app_6th_ed
+packages:
+- path: app
+- path: lib
+language: ruby
+appmap_dir: tmp/appmap
