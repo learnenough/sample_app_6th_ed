@@ -112,21 +112,6 @@ paths:
                   properties:
                     content:
                       type: string
-  /microposts/{id}:
-    delete:
-      responses:
-        '302':
-          content: {}
-          description: Found
-        '303':
-          content: {}
-          description: See Other
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
   /password_resets:
     post:
       responses:
@@ -152,37 +137,6 @@ paths:
           content:
             text/html: {}
           description: OK
-  /password_resets/{id}:
-    patch:
-      responses:
-        '200':
-          content:
-            text/html: {}
-          description: OK
-        '302':
-          content: {}
-          description: Found
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                user:
-                  type: object
-                  properties:
-                    password:
-                      type: string
-                    password_confirmation:
-                      type: string
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
   /password_resets/{id}/edit:
     get:
       responses:
