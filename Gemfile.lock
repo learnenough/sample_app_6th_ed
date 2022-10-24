@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: 61177cc3accdefcea112af403cc4beb37014fecf
+  revision: d181ea88763001e84577faf8764f4d0b22f08911
   branch: master
   specs:
-    appmap (0.83.5)
+    appmap (0.93.3)
       activesupport
       method_source
       rack
@@ -108,7 +108,7 @@ GEM
       sassc (>= 2.0.0)
     bootstrap-will_paginate (1.0.0)
       will_paginate
-    brakeman (5.2.1)
+    brakeman (5.3.1)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.32.2)
@@ -163,7 +163,7 @@ GEM
     guard-minitest (2.4.6)
       guard-compat (~> 1.2)
       minitest (>= 3.0)
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     image_processing (1.9.3)
@@ -203,7 +203,7 @@ GEM
     msgpack (1.4.2)
     nenv (0.3.0)
     nio4r (2.5.8)
-    nokogiri (1.13.6)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     notiffany (0.1.3)
@@ -370,7 +370,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unicode-display_width (1.8.0)
     virtus (1.0.5)
@@ -400,7 +400,7 @@ GEM
       nokogiri (~> 1.8)
     yard (0.9.28)
       webrick (~> 1.7.0)
-    zeitwerk (2.6.0)
+    zeitwerk (2.6.1)
 
 PLATFORMS
   ruby
