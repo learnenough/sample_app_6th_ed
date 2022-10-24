@@ -1,36 +1,34 @@
 checks:
-  - rule: authzBeforeAuthn
-  - rule: deserializationOfUntrustedData
-    scope: command
-  - rule: execOfUntrustedCommand
-    scope: command
-  - rule: http500
-  - rule: illegalPackageDependency
+  - rule: authz-before-authn
+  # - rule: circular-dependency
+  # - rule: deprecated-crypto-algorithm
+  - rule: deserialization-of-untrusted-data
+  - rule: exec-of-untrusted-command
+  - rule: http-500
+  - rule: illegal-package-dependency
     properties:
       callerPackages:
         - equal: actionpack
         - equal: activesupport
       calleePackage:
         equal: app/controllers
-  - rule: insecureCompare
-  # - rule: jobNotCancelled
-  - rule: logoutWithoutSessionReset
-  - rule: missingAuthentication
-  - rule: missingContentType
-  - rule: nPlusOneQuery
-  - rule: secretInLog
-  #- rule: slowFunctionCall
-  #  properties:
-  #    timeAllowed: 0.2
-  #    functions:
-  #      - match: Controller#
-  #- rule: slowHttpServerRequest
-  #  properties:
-  #    timeAllowed: 0.5
-  #- rule: slowQuery
-  #  properties:
-  #    timeAllowed: 0.05
-  - rule: tooManyJoins
-  - rule: tooManyUpdates
-  - rule: unbatchedMaterializedQuery
-  - rule: updateInGetRequest
+  # - rule: incompatible-http-client-request
+  # - rule: insecure-compare
+  # - rule: job-not-cancelled
+  - rule: logout-without-session-reset
+  - rule: missing-authentication
+  - rule: missing-content-type
+  - rule: n-plus-one-query
+  # - rule: query-from-invalid-package
+  # - rule: query-from-view
+  # - rule: rpc-without-circuit-breaker
+  # - rule: save-without-validation
+  - rule: secret-in-log
+  #  - rule: slow-function-call
+  #  - rule: slow-httpServer-request
+  #  - rule: slow-query
+  - rule: too-many-joins
+  - rule: too-many-updates
+  - rule: unbatched-materialized-query
+  # - rule: unauthenticated-encryption
+  - rule: update-in-get-request
