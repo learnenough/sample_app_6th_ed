@@ -25,16 +25,14 @@ class MicropostsController < ApplicationController
     end
   end
 
-  private
+  def micropost_params
+    params.require(:micropost).permit(:content, :image)
+  end
 
-    def micropost_params
-      params.require(:micropost).permit(:content, :image)
-    end
-
-    def correct_user
-      @micropost = current_user.microposts.find_by(id: params[:id])
-      # status: https://stackoverflow.com/questions/10472600/a-redirect-to-from-destroy-action-always-gets-delete-verb-whatever-method-i-dec/20978913
-      status = request.delete? ? 303 : 302
-      redirect_to root_url, status: status if @micropost.nil?
-    end
+  def correct_user
+    @micropost = current_user.microposts.find_by(id: params[:id])
+    # status: https://stackoverflow.com/questions/10472600/a-redirect-to-from-destroy-action-always-gets-delete-verb-whatever-method-i-dec/20978913
+    status = request.delete? ? 303 : 302
+    redirect_to root_url, status: status if @micropost.nil?
+  end
 end

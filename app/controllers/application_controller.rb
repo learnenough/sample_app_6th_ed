@@ -12,7 +12,5 @@ class ApplicationController < ActionController::Base
     render json: { error: { message: err.message } }, status: 401
   end
 
-  private
-
   include LoggedInHelper
 end
