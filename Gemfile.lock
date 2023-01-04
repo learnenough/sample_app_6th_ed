@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/applandinc/appmap-ruby.git
-  revision: d181ea88763001e84577faf8764f4d0b22f08911
+  revision: 745f9748d909ea84f92f1dba9a5e223d6c6fd985
   branch: master
   specs:
-    appmap (0.93.3)
+    appmap (0.95.0)
       activesupport
       method_source
       rack
@@ -203,7 +203,7 @@ GEM
     msgpack (1.4.2)
     nenv (0.3.0)
     nio4r (2.5.8)
-    nokogiri (1.13.9)
+    nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     notiffany (0.1.3)
@@ -220,7 +220,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.3.2)
       nio4r (~> 2.0)
-    racc (1.6.0)
+    racc (1.6.2)
     rack (2.2.4)
     rack-proxy (0.7.0)
       rack
@@ -400,7 +400,7 @@ GEM
       nokogiri (~> 1.8)
     yard (0.9.28)
       webrick (~> 1.7.0)
-    zeitwerk (2.6.1)
+    zeitwerk (2.6.6)
 
 PLATFORMS
   ruby
