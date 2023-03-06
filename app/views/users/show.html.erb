@@ -5,6 +5,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        Website: <a href="<%= raw(@user.website) %>">%<= @user.website %></a>
       </h1>
     </section>
     <section class="stats">

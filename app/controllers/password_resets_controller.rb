@@ -23,7 +23,10 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    if params[:user][:password].empty?                  # Case (3)
+    if params[:user][:website] && params[:user][:website].empty?                  # Case (3)
+      @user.errors.add(:website, "can't be empty")
+      render 'edit'
+    elsif params[:user][:password].empty?
       @user.errors.add(:password, "can't be empty")
       render 'edit'
     elsif @user.update(user_params)                     # Case (4)

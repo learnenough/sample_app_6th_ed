@@ -19,6 +19,13 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+      <div>
+      <h3>Website URL:</h3>
+      <%= f.label :website, "Website URL" %>
+        <%= f.text_field :website, class: 'form-control' %>
+        </div>
+
     <% end %>
 
     <div class="gravatar_edit">
@@ -26,4 +33,6 @@
       <a href="https://gravatar.com/emails" target="_blank">change</a>
     </div>
   </div>
+
+
 </div>

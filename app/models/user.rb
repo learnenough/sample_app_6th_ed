@@ -18,6 +18,8 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :website, presence: true, length: { minimum: 11 }, allow_nil: true
+  before_save :verifyWebsite
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -105,6 +107,12 @@ class User < ApplicationRecord
   # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  def verifyWebsite()
+    puts "#{website}"
+    if (website != nil && !(website.starts_with?('http'))) then raise "Invalid website." end
+    return true
   end
 
   private
