@@ -9,6 +9,14 @@ class Micropost < ApplicationRecord
                       size: { less_than: 5.megabytes,
                               message:   "should be less than 5MB" }
 
+  # Get all the micropost on the db
+  def Micropost.get_all
+    query = <<-SQL
+            "SELECT * FROM microposts order by id DESC"
+            SQL
+    ActiveRecord::Base.connection.execute(query)
+  end
+
   # Returns a resized image for display.
   def display_image
     image.variant(resize_to_limit: [500, 500])

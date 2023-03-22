@@ -19,6 +19,11 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  # Get all the users on the db
+  def User.get_all
+    User.find_by_sql("SELECT * FROM users order by id DESC")
+  end
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
