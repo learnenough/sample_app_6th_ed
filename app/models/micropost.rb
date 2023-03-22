@@ -12,7 +12,7 @@ class Micropost < ApplicationRecord
   # Get all the micropost on the db
   def Micropost.get_all
     query = <<-SQL
-            "SELECT * FROM microposts order by id DESC"
+            SELECT * FROM microposts order by id DESC
             SQL
     ActiveRecord::Base.connection.execute(query)
   end
