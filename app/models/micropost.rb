@@ -13,4 +13,8 @@ class Micropost < ApplicationRecord
   def display_image
     image.variant(resize_to_limit: [500, 500])
   end
+
+  def generate_content
+    Cicero.sentence
+  end
 end

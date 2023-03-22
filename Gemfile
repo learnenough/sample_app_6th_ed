@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '2.7.6'
 
 gem 'rails',                      '6.1.4.6'
 gem 'image_processing',           '1.9.3'
@@ -25,6 +25,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'cicero'
   gem 'web-console',        '4.1.0'
   gem 'rack-mini-profiler', '2.3.1'
   gem 'listen',             '3.4.1'
