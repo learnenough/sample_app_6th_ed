@@ -10,5 +10,7 @@ jobs:
       - name: Install AppMap step
         uses: getappmap/install-appmap-action@v1-pre.1
         id: install-appmap
+        with:
+          verbose: true
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
