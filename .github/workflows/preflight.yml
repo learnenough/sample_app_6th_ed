@@ -1,0 +1,36 @@
+on: [push]
+name: Install AppMap
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    name: AppMap Preflight
+    steps:
+      - name: Checkout step
+        uses: actions/checkout@v3
+      - name: Install AppMap step
+        uses: getappmap/install-appmap-action@v1-pre.1
+        id: install-appmap
+        with:
+          verbose: true
+      - name: Commit changes
+        id: commit-changes-to-appmap-config
+        uses: EndBug/add-and-commit@v9
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'yarn'          
+      - name: Rails test setup
+        run: |
+          rails db:migrate
+          ./bin/webpack
+      - name: Run tests
+        run: rails test
+      - name: Archive AppMaps
+        uses: getappmap/archive-appmap-action@v1-pre.3
+        id: archive-appmaps
+        with:
+          verbose: true
