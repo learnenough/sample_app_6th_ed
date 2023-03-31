@@ -21,10 +21,10 @@ jobs:
         run: chmod a+x /tmp/appmap
       - name: Rails test setup
         run: |
-          rails db:migrate
+          ./bin/rails db:migrate
           ./bin/webpack
       - name: Run tests
-        run: rails test
+        run: ./bin/rails test
       - name: Archive AppMaps
         uses: getappmap/archive-appmap-action@v1-pre.3
         id: archive-appmaps
