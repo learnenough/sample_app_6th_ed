@@ -28,7 +28,7 @@ jobs:
       - name: Run tests
         run: ./bin/rails test
       - name: Archive AppMaps
-        uses: getappmap/archive-appmap-action@v1-pre.3
+        uses: getappmap/archive-appmap-action@v1-pre.4
         id: archive-appmaps
         with:
           verbose: true
