@@ -1,5 +1,5 @@
-on: [push]
-name: Install AppMap
+on: [pull_request]
+name: AppMap Preflight
 jobs:
   preflight:
     runs-on: ubuntu-latest
@@ -28,7 +28,13 @@ jobs:
       - name: Run tests
         run: ./bin/rails test
       - name: Archive AppMaps
-        uses: getappmap/archive-appmap-action@v1-pre.4
+        uses: getappmap/archive-appmap-action@v1-pre.6
         id: archive-appmaps
         with:
           verbose: true
+      - name: Preflight report
+        uses: getappmap/preflight-appmap-action@v1-pre.1
+        id: preflight
+        with:
+          verbose: true
+
