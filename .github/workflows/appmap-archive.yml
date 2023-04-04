@@ -11,11 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install AppMap
-        uses: getappmap/install-appmap-action@v1-pre.3
-        id: install-appmap
-        with:
-          verbose: true
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -24,6 +19,12 @@ jobs:
         with:
           node-version: 14
           cache: 'yarn'
+      - name: Install AppMap
+        uses: getappmap/install-appmap-action@v1-pre.4
+        id: install-appmap
+        with:
+          project-type: bundler
+          verbose: true
       - name: Yarn install
         run: yarn install
       - name: Rails test setup
