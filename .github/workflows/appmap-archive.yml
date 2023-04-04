@@ -22,7 +22,7 @@ jobs:
       - name: Put bundler back in development mode
         run: bundle config unset deployment && bundle update appmap
       - name: Install AppMap
-        uses: getappmap/install-appmap-action@v1-pre.4
+        uses: getappmap/install-appmap-action@v1-pre.5
         id: install-appmap
         with:
           project-type: bundler
