@@ -1,5 +1,9 @@
 dist: bionic
 
+branches:
+  except:
+    - ci/appmap-preflight
+
 language: ruby
 rvm:
  - 3.0.2

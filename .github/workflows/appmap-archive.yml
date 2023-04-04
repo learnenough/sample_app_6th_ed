@@ -1,0 +1,42 @@
+name: AppMap Archive
+
+on: [pull_request]
+
+env:
+  APPMAP_TELEMETRY_DISABLED: 'true'
+
+jobs:
+  appmap_archive_main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
+          cache: 'yarn'
+      - name: Put bundler back in development mode
+        run: bundle config unset deployment && bundle update appmap
+      - name: Install AppMap
+        uses: getappmap/install-appmap-action@v1-pre.5
+        id: install-appmap
+        with:
+          project-type: bundler
+          verbose: true
+      - name: Yarn install
+        run: yarn install
+      - name: Rails test setup
+        run: |
+          ./bin/rails db:migrate
+          ./bin/webpack
+      - name: Run tests
+        run: ./bin/rails test
+      - name: Archive AppMaps
+        uses: getappmap/archive-appmap-action@v1-pre.7
+        id: archive-appmaps
+        with:
+          verbose: true
