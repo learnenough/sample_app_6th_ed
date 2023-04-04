@@ -1,4 +1,4 @@
-name: AppMap Preflight
+name: AppMap Archive
 
 on: [pull_request]
 
