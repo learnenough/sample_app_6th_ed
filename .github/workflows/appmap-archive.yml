@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: 14
           cache: 'yarn'
+      - name: Put bundler back in development mode
+        run: bundle config unset deployment && bundle update appmap
       - name: Install AppMap
         uses: getappmap/install-appmap-action@v1-pre.4
         id: install-appmap
