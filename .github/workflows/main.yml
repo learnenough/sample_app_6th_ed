@@ -46,7 +46,8 @@ jobs:
         run: ./bin/rails test
       - name: AppMap Generate OpenAPI Documentation
         run: npx @appland/appmap@latest openapi --output-file openapi.yml
-      - name: Push OpenAPI to Readme
-        run: rdme openapi --github --version=v1.0 --key=$RDME_KEY
+      # Failing with: Error: The `--github` flag is only for usage in non-CI environments
+      # - name: Push OpenAPI to Readme
+      #   run: rdme openapi --github --version=v1.0 --key=$RDME_KEY
       - name: Push OpenAPI to Atlassian Compass
         run: curl -X PUT $COMPASS_WEBHOOK_URL -F file=@openapi.yml --user "$COMPASS_API_USER:$COMPASS_API_KEY"
