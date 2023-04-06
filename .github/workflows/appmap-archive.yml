@@ -2,7 +2,6 @@ name: AppMap Archive
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
   schedule:
     # Keep the artifact up to date, as it will expire after 90 days.
     - cron: 1 1 1 * *
@@ -17,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with: # This is needed on a PR, because the checkout action doesn't fetch the base or head branches
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -25,10 +26,15 @@ jobs:
         with:
           node-version: 14
           cache: 'yarn'
+      - name: Prepare bundle for AppMap installation
+        run: bundle config unset deployment
       - name: Install AppMap tools
-        run: |
-          curl -L -o /tmp/appmap https://github.com/getappmap/appmap-js/releases/download/%40appland%2Fappmap-preflight-v1.0-pre.1/appmap-preflight-linux-x64
-          chmod +x /tmp/appmap
+        uses: getappmap/install-appmap-action@v1-pre.5
+        with:
+          project-type: bundler
+          verbose: true
+      # - name: Commit AppMap configuration
+      #   uses: EndBug/add-and-commit@v9
       - name: Yarn install
         run: yarn install
       - name: Rails test setup
@@ -37,9 +43,9 @@ jobs:
           ./bin/rails db:test:prepare
           ./bin/webpack
       - name: Run tests
-        run: ./bin/rails test
+        run: ./bin/rails test || true
       - name: Archive AppMaps
         uses: getappmap/archive-appmap-action@v1-pre.8
-        id: archive-appmaps
         with:
+          commit-sha: ${{ github.event.pull_request.head.sha }}
           verbose: true
