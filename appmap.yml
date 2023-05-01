@@ -4,3 +4,17 @@ appmap_dir: tmp/appmap
 packages:
   - path: app
   - path: lib
+compare:
+  filter:
+    hide_external: true
+    dependency_folders: [ vendor ]
+    hide_name: 
+      - /^external-route:.*\bhttp:\/\/127\.0\.0\.1:\d+\/session\/[a-f0-9]{32,}\//
+      - /^query:[\s\S]*\bSAVEPOINT\b/
+      - /^query:[\s\S]*\bPRAGMA\b/,
+      - /^query:[\s\S]*\bsqlite_master\b/
+update:
+  test_folders: [ test ]
+  test_commands:
+    test:
+      - env DISABLE_SPRING=true rails test {testFiles}
