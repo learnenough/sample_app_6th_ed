@@ -45,10 +45,13 @@ appland-findings.json
 *.code-workspace
 node_modules
 swagger/openapi.yaml
-revision-report
 
 # Ignore macOS DS_Store.
 .DS_Store
 
 # Ignore db test files.
 db/test.*
+
+.appmap
+!.appmap/archive
+!.appmap/history/.keep
