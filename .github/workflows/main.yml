@@ -1,16 +1,16 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
-
 name: CI
 
-on: [ push ]
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0'
 
 permissions:
   contents: read
+  pull-requests: write
 
 env:
   COMPASS_WEBHOOK_URL: "${{secrets.COMPASS_WEBHOOK_URL}}"
@@ -24,30 +24,55 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Ruby
       # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
       # change this to (see https://github.com/ruby/setup-ruby#versioning):
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
       - uses: actions/setup-node@v3
         with:
           node-version: 14
           cache: 'yarn'
+
+      - name: Prepare bundle for AppMap installation
+        run: bundle config unset deployment
+      - name: Install AppMap tools
+        uses: getappmap/install-action@v1.0
+        with:
+          project-type: bundler
+  
       - name: Yarn install
         run: yarn install
+
       - name: Rails test setup
         run: |
           ./bin/rails db:migrate
           ./bin/webpack
+
       - name: Install rdme
         run: npm install rdme@latest -g
+
       - name: Run tests
         run: ./bin/rails test
+
+      - name: Archive AppMaps
+        if: github.event_name != 'pull_request'
+        uses: getappmap/archive-action@v1-pre.13
+
+      - name: Analyze AppMaps
+        # We want to analyze the AppMaps even if the tests fail.
+        if: (success() || failure()) && github.event_name == 'pull_request'
+        uses: getappmap/analyze-action@v1-pre.14
+        with:
+          base-revision: ${{ github.event.pull_request.base.sha }}
+          head-revision: ${{ github.event.pull_request.head.sha }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: AppMap Generate OpenAPI Documentation
         run: npx @appland/appmap@latest openapi --output-file openapi.yml
-      # Failing with: Error: The `--github` flag is only for usage in non-CI environments
-      # - name: Push OpenAPI to Readme
-      #   run: rdme openapi --github --version=v1.0 --key=$RDME_KEY
+
       - name: Push OpenAPI to Atlassian Compass
         run: curl -X PUT $COMPASS_WEBHOOK_URL -F file=@openapi.yml --user "$COMPASS_API_USER:$COMPASS_API_KEY"
