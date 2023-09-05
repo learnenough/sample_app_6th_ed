@@ -1,23 +1,12 @@
-name: CI
+name: appmap-analysis
 
 on:
   pull_request:
   push:
     branches:
-      - main
+      - appmap-e2e
   schedule:
     - cron: '0 0 * * 0'
-
-permissions:
-  contents: read
-  pull-requests: write
-
-env:
-  COMPASS_WEBHOOK_URL: "${{secrets.COMPASS_WEBHOOK_URL}}"
-  COMPASS_API_KEY: "${{secrets.COMPASS_API_KEY}}"
-  COMPASS_API_USER: "${{secrets.COMPASS_API_USER}}"
-  RDME_KEY: "${{secrets.RDME_KEY}}"
-  APPMAP_TELEMETRY_DISABLED: "true"
 
 jobs:
   test:
@@ -26,23 +15,28 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up Ruby
-      # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-      # change this to (see https://github.com/ruby/setup-ruby#versioning):
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          bundler-cache: true
+
+      - name: Enable appmap gem update
+        run: bundle config unset deployment 
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
           cache: 'yarn'
 
       - name: Prepare bundle for AppMap installation
         run: bundle config unset deployment
+      
       - name: Install AppMap tools
-        uses: getappmap/install-action@v1.0
+        id: install-appmap
+        uses: getappmap/install-action@v1
         with:
-          project-type: bundler
+          project-type: bundler # Choose the type of your project here:
+                        # bundler, maven, gradle, pip, pipenv, poetry,
+                        # yarn, npm, etc.
   
       - name: Yarn install
         run: yarn install
@@ -52,27 +46,22 @@ jobs:
           ./bin/rails db:migrate
           ./bin/webpack
 
-      - name: Install rdme
-        run: npm install rdme@latest -g
-
       - name: Run tests
         run: ./bin/rails test
 
-      - name: Archive AppMaps
-        if: github.event_name != 'pull_request'
-        uses: getappmap/archive-action@v1-pre.13
-
-      - name: Analyze AppMaps
-        # We want to analyze the AppMaps even if the tests fail.
-        if: (success() || failure()) && github.event_name == 'pull_request'
-        uses: getappmap/analyze-action@v1-pre.14
+      - name: Save AppMaps
+        uses: actions/cache/save@v3
+        if: always()
         with:
-          base-revision: ${{ github.event.pull_request.base.sha }}
-          head-revision: ${{ github.event.pull_request.head.sha }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: AppMap Generate OpenAPI Documentation
-        run: npx @appland/appmap@latest openapi --output-file openapi.yml
-
-      - name: Push OpenAPI to Atlassian Compass
-        run: curl -X PUT $COMPASS_WEBHOOK_URL -F file=@openapi.yml --user "$COMPASS_API_USER:$COMPASS_API_KEY"
+          path: ${{ steps.install-appmap.outputs.appmap-dir }}
+          key: appmaps-${{ github.sha }}-${{ github.run_attempt }}
+  
+  appmap-analysis:
+    if: always()
+    needs: [test] # You may need to change this to match the name of the step that runs your tests.
+    uses: getappmap/analyze-action/.github/workflows/appmap-analysis.yml@v1
+    permissions:
+      actions: read
+      contents: read
+      checks: write
+      pull-requests: write
