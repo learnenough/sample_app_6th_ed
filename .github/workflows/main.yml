@@ -8,11 +8,31 @@ on:
   schedule:
     - cron: "0 0 * * 0"
 
+permissions:
+  # Read the baseline artifact in order to perform
+  # the AppMap comparison.
+  actions: read
+
+  # Commit the AppMap configuration.
+  # If the EndBug/add-and-commit is removed,
+  # this can be changed to 'read'.
+  contents: write
+
+  # Add check annotations to the source code when
+  # a problem is detected.
+  checks: write
+
+  # Add a comment to the pull request.
+  pull-requests: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          # Checkout pull request head so that a commit can be made
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -30,6 +50,20 @@ jobs:
       - name: Prepare bundle for AppMap installation
         run: bundle config unset deployment
 
+      # Begin install-action snippet
+      #
+      - name: Enable appmap gem update
+        run: bundle config unset deployment
+      - name: Install AppMap tools
+        id: install-appmap
+        uses: getappmap/install-action@v1
+        with:
+          project-type: bundler
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+      #
+      # End install-action snippet
+
       - name: Yarn install
         run: yarn install
 
@@ -40,3 +74,8 @@ jobs:
 
       - name: Run tests
         run: ./bin/rails test
+
+      - name: Archive AppMaps
+        uses: getappmap/archive-action@v1
+        with:
+          revision: ${{ github.event.pull_request.base.sha }}
